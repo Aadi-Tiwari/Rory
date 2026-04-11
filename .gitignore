@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Model weights (too large for git)
+backend_a/models/weights/*.pt
+backend_a/models/weights/*.npy
+
+# Env
+.env
+
+# VS Code
+.vscode/
