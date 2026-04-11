@@ -1,0 +1,2702 @@
+[
+  {
+    "patient_id": "SYNTH-0063",
+    "age_months": 11,
+    "sex": "M",
+    "weight_kg": 9.7,
+    "complaint_text": "runny nose, low-grade fever x5 days, fussy but consolable",
+    "vitals": {
+      "hr": 169,
+      "rr": 38,
+      "temp_f": 100.6,
+      "spo2": 97,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0197",
+    "age_months": 15,
+    "sex": "M",
+    "weight_kg": 11.2,
+    "complaint_text": "1-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": 113,
+      "rr": 38,
+      "temp_f": 101.6,
+      "spo2": 96,
+      "cap_refill_s": 1.8
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0070",
+    "age_months": 207,
+    "sex": "F",
+    "weight_kg": 56.0,
+    "complaint_text": "runny nose, low-grade fever x3 days, fussy but consolable",
+    "vitals": {
+      "hr": 85,
+      "rr": 20,
+      "temp_f": null,
+      "spo2": 94,
+      "cap_refill_s": null
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0103",
+    "age_months": 106,
+    "sex": "F",
+    "weight_kg": 29.1,
+    "complaint_text": "vomiting x4 days, no blood in stool, fever, hydration borderline",
+    "vitals": {
+      "hr": 119,
+      "rr": null,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0011",
+    "age_months": 44,
+    "sex": "F",
+    "weight_kg": 15.3,
+    "complaint_text": "fever 2 days, vomiting, decreased urine output, 3y8m-old appears very unwell",
+    "vitals": {
+      "hr": 164,
+      "rr": 42,
+      "temp_f": 102.3,
+      "spo2": 95,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0090",
+    "age_months": 25,
+    "sex": "M",
+    "weight_kg": 12.6,
+    "complaint_text": "pharyngitis, fever, rapid strep pending, 2y1m-old appears non-toxic",
+    "vitals": {
+      "hr": null,
+      "rr": 40,
+      "temp_f": null,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0109",
+    "age_months": 41,
+    "sex": "F",
+    "weight_kg": 13.3,
+    "complaint_text": "vomiting x1 days, no blood in stool, fever, hydration borderline",
+    "vitals": {
+      "hr": 133,
+      "rr": 33,
+      "temp_f": 99.8,
+      "spo2": 99,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0029",
+    "age_months": 41,
+    "sex": "F",
+    "weight_kg": 15.2,
+    "complaint_text": "fever and altered mental status, 2 days of illness, not eating or drinking",
+    "vitals": {
+      "hr": 170,
+      "rr": 42,
+      "temp_f": 101.7,
+      "spo2": 93,
+      "cap_refill_s": 3.1
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0185",
+    "age_months": 68,
+    "sex": "M",
+    "weight_kg": 21.3,
+    "complaint_text": "2-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": 103,
+      "rr": 26,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 1.3
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0100",
+    "age_months": 25,
+    "sex": "M",
+    "weight_kg": 13.4,
+    "complaint_text": "2y1m-old with 2-day GI illness, mildly dehydrated but alert and interactive",
+    "vitals": {
+      "hr": 132,
+      "rr": 41,
+      "temp_f": 100.1,
+      "spo2": 98,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0074",
+    "age_months": 45,
+    "sex": "F",
+    "weight_kg": 12.8,
+    "complaint_text": "runny nose, low-grade fever x4 days, fussy but consolable",
+    "vitals": {
+      "hr": 133,
+      "rr": 30,
+      "temp_f": 100.4,
+      "spo2": 95,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0047",
+    "age_months": 163,
+    "sex": "F",
+    "weight_kg": 41.4,
+    "complaint_text": "child unresponsive to verbal stimuli, fever, possible source unknown",
+    "vitals": {
+      "hr": 129,
+      "rr": 39,
+      "temp_f": 94.0,
+      "spo2": 97,
+      "cap_refill_s": 4.2
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0159",
+    "age_months": 1,
+    "sex": "M",
+    "weight_kg": 4.3,
+    "complaint_text": "flu-like illness: high fever, myalgias, headache, 1-month-old tested positive rapid flu",
+    "vitals": {
+      "hr": 190,
+      "rr": 41,
+      "temp_f": 100.7,
+      "spo2": 94,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0067",
+    "age_months": 34,
+    "sex": "M",
+    "weight_kg": 11.4,
+    "complaint_text": "runny nose, low-grade fever x4 days, fussy but consolable",
+    "vitals": {
+      "hr": 139,
+      "rr": 35,
+      "temp_f": 102.5,
+      "spo2": 98,
+      "cap_refill_s": 1.2
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0161",
+    "age_months": 22,
+    "sex": "F",
+    "weight_kg": 11.0,
+    "complaint_text": "influenza A confirmed, fever x4 days, cough, fatigue, no respiratory distress",
+    "vitals": {
+      "hr": 124,
+      "rr": 43,
+      "temp_f": 102.0,
+      "spo2": 95,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0163",
+    "age_months": 17,
+    "sex": "M",
+    "weight_kg": 12.1,
+    "complaint_text": "flu-like illness: high fever, myalgias, headache, 1y5m-old tested positive rapid flu",
+    "vitals": {
+      "hr": 129,
+      "rr": 37,
+      "temp_f": 101.8,
+      "spo2": 97,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0095",
+    "age_months": 203,
+    "sex": "F",
+    "weight_kg": 53.1,
+    "complaint_text": "sore throat x2 days, fever, no drooling or trismus",
+    "vitals": {
+      "hr": null,
+      "rr": 22,
+      "temp_f": 101.3,
+      "spo2": 97,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0199",
+    "age_months": 30,
+    "sex": "F",
+    "weight_kg": 13.3,
+    "complaint_text": "ear pain and low-grade fever x1 days, 2y6m-old tugging at ear",
+    "vitals": {
+      "hr": 120,
+      "rr": 37,
+      "temp_f": 100.2,
+      "spo2": 96,
+      "cap_refill_s": 1.8
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0022",
+    "age_months": 34,
+    "sex": "F",
+    "weight_kg": 12.0,
+    "complaint_text": "sent from pediatrician for evaluation of sepsis: high fever, tachy, poor perfusion",
+    "vitals": {
+      "hr": 150,
+      "rr": 37,
+      "temp_f": 100.0,
+      "spo2": 94,
+      "cap_refill_s": 3.5
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0002",
+    "age_months": 12,
+    "sex": "M",
+    "weight_kg": 8.4,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled",
+    "vitals": {
+      "hr": 146,
+      "rr": 61,
+      "temp_f": 95.3,
+      "spo2": 91,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0180",
+    "age_months": 42,
+    "sex": "F",
+    "weight_kg": 13.9,
+    "complaint_text": "3y6m-old with 1-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": 132,
+      "rr": 32,
+      "temp_f": 99.7,
+      "spo2": 97,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0052",
+    "age_months": 108,
+    "sex": "M",
+    "weight_kg": 24.7,
+    "complaint_text": "fever 1 days, vomiting, decreased urine output, 9-year-old appears very unwell",
+    "vitals": {
+      "hr": 121,
+      "rr": 27,
+      "temp_f": 98.2,
+      "spo2": 91,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0140",
+    "age_months": 18,
+    "sex": "F",
+    "weight_kg": 10.4,
+    "complaint_text": "prolonged fever over 5 days, bilateral conjunctivitis, rash on trunk",
+    "vitals": {
+      "hr": 161,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 96,
+      "cap_refill_s": 3.1
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0004",
+    "age_months": 46,
+    "sex": "M",
+    "weight_kg": 16.0,
+    "complaint_text": "fever with source unknown, HR elevated at triage, child limp in parent's arms",
+    "vitals": {
+      "hr": 165,
+      "rr": 45,
+      "temp_f": 99.4,
+      "spo2": 91,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0080",
+    "age_months": 16,
+    "sex": "F",
+    "weight_kg": 9.4,
+    "complaint_text": "pharyngitis, fever, rapid strep pending, 1y4m-old appears non-toxic",
+    "vitals": {
+      "hr": 154,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0135",
+    "age_months": 26,
+    "sex": "M",
+    "weight_kg": 12.2,
+    "complaint_text": "4-day fever with desquamation of fingertips, concern for Kawasaki disease",
+    "vitals": {
+      "hr": 160,
+      "rr": 43,
+      "temp_f": 102.6,
+      "spo2": 96,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0174",
+    "age_months": 32,
+    "sex": "M",
+    "weight_kg": 12.1,
+    "complaint_text": "2y8m-old with 5-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": null,
+      "rr": 40,
+      "temp_f": 101.4,
+      "spo2": 95,
+      "cap_refill_s": 1.3
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0102",
+    "age_months": 23,
+    "sex": "F",
+    "weight_kg": 10.7,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp",
+    "vitals": {
+      "hr": 149,
+      "rr": 23,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0167",
+    "age_months": 164,
+    "sex": "M",
+    "weight_kg": 40.0,
+    "complaint_text": "fever and urinary frequency, urine culture pending, clinically well-appearing",
+    "vitals": {
+      "hr": 94,
+      "rr": 22,
+      "temp_f": 101.3,
+      "spo2": 98,
+      "cap_refill_s": null
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0183",
+    "age_months": 147,
+    "sex": "M",
+    "weight_kg": 37.7,
+    "complaint_text": "febrile UTI, UA with pyuria and bacteriuria, 12y3m-old non-toxic",
+    "vitals": {
+      "hr": 121,
+      "rr": 17,
+      "temp_f": 101.1,
+      "spo2": null,
+      "cap_refill_s": null
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0008",
+    "age_months": 8,
+    "sex": "F",
+    "weight_kg": 7.3,
+    "complaint_text": "child with petechial rash and fever, lethargic, not making eye contact",
+    "vitals": {
+      "hr": null,
+      "rr": 49,
+      "temp_f": 97.7,
+      "spo2": null,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0177",
+    "age_months": 30,
+    "sex": "M",
+    "weight_kg": 11.0,
+    "complaint_text": "febrile UTI, UA with pyuria and bacteriuria, 2y6m-old non-toxic",
+    "vitals": {
+      "hr": 136,
+      "rr": 26,
+      "temp_f": 98.9,
+      "spo2": 98,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0035",
+    "age_months": 58,
+    "sex": "F",
+    "weight_kg": 18.5,
+    "complaint_text": "4y10m-old with 3-day fever, tachypneic, mottled skin, capillary refill prolonged",
+    "vitals": {
+      "hr": null,
+      "rr": 42,
+      "temp_f": null,
+      "spo2": 96,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0112",
+    "age_months": 11,
+    "sex": "M",
+    "weight_kg": 9.2,
+    "complaint_text": "vomiting x5 days, no blood in stool, fever, hydration borderline",
+    "vitals": {
+      "hr": 141,
+      "rr": 50,
+      "temp_f": 99.3,
+      "spo2": 97,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0154",
+    "age_months": 102,
+    "sex": "M",
+    "weight_kg": 23.3,
+    "complaint_text": "influenza A confirmed, fever x3 days, cough, fatigue, no respiratory distress",
+    "vitals": {
+      "hr": 139,
+      "rr": 37,
+      "temp_f": null,
+      "spo2": 95,
+      "cap_refill_s": null
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0009",
+    "age_months": 123,
+    "sex": "F",
+    "weight_kg": 28.1,
+    "complaint_text": "scratch on leg 3 days ago, now fever and rapidly spreading redness, child lethargic",
+    "vitals": {
+      "hr": 146,
+      "rr": 34,
+      "temp_f": null,
+      "spo2": 92,
+      "cap_refill_s": 4.1
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0168",
+    "age_months": 147,
+    "sex": "F",
+    "weight_kg": 32.3,
+    "complaint_text": "12y3m-old with 1-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": null,
+      "rr": 21,
+      "temp_f": 101.9,
+      "spo2": 97,
+      "cap_refill_s": 1.8
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0069",
+    "age_months": 17,
+    "sex": "M",
+    "weight_kg": 10.1,
+    "complaint_text": "runny nose, low-grade fever x2 days, fussy but consolable",
+    "vitals": {
+      "hr": 120,
+      "rr": 32,
+      "temp_f": 102.1,
+      "spo2": 95,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0040",
+    "age_months": 5,
+    "sex": "F",
+    "weight_kg": 6.5,
+    "complaint_text": "fever with source unknown, HR elevated at triage, child limp in parent's arms",
+    "vitals": {
+      "hr": 144,
+      "rr": 55,
+      "temp_f": 101.0,
+      "spo2": 96,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0049",
+    "age_months": 15,
+    "sex": "M",
+    "weight_kg": 8.9,
+    "complaint_text": "sent from pediatrician for evaluation of sepsis: high fever, tachy, poor perfusion",
+    "vitals": {
+      "hr": 169,
+      "rr": 44,
+      "temp_f": 100.0,
+      "spo2": 89,
+      "cap_refill_s": 3.0
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0184",
+    "age_months": 58,
+    "sex": "F",
+    "weight_kg": 16.2,
+    "complaint_text": "acute otitis media confirmed, mild fever, 4y10m-old consolable",
+    "vitals": {
+      "hr": 147,
+      "rr": 26,
+      "temp_f": 101.2,
+      "spo2": 99,
+      "cap_refill_s": 2.6
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0120",
+    "age_months": 6,
+    "sex": "F",
+    "weight_kg": 7.0,
+    "complaint_text": "abdominal pain worsening over 2 days, rebound tenderness noted",
+    "vitals": {
+      "hr": 152,
+      "rr": 29,
+      "temp_f": 101.2,
+      "spo2": 95,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0195",
+    "age_months": 31,
+    "sex": "M",
+    "weight_kg": 11.0,
+    "complaint_text": "acute otitis media confirmed, mild fever, 2y7m-old consolable",
+    "vitals": {
+      "hr": 139,
+      "rr": 32,
+      "temp_f": 100.5,
+      "spo2": 98,
+      "cap_refill_s": 1.1
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0055",
+    "age_months": 31,
+    "sex": "F",
+    "weight_kg": 13.6,
+    "complaint_text": "sent from pediatrician for evaluation of sepsis: high fever, tachy, poor perfusion",
+    "vitals": {
+      "hr": 176,
+      "rr": 51,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 4.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0060",
+    "age_months": 185,
+    "sex": "M",
+    "weight_kg": 46.0,
+    "complaint_text": "scratch on leg 3 days ago, now fever and rapidly spreading redness, child lethargic",
+    "vitals": {
+      "hr": 131,
+      "rr": 25,
+      "temp_f": 105.5,
+      "spo2": 93,
+      "cap_refill_s": 4.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0046",
+    "age_months": 27,
+    "sex": "F",
+    "weight_kg": 13.7,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled",
+    "vitals": {
+      "hr": 168,
+      "rr": 44,
+      "temp_f": 98.4,
+      "spo2": 95,
+      "cap_refill_s": 3.2
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0176",
+    "age_months": 177,
+    "sex": "M",
+    "weight_kg": 43.5,
+    "complaint_text": "fever and urinary frequency, urine culture pending, clinically well-appearing",
+    "vitals": {
+      "hr": null,
+      "rr": 22,
+      "temp_f": null,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0136",
+    "age_months": 21,
+    "sex": "M",
+    "weight_kg": 12.3,
+    "complaint_text": "2-day fever with desquamation of fingertips, concern for Kawasaki disease",
+    "vitals": {
+      "hr": 148,
+      "rr": 38,
+      "temp_f": 101.4,
+      "spo2": 97,
+      "cap_refill_s": 2.6
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0125",
+    "age_months": 4,
+    "sex": "F",
+    "weight_kg": 6.9,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": 172,
+      "rr": 45,
+      "temp_f": null,
+      "spo2": 96,
+      "cap_refill_s": null
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0073",
+    "age_months": 21,
+    "sex": "F",
+    "weight_kg": 10.6,
+    "complaint_text": "1y9m-old with cough, congestion, fever for 1 days, active and playful",
+    "vitals": {
+      "hr": 132,
+      "rr": 30,
+      "temp_f": 101.7,
+      "spo2": 98,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0190",
+    "age_months": 9,
+    "sex": "F",
+    "weight_kg": 8.5,
+    "complaint_text": "2-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": 136,
+      "rr": 57,
+      "temp_f": 101.5,
+      "spo2": null,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0193",
+    "age_months": 161,
+    "sex": "F",
+    "weight_kg": 42.9,
+    "complaint_text": "5-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": null,
+      "rr": 22,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0048",
+    "age_months": 61,
+    "sex": "M",
+    "weight_kg": 17.1,
+    "complaint_text": "5y1m-old with 1-day fever, tachypneic, mottled skin, capillary refill prolonged",
+    "vitals": {
+      "hr": 143,
+      "rr": 39,
+      "temp_f": 103.4,
+      "spo2": 93,
+      "cap_refill_s": 4.2
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0138",
+    "age_months": 10,
+    "sex": "F",
+    "weight_kg": 8.6,
+    "complaint_text": "fever x2 days, rash, red eyes, strawberry tongue, 10-month-old infant",
+    "vitals": {
+      "hr": 144,
+      "rr": 39,
+      "temp_f": null,
+      "spo2": 96,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0045",
+    "age_months": 60,
+    "sex": "M",
+    "weight_kg": 18.5,
+    "complaint_text": "fever 2 days, vomiting, decreased urine output, 5-year-old appears very unwell",
+    "vitals": {
+      "hr": 162,
+      "rr": 33,
+      "temp_f": 98.4,
+      "spo2": 95,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0039",
+    "age_months": 9,
+    "sex": "F",
+    "weight_kg": 8.1,
+    "complaint_text": "child unresponsive to verbal stimuli, fever, possible source unknown",
+    "vitals": {
+      "hr": 172,
+      "rr": null,
+      "temp_f": 103.3,
+      "spo2": 94,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0123",
+    "age_months": 211,
+    "sex": "M",
+    "weight_kg": 52.1,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": 101.2,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0084",
+    "age_months": 78,
+    "sex": "F",
+    "weight_kg": 21.0,
+    "complaint_text": "throat pain, fever, exudates on exam, Centor score high",
+    "vitals": {
+      "hr": 129,
+      "rr": 23,
+      "temp_f": 100.9,
+      "spo2": 98,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0124",
+    "age_months": 39,
+    "sex": "M",
+    "weight_kg": 16.1,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": 134,
+      "rr": 33,
+      "temp_f": 101.7,
+      "spo2": 99,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0098",
+    "age_months": 184,
+    "sex": "M",
+    "weight_kg": 45.7,
+    "complaint_text": "vomiting and diarrhea x4 days, mild fever, tolerating sips of fluid",
+    "vitals": {
+      "hr": 98,
+      "rr": 22,
+      "temp_f": 99.8,
+      "spo2": 96,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0038",
+    "age_months": 120,
+    "sex": "F",
+    "weight_kg": 33.0,
+    "complaint_text": "child with petechial rash and fever, lethargic, not making eye contact",
+    "vitals": {
+      "hr": 137,
+      "rr": null,
+      "temp_f": 100.7,
+      "spo2": 97,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0108",
+    "age_months": 54,
+    "sex": "F",
+    "weight_kg": 17.0,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp",
+    "vitals": {
+      "hr": 120,
+      "rr": 34,
+      "temp_f": 99.2,
+      "spo2": 97,
+      "cap_refill_s": 1.8
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0169",
+    "age_months": 31,
+    "sex": "M",
+    "weight_kg": 13.3,
+    "complaint_text": "fever and urinary frequency, urine culture pending, clinically well-appearing",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": 101.7,
+      "spo2": null,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0166",
+    "age_months": 29,
+    "sex": "M",
+    "weight_kg": 12.6,
+    "complaint_text": "rapid flu positive, fever and body aches, tolerating fluids, no hypoxia",
+    "vitals": {
+      "hr": null,
+      "rr": 37,
+      "temp_f": 100.7,
+      "spo2": null,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0032",
+    "age_months": 116,
+    "sex": "F",
+    "weight_kg": 24.8,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled",
+    "vitals": {
+      "hr": 129,
+      "rr": null,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 3.2
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0105",
+    "age_months": 95,
+    "sex": "F",
+    "weight_kg": 24.9,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp",
+    "vitals": {
+      "hr": 110,
+      "rr": 29,
+      "temp_f": null,
+      "spo2": 95,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0156",
+    "age_months": 158,
+    "sex": "M",
+    "weight_kg": 38.5,
+    "complaint_text": "13y2m-old with influenza: fever, malaise, cough, mild tachycardia",
+    "vitals": {
+      "hr": 104,
+      "rr": 26,
+      "temp_f": 102.3,
+      "spo2": 96,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0142",
+    "age_months": 83,
+    "sex": "F",
+    "weight_kg": 19.5,
+    "complaint_text": "prolonged fever over 5 days, bilateral conjunctivitis, rash on trunk",
+    "vitals": {
+      "hr": 125,
+      "rr": 29,
+      "temp_f": 100.5,
+      "spo2": 96,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0042",
+    "age_months": 204,
+    "sex": "F",
+    "weight_kg": 51.1,
+    "complaint_text": "child with petechial rash and fever, lethargic, not making eye contact",
+    "vitals": {
+      "hr": 118,
+      "rr": 35,
+      "temp_f": 101.7,
+      "spo2": null,
+      "cap_refill_s": 3.5
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0077",
+    "age_months": 204,
+    "sex": "M",
+    "weight_kg": 43.5,
+    "complaint_text": "17-year-old with cough, congestion, fever for 5 days, active and playful",
+    "vitals": {
+      "hr": 125,
+      "rr": 23,
+      "temp_f": 99.2,
+      "spo2": 97,
+      "cap_refill_s": 1.4
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0107",
+    "age_months": 19,
+    "sex": "M",
+    "weight_kg": 10.9,
+    "complaint_text": "1y7m-old with 1-day GI illness, mildly dehydrated but alert and interactive",
+    "vitals": {
+      "hr": 149,
+      "rr": 21,
+      "temp_f": 102.5,
+      "spo2": 97,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0017",
+    "age_months": 10,
+    "sex": "F",
+    "weight_kg": 8.5,
+    "complaint_text": "scratch on leg 3 days ago, now fever and rapidly spreading redness, child lethargic",
+    "vitals": {
+      "hr": 190,
+      "rr": null,
+      "temp_f": 99.7,
+      "spo2": 96,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0188",
+    "age_months": 96,
+    "sex": "F",
+    "weight_kg": 24.9,
+    "complaint_text": "acute otitis media confirmed, mild fever, 8-year-old consolable",
+    "vitals": {
+      "hr": 105,
+      "rr": 17,
+      "temp_f": 100.6,
+      "spo2": null,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0086",
+    "age_months": 179,
+    "sex": "M",
+    "weight_kg": 44.6,
+    "complaint_text": "sore throat and fever x5 days, no rash, no difficulty swallowing",
+    "vitals": {
+      "hr": 120,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 99,
+      "cap_refill_s": null
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0171",
+    "age_months": 194,
+    "sex": "M",
+    "weight_kg": 48.9,
+    "complaint_text": "fever and urinary frequency, urine culture pending, clinically well-appearing",
+    "vitals": {
+      "hr": 112,
+      "rr": 19,
+      "temp_f": 100.0,
+      "spo2": 98,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0066",
+    "age_months": 67,
+    "sex": "F",
+    "weight_kg": 18.7,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay",
+    "vitals": {
+      "hr": 140,
+      "rr": 31,
+      "temp_f": 101.2,
+      "spo2": 98,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0187",
+    "age_months": 105,
+    "sex": "F",
+    "weight_kg": 27.9,
+    "complaint_text": "AOM diagnosis, low-grade fever, 8y9m-old eating and drinking normally",
+    "vitals": {
+      "hr": 121,
+      "rr": 29,
+      "temp_f": 99.4,
+      "spo2": 98,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0134",
+    "age_months": 117,
+    "sex": "M",
+    "weight_kg": 27.8,
+    "complaint_text": "prolonged fever over 5 days, bilateral conjunctivitis, rash on trunk",
+    "vitals": {
+      "hr": 121,
+      "rr": 35,
+      "temp_f": 102.4,
+      "spo2": 97,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0056",
+    "age_months": 156,
+    "sex": "F",
+    "weight_kg": 41.6,
+    "complaint_text": "child brought in lethargic and not responding normally, fever for 4 days, looks very ill",
+    "vitals": {
+      "hr": 83,
+      "rr": 39,
+      "temp_f": 103.1,
+      "spo2": 97,
+      "cap_refill_s": 3.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0071",
+    "age_months": 55,
+    "sex": "F",
+    "weight_kg": 15.9,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay",
+    "vitals": {
+      "hr": 131,
+      "rr": 34,
+      "temp_f": 99.3,
+      "spo2": 95,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0007",
+    "age_months": 3,
+    "sex": "F",
+    "weight_kg": 7.1,
+    "complaint_text": "fever 1 days, vomiting, decreased urine output, 3-month-old infant appears very unwell",
+    "vitals": {
+      "hr": 166,
+      "rr": 45,
+      "temp_f": 99.2,
+      "spo2": 96,
+      "cap_refill_s": 5.1
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0068",
+    "age_months": 1,
+    "sex": "M",
+    "weight_kg": 4.1,
+    "complaint_text": "1-month-old with cough, congestion, fever for 2 days, active and playful",
+    "vitals": {
+      "hr": 158,
+      "rr": 53,
+      "temp_f": 102.4,
+      "spo2": 98,
+      "cap_refill_s": 1.4
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0137",
+    "age_months": 95,
+    "sex": "M",
+    "weight_kg": 23.4,
+    "complaint_text": "prolonged fever over 5 days, bilateral conjunctivitis, rash on trunk",
+    "vitals": {
+      "hr": 130,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 98,
+      "cap_refill_s": null
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0064",
+    "age_months": 178,
+    "sex": "M",
+    "weight_kg": 38.7,
+    "complaint_text": "fever and rhinorrhea, no respiratory distress, immunizations up to date",
+    "vitals": {
+      "hr": 116,
+      "rr": null,
+      "temp_f": 101.9,
+      "spo2": null,
+      "cap_refill_s": null
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0018",
+    "age_months": 29,
+    "sex": "F",
+    "weight_kg": 11.6,
+    "complaint_text": "scratch on leg 3 days ago, now fever and rapidly spreading redness, child lethargic",
+    "vitals": {
+      "hr": 176,
+      "rr": 46,
+      "temp_f": 104.3,
+      "spo2": 93,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0065",
+    "age_months": 23,
+    "sex": "F",
+    "weight_kg": 11.4,
+    "complaint_text": "runny nose, low-grade fever x3 days, fussy but consolable",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 96,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0111",
+    "age_months": 14,
+    "sex": "M",
+    "weight_kg": 10.2,
+    "complaint_text": "vomiting x4 days, no blood in stool, fever, hydration borderline",
+    "vitals": {
+      "hr": 141,
+      "rr": 30,
+      "temp_f": 101.1,
+      "spo2": 93,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0145",
+    "age_months": 185,
+    "sex": "M",
+    "weight_kg": 50.0,
+    "complaint_text": "classic Kawasaki features: fever, rash, cracked lips, cervical adenopathy",
+    "vitals": {
+      "hr": 118,
+      "rr": 26,
+      "temp_f": 102.6,
+      "spo2": 93,
+      "cap_refill_s": 3.2
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0113",
+    "age_months": 19,
+    "sex": "M",
+    "weight_kg": 10.4,
+    "complaint_text": "vomiting x5 days, no blood in stool, fever, hydration borderline",
+    "vitals": {
+      "hr": 149,
+      "rr": 45,
+      "temp_f": 99.6,
+      "spo2": 98,
+      "cap_refill_s": 1.8
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0173",
+    "age_months": 100,
+    "sex": "M",
+    "weight_kg": 22.3,
+    "complaint_text": "8y4m-old with 1-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": 122,
+      "rr": 27,
+      "temp_f": 100.2,
+      "spo2": 99,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0099",
+    "age_months": 37,
+    "sex": "F",
+    "weight_kg": 13.7,
+    "complaint_text": "vomiting x3 days, no blood in stool, fever, hydration borderline",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": 99.5,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0146",
+    "age_months": 44,
+    "sex": "F",
+    "weight_kg": 13.6,
+    "complaint_text": "2-day fever with desquamation of fingertips, concern for Kawasaki disease",
+    "vitals": {
+      "hr": 124,
+      "rr": 33,
+      "temp_f": 100.1,
+      "spo2": 99,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0076",
+    "age_months": 9,
+    "sex": "M",
+    "weight_kg": 8.1,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay",
+    "vitals": {
+      "hr": 178,
+      "rr": null,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0082",
+    "age_months": 117,
+    "sex": "M",
+    "weight_kg": 31.2,
+    "complaint_text": "sore throat x4 days, fever, no drooling or trismus",
+    "vitals": {
+      "hr": 119,
+      "rr": 19,
+      "temp_f": 100.7,
+      "spo2": 99,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0006",
+    "age_months": 63,
+    "sex": "M",
+    "weight_kg": 18.9,
+    "complaint_text": "child unresponsive to verbal stimuli, fever, possible source unknown",
+    "vitals": {
+      "hr": 151,
+      "rr": 38,
+      "temp_f": 98.6,
+      "spo2": 98,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0054",
+    "age_months": 100,
+    "sex": "F",
+    "weight_kg": 23.9,
+    "complaint_text": "fever x2 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right'",
+    "vitals": {
+      "hr": 148,
+      "rr": 38,
+      "temp_f": 101.9,
+      "spo2": 89,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0179",
+    "age_months": 11,
+    "sex": "F",
+    "weight_kg": 7.8,
+    "complaint_text": "dysuria and fever x1 days, urinalysis positive, 11-month-old infant",
+    "vitals": {
+      "hr": 130,
+      "rr": 44,
+      "temp_f": 99.7,
+      "spo2": 97,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0044",
+    "age_months": 12,
+    "sex": "F",
+    "weight_kg": 11.0,
+    "complaint_text": "1-year-old with 4-day fever, tachypneic, mottled skin, capillary refill prolonged",
+    "vitals": {
+      "hr": 212,
+      "rr": 46,
+      "temp_f": 104.1,
+      "spo2": 90,
+      "cap_refill_s": 4.2
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0189",
+    "age_months": 143,
+    "sex": "M",
+    "weight_kg": 41.0,
+    "complaint_text": "acute otitis media confirmed, mild fever, 11y11m-old consolable",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": 100.3,
+      "spo2": 98,
+      "cap_refill_s": null
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0175",
+    "age_months": 67,
+    "sex": "M",
+    "weight_kg": 18.7,
+    "complaint_text": "5y7m-old with 4-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": 143,
+      "rr": 33,
+      "temp_f": 101.1,
+      "spo2": 96,
+      "cap_refill_s": 1.1
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0101",
+    "age_months": 29,
+    "sex": "F",
+    "weight_kg": 11.2,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp",
+    "vitals": {
+      "hr": 145,
+      "rr": 30,
+      "temp_f": 97.8,
+      "spo2": 97,
+      "cap_refill_s": 3.2
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0129",
+    "age_months": 24,
+    "sex": "M",
+    "weight_kg": 11.7,
+    "complaint_text": "abdominal pain worsening over 2 days, rebound tenderness noted",
+    "vitals": {
+      "hr": 139,
+      "rr": 32,
+      "temp_f": null,
+      "spo2": 98,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0059",
+    "age_months": 23,
+    "sex": "M",
+    "weight_kg": 11.1,
+    "complaint_text": "fever 1 days, vomiting, decreased urine output, 1y11m-old appears very unwell",
+    "vitals": {
+      "hr": 148,
+      "rr": 45,
+      "temp_f": 96.5,
+      "spo2": 99,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0132",
+    "age_months": 167,
+    "sex": "M",
+    "weight_kg": 37.7,
+    "complaint_text": "13y11m-old with periumbilical pain migrating to RLQ, nausea, fever",
+    "vitals": {
+      "hr": 116,
+      "rr": 21,
+      "temp_f": 101.5,
+      "spo2": 96,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0051",
+    "age_months": 21,
+    "sex": "M",
+    "weight_kg": 13.1,
+    "complaint_text": "sent from pediatrician for evaluation of sepsis: high fever, tachy, poor perfusion",
+    "vitals": {
+      "hr": 169,
+      "rr": 44,
+      "temp_f": 101.3,
+      "spo2": 93,
+      "cap_refill_s": 3.9
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0110",
+    "age_months": 201,
+    "sex": "M",
+    "weight_kg": 51.4,
+    "complaint_text": "vomiting and diarrhea x4 days, mild fever, tolerating sips of fluid",
+    "vitals": {
+      "hr": 92,
+      "rr": 22,
+      "temp_f": 99.9,
+      "spo2": 96,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0016",
+    "age_months": 15,
+    "sex": "M",
+    "weight_kg": 9.2,
+    "complaint_text": "high fever, chills, poor oral intake x3 days, child appears toxic",
+    "vitals": {
+      "hr": 174,
+      "rr": 40,
+      "temp_f": null,
+      "spo2": 92,
+      "cap_refill_s": 3.9
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0139",
+    "age_months": 17,
+    "sex": "F",
+    "weight_kg": 10.2,
+    "complaint_text": "classic Kawasaki features: fever, rash, cracked lips, cervical adenopathy",
+    "vitals": {
+      "hr": null,
+      "rr": 37,
+      "temp_f": 101.3,
+      "spo2": null,
+      "cap_refill_s": 0.6
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0026",
+    "age_months": 19,
+    "sex": "F",
+    "weight_kg": 11.7,
+    "complaint_text": "fever with source unknown, HR elevated at triage, child limp in parent's arms",
+    "vitals": {
+      "hr": 147,
+      "rr": 38,
+      "temp_f": 102.2,
+      "spo2": 95,
+      "cap_refill_s": 3.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0079",
+    "age_months": 14,
+    "sex": "F",
+    "weight_kg": 10.0,
+    "complaint_text": "sore throat and fever x1 days, no rash, no difficulty swallowing",
+    "vitals": {
+      "hr": 163,
+      "rr": 38,
+      "temp_f": 103.2,
+      "spo2": 97,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0033",
+    "age_months": 19,
+    "sex": "M",
+    "weight_kg": 10.7,
+    "complaint_text": "child with petechial rash and fever, lethargic, not making eye contact",
+    "vitals": {
+      "hr": 173,
+      "rr": 35,
+      "temp_f": 99.1,
+      "spo2": 92,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0148",
+    "age_months": 4,
+    "sex": "M",
+    "weight_kg": 6.0,
+    "complaint_text": "classic Kawasaki features: fever, rash, cracked lips, cervical adenopathy",
+    "vitals": {
+      "hr": null,
+      "rr": 45,
+      "temp_f": 102.4,
+      "spo2": 96,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0152",
+    "age_months": 125,
+    "sex": "F",
+    "weight_kg": 30.3,
+    "complaint_text": "rapid flu positive, fever and body aches, tolerating fluids, no hypoxia",
+    "vitals": {
+      "hr": 113,
+      "rr": 20,
+      "temp_f": 102.7,
+      "spo2": 97,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0093",
+    "age_months": 33,
+    "sex": "F",
+    "weight_kg": 13.1,
+    "complaint_text": "throat pain, fever, exudates on exam, Centor score high",
+    "vitals": {
+      "hr": null,
+      "rr": 35,
+      "temp_f": 101.0,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0133",
+    "age_months": 63,
+    "sex": "F",
+    "weight_kg": 21.5,
+    "complaint_text": "fever x1 days, rash, red eyes, strawberry tongue, 5y3m-old",
+    "vitals": {
+      "hr": 144,
+      "rr": 26,
+      "temp_f": 101.6,
+      "spo2": 96,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0162",
+    "age_months": 20,
+    "sex": "M",
+    "weight_kg": 11.3,
+    "complaint_text": "flu-like illness: high fever, myalgias, headache, 1y8m-old tested positive rapid flu",
+    "vitals": {
+      "hr": 171,
+      "rr": 40,
+      "temp_f": 101.0,
+      "spo2": 96,
+      "cap_refill_s": 1.2
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0036",
+    "age_months": 5,
+    "sex": "F",
+    "weight_kg": 7.6,
+    "complaint_text": "fever 3 days, vomiting, decreased urine output, 5-month-old infant appears very unwell",
+    "vitals": {
+      "hr": 191,
+      "rr": 63,
+      "temp_f": 99.5,
+      "spo2": 92,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0192",
+    "age_months": 3,
+    "sex": "M",
+    "weight_kg": 6.5,
+    "complaint_text": "4-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": 166,
+      "rr": 41,
+      "temp_f": 100.2,
+      "spo2": 98,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0191",
+    "age_months": 13,
+    "sex": "M",
+    "weight_kg": 9.2,
+    "complaint_text": "5-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 97,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0012",
+    "age_months": 79,
+    "sex": "M",
+    "weight_kg": 19.9,
+    "complaint_text": "fever with source unknown, HR elevated at triage, child limp in parent's arms",
+    "vitals": {
+      "hr": 138,
+      "rr": 44,
+      "temp_f": 101.1,
+      "spo2": 94,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0028",
+    "age_months": 141,
+    "sex": "M",
+    "weight_kg": 38.6,
+    "complaint_text": "sent from pediatrician for evaluation of sepsis: high fever, tachy, poor perfusion",
+    "vitals": {
+      "hr": 128,
+      "rr": 32,
+      "temp_f": 97.9,
+      "spo2": 89,
+      "cap_refill_s": 3.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0096",
+    "age_months": 190,
+    "sex": "F",
+    "weight_kg": 41.9,
+    "complaint_text": "sore throat and fever x2 days, no rash, no difficulty swallowing",
+    "vitals": {
+      "hr": 101,
+      "rr": 20,
+      "temp_f": 101.1,
+      "spo2": 96,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0091",
+    "age_months": 8,
+    "sex": "M",
+    "weight_kg": 7.1,
+    "complaint_text": "pharyngitis, fever, rapid strep pending, 8-month-old infant appears non-toxic",
+    "vitals": {
+      "hr": 193,
+      "rr": 35,
+      "temp_f": 101.8,
+      "spo2": 97,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0150",
+    "age_months": 4,
+    "sex": "M",
+    "weight_kg": 6.2,
+    "complaint_text": "flu-like illness: high fever, myalgias, headache, 4-month-old infant tested positive rapid flu",
+    "vitals": {
+      "hr": 150,
+      "rr": 40,
+      "temp_f": 101.9,
+      "spo2": 96,
+      "cap_refill_s": 1.3
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0158",
+    "age_months": 36,
+    "sex": "F",
+    "weight_kg": 13.9,
+    "complaint_text": "influenza A confirmed, fever x2 days, cough, fatigue, no respiratory distress",
+    "vitals": {
+      "hr": 149,
+      "rr": 36,
+      "temp_f": 101.2,
+      "spo2": 94,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0057",
+    "age_months": 15,
+    "sex": "F",
+    "weight_kg": 10.6,
+    "complaint_text": "child brought in lethargic and not responding normally, fever for 3 days, looks very ill",
+    "vitals": {
+      "hr": 144,
+      "rr": 38,
+      "temp_f": 104.4,
+      "spo2": 94,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0025",
+    "age_months": 29,
+    "sex": "M",
+    "weight_kg": 13.1,
+    "complaint_text": "high fever, chills, poor oral intake x4 days, child appears toxic",
+    "vitals": {
+      "hr": 166,
+      "rr": 42,
+      "temp_f": 99.7,
+      "spo2": 97,
+      "cap_refill_s": 1.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0030",
+    "age_months": 38,
+    "sex": "M",
+    "weight_kg": 14.1,
+    "complaint_text": "fever with source unknown, HR elevated at triage, child limp in parent's arms",
+    "vitals": {
+      "hr": 154,
+      "rr": 43,
+      "temp_f": 103.5,
+      "spo2": 97,
+      "cap_refill_s": 3.0
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0116",
+    "age_months": 9,
+    "sex": "M",
+    "weight_kg": 7.9,
+    "complaint_text": "9-month-old infant with periumbilical pain migrating to RLQ, nausea, fever",
+    "vitals": {
+      "hr": 154,
+      "rr": 46,
+      "temp_f": null,
+      "spo2": 98,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0149",
+    "age_months": 161,
+    "sex": "F",
+    "weight_kg": 40.0,
+    "complaint_text": "2-day fever with desquamation of fingertips, concern for Kawasaki disease",
+    "vitals": {
+      "hr": 115,
+      "rr": 36,
+      "temp_f": 104.0,
+      "spo2": 95,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0122",
+    "age_months": 13,
+    "sex": "F",
+    "weight_kg": 10.5,
+    "complaint_text": "1y1m-old with periumbilical pain migrating to RLQ, nausea, fever",
+    "vitals": {
+      "hr": 146,
+      "rr": 31,
+      "temp_f": 101.4,
+      "spo2": 96,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0186",
+    "age_months": 33,
+    "sex": "F",
+    "weight_kg": 11.6,
+    "complaint_text": "3-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": 133,
+      "rr": 46,
+      "temp_f": 100.2,
+      "spo2": 97,
+      "cap_refill_s": 1.5
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0151",
+    "age_months": 11,
+    "sex": "M",
+    "weight_kg": 9.2,
+    "complaint_text": "influenza A confirmed, fever x4 days, cough, fatigue, no respiratory distress",
+    "vitals": {
+      "hr": 166,
+      "rr": 54,
+      "temp_f": 102.2,
+      "spo2": 96,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0094",
+    "age_months": 20,
+    "sex": "F",
+    "weight_kg": 9.2,
+    "complaint_text": "pharyngitis, fever, rapid strep pending, 1y8m-old appears non-toxic",
+    "vitals": {
+      "hr": 146,
+      "rr": 35,
+      "temp_f": 100.8,
+      "spo2": 98,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0088",
+    "age_months": 5,
+    "sex": "M",
+    "weight_kg": 7.3,
+    "complaint_text": "pharyngitis, fever, rapid strep pending, 5-month-old infant appears non-toxic",
+    "vitals": {
+      "hr": 138,
+      "rr": 40,
+      "temp_f": 99.8,
+      "spo2": 98,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0053",
+    "age_months": 44,
+    "sex": "M",
+    "weight_kg": 15.7,
+    "complaint_text": "fever x2 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right'",
+    "vitals": {
+      "hr": null,
+      "rr": 44,
+      "temp_f": 98.7,
+      "spo2": null,
+      "cap_refill_s": 5.5
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0144",
+    "age_months": 103,
+    "sex": "F",
+    "weight_kg": 24.3,
+    "complaint_text": "classic Kawasaki features: fever, rash, cracked lips, cervical adenopathy",
+    "vitals": {
+      "hr": 113,
+      "rr": 34,
+      "temp_f": 101.8,
+      "spo2": 96,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0131",
+    "age_months": 34,
+    "sex": "M",
+    "weight_kg": 12.7,
+    "complaint_text": "2y10m-old with periumbilical pain migrating to RLQ, nausea, fever",
+    "vitals": {
+      "hr": 143,
+      "rr": 39,
+      "temp_f": 101.2,
+      "spo2": 96,
+      "cap_refill_s": 2.6
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0078",
+    "age_months": 210,
+    "sex": "M",
+    "weight_kg": 53.9,
+    "complaint_text": "17y6m-old with cough, congestion, fever for 2 days, active and playful",
+    "vitals": {
+      "hr": 108,
+      "rr": 30,
+      "temp_f": 101.8,
+      "spo2": null,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0155",
+    "age_months": 7,
+    "sex": "M",
+    "weight_kg": 7.6,
+    "complaint_text": "rapid flu positive, fever and body aches, tolerating fluids, no hypoxia",
+    "vitals": {
+      "hr": 159,
+      "rr": 46,
+      "temp_f": 101.6,
+      "spo2": 95,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0024",
+    "age_months": 81,
+    "sex": "F",
+    "weight_kg": 24.5,
+    "complaint_text": "high fever, chills, poor oral intake x5 days, child appears toxic",
+    "vitals": {
+      "hr": 132,
+      "rr": 45,
+      "temp_f": 100.8,
+      "spo2": 95,
+      "cap_refill_s": 3.0
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0001",
+    "age_months": 37,
+    "sex": "F",
+    "weight_kg": 13.8,
+    "complaint_text": "fever 5 days, vomiting, decreased urine output, 3y1m-old appears very unwell",
+    "vitals": {
+      "hr": 171,
+      "rr": 38,
+      "temp_f": 101.7,
+      "spo2": 91,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0181",
+    "age_months": 22,
+    "sex": "M",
+    "weight_kg": 12.5,
+    "complaint_text": "1y10m-old with 3-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": 143,
+      "rr": 38,
+      "temp_f": 101.1,
+      "spo2": 100,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0200",
+    "age_months": 22,
+    "sex": "M",
+    "weight_kg": 11.3,
+    "complaint_text": "AOM diagnosis, low-grade fever, 1y10m-old eating and drinking normally",
+    "vitals": {
+      "hr": 121,
+      "rr": null,
+      "temp_f": 98.6,
+      "spo2": null,
+      "cap_refill_s": null
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0010",
+    "age_months": 5,
+    "sex": "F",
+    "weight_kg": 6.2,
+    "complaint_text": "5-month-old infant with 2-day fever, tachypneic, mottled skin, capillary refill prolonged",
+    "vitals": {
+      "hr": null,
+      "rr": 51,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0106",
+    "age_months": 47,
+    "sex": "M",
+    "weight_kg": 14.1,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp",
+    "vitals": {
+      "hr": 111,
+      "rr": 23,
+      "temp_f": 102.4,
+      "spo2": 97,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0178",
+    "age_months": 201,
+    "sex": "M",
+    "weight_kg": 45.7,
+    "complaint_text": "fever and urinary frequency, urine culture pending, clinically well-appearing",
+    "vitals": {
+      "hr": 104,
+      "rr": 25,
+      "temp_f": 101.3,
+      "spo2": 97,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0027",
+    "age_months": 9,
+    "sex": "F",
+    "weight_kg": 7.7,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled",
+    "vitals": {
+      "hr": 175,
+      "rr": 64,
+      "temp_f": 99.5,
+      "spo2": 91,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0005",
+    "age_months": 10,
+    "sex": "F",
+    "weight_kg": 9.6,
+    "complaint_text": "fever x2 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right'",
+    "vitals": {
+      "hr": 168,
+      "rr": 54,
+      "temp_f": 100.4,
+      "spo2": 86,
+      "cap_refill_s": 4.6
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0170",
+    "age_months": 5,
+    "sex": "F",
+    "weight_kg": 6.7,
+    "complaint_text": "febrile UTI, UA with pyuria and bacteriuria, 5-month-old infant non-toxic",
+    "vitals": {
+      "hr": 143,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 99,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0031",
+    "age_months": 92,
+    "sex": "F",
+    "weight_kg": 24.4,
+    "complaint_text": "fever x5 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right'",
+    "vitals": {
+      "hr": 130,
+      "rr": 46,
+      "temp_f": 100.8,
+      "spo2": 92,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0172",
+    "age_months": 0,
+    "sex": "M",
+    "weight_kg": 3.8,
+    "complaint_text": "newborn with 1-day fever and foul-smelling urine, UA consistent with UTI",
+    "vitals": {
+      "hr": 154,
+      "rr": 49,
+      "temp_f": 101.8,
+      "spo2": 97,
+      "cap_refill_s": 1.3
+    },
+    "ground_truth": "uti"
+  },
+  {
+    "patient_id": "SYNTH-0128",
+    "age_months": 200,
+    "sex": "F",
+    "weight_kg": 52.2,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": 105,
+      "rr": 29,
+      "temp_f": 99.6,
+      "spo2": 98,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0023",
+    "age_months": 26,
+    "sex": "M",
+    "weight_kg": 10.5,
+    "complaint_text": "fever 5 days, vomiting, decreased urine output, 2y2m-old appears very unwell",
+    "vitals": {
+      "hr": 177,
+      "rr": null,
+      "temp_f": 97.0,
+      "spo2": 93,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0115",
+    "age_months": 16,
+    "sex": "M",
+    "weight_kg": 9.7,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": 143,
+      "rr": 34,
+      "temp_f": 99.7,
+      "spo2": 96,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0147",
+    "age_months": 160,
+    "sex": "F",
+    "weight_kg": 42.9,
+    "complaint_text": "fever x1 days, rash, red eyes, strawberry tongue, 13y4m-old",
+    "vitals": {
+      "hr": 127,
+      "rr": 30,
+      "temp_f": 103.1,
+      "spo2": 95,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0118",
+    "age_months": 145,
+    "sex": "M",
+    "weight_kg": 34.1,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": 124,
+      "rr": 42,
+      "temp_f": 100.2,
+      "spo2": 96,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0021",
+    "age_months": 3,
+    "sex": "F",
+    "weight_kg": 7.4,
+    "complaint_text": "child unresponsive to verbal stimuli, fever, possible source unknown",
+    "vitals": {
+      "hr": 157,
+      "rr": 49,
+      "temp_f": 99.9,
+      "spo2": 92,
+      "cap_refill_s": 4.0
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0061",
+    "age_months": 99,
+    "sex": "F",
+    "weight_kg": 24.2,
+    "complaint_text": "runny nose, low-grade fever x4 days, fussy but consolable",
+    "vitals": {
+      "hr": 110,
+      "rr": 31,
+      "temp_f": 99.9,
+      "spo2": 97,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0104",
+    "age_months": 54,
+    "sex": "F",
+    "weight_kg": 17.5,
+    "complaint_text": "vomiting and diarrhea x4 days, mild fever, tolerating sips of fluid",
+    "vitals": {
+      "hr": 133,
+      "rr": 27,
+      "temp_f": 102.0,
+      "spo2": 97,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0097",
+    "age_months": 194,
+    "sex": "F",
+    "weight_kg": 48.5,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp",
+    "vitals": {
+      "hr": 107,
+      "rr": 22,
+      "temp_f": 100.7,
+      "spo2": 98,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "gastroenteritis"
+  },
+  {
+    "patient_id": "SYNTH-0196",
+    "age_months": 49,
+    "sex": "F",
+    "weight_kg": 15.3,
+    "complaint_text": "3-day ear pain, fever, bulging tympanic membrane on exam",
+    "vitals": {
+      "hr": 125,
+      "rr": null,
+      "temp_f": 100.1,
+      "spo2": null,
+      "cap_refill_s": 1.2
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0141",
+    "age_months": 67,
+    "sex": "M",
+    "weight_kg": 17.5,
+    "complaint_text": "classic Kawasaki features: fever, rash, cracked lips, cervical adenopathy",
+    "vitals": {
+      "hr": 107,
+      "rr": 24,
+      "temp_f": 101.9,
+      "spo2": null,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "kawasaki"
+  },
+  {
+    "patient_id": "SYNTH-0058",
+    "age_months": 90,
+    "sex": "M",
+    "weight_kg": 21.8,
+    "complaint_text": "fever x1 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right'",
+    "vitals": {
+      "hr": 112,
+      "rr": 49,
+      "temp_f": 102.7,
+      "spo2": 93,
+      "cap_refill_s": 3.6
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0194",
+    "age_months": 39,
+    "sex": "M",
+    "weight_kg": 14.3,
+    "complaint_text": "ear pain and low-grade fever x5 days, 3y3m-old tugging at ear",
+    "vitals": {
+      "hr": 123,
+      "rr": 26,
+      "temp_f": 100.7,
+      "spo2": 97,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "otitis_media"
+  },
+  {
+    "patient_id": "SYNTH-0072",
+    "age_months": 68,
+    "sex": "M",
+    "weight_kg": 15.7,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay",
+    "vitals": {
+      "hr": 136,
+      "rr": 30,
+      "temp_f": 101.0,
+      "spo2": 97,
+      "cap_refill_s": 1.1
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0085",
+    "age_months": 82,
+    "sex": "F",
+    "weight_kg": 19.2,
+    "complaint_text": "throat pain, fever, exudates on exam, Centor score high",
+    "vitals": {
+      "hr": 99,
+      "rr": 28,
+      "temp_f": 101.4,
+      "spo2": 98,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0062",
+    "age_months": 8,
+    "sex": "M",
+    "weight_kg": 7.9,
+    "complaint_text": "8-month-old infant with cough, congestion, fever for 3 days, active and playful",
+    "vitals": {
+      "hr": 134,
+      "rr": 38,
+      "temp_f": 101.7,
+      "spo2": 95,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "viral_syndrome"
+  },
+  {
+    "patient_id": "SYNTH-0083",
+    "age_months": 44,
+    "sex": "M",
+    "weight_kg": 14.2,
+    "complaint_text": "throat pain, fever, exudates on exam, Centor score high",
+    "vitals": {
+      "hr": 114,
+      "rr": 32,
+      "temp_f": 100.2,
+      "spo2": 97,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "strep"
+  },
+  {
+    "patient_id": "SYNTH-0126",
+    "age_months": 82,
+    "sex": "F",
+    "weight_kg": 22.3,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated",
+    "vitals": {
+      "hr": 136,
+      "rr": 29,
+      "temp_f": 98.7,
+      "spo2": 96,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0020",
+    "age_months": 29,
+    "sex": "F",
+    "weight_kg": 13.1,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled",
+    "vitals": {
+      "hr": 163,
+      "rr": 47,
+      "temp_f": 96.8,
+      "spo2": 93,
+      "cap_refill_s": 3.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0043",
+    "age_months": 70,
+    "sex": "F",
+    "weight_kg": 18.4,
+    "complaint_text": "5y10m-old with 2-day fever, tachypneic, mottled skin, capillary refill prolonged",
+    "vitals": {
+      "hr": 140,
+      "rr": 39,
+      "temp_f": 101.2,
+      "spo2": 91,
+      "cap_refill_s": 4.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0127",
+    "age_months": 24,
+    "sex": "F",
+    "weight_kg": 12.4,
+    "complaint_text": "right lower quadrant pain x1 days, low-grade fever, anorexia",
+    "vitals": {
+      "hr": 153,
+      "rr": 42,
+      "temp_f": 101.4,
+      "spo2": 96,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0121",
+    "age_months": 11,
+    "sex": "F",
+    "weight_kg": 9.8,
+    "complaint_text": "11-month-old infant with periumbilical pain migrating to RLQ, nausea, fever",
+    "vitals": {
+      "hr": null,
+      "rr": 38,
+      "temp_f": 101.7,
+      "spo2": 98,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0130",
+    "age_months": 135,
+    "sex": "M",
+    "weight_kg": 35.4,
+    "complaint_text": "11y3m-old with periumbilical pain migrating to RLQ, nausea, fever",
+    "vitals": {
+      "hr": 119,
+      "rr": 33,
+      "temp_f": 100.1,
+      "spo2": 97,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "appendicitis"
+  },
+  {
+    "patient_id": "SYNTH-0041",
+    "age_months": 37,
+    "sex": "M",
+    "weight_kg": 14.0,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled",
+    "vitals": {
+      "hr": 175,
+      "rr": 44,
+      "temp_f": 102.2,
+      "spo2": 93,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0165",
+    "age_months": 60,
+    "sex": "F",
+    "weight_kg": 17.5,
+    "complaint_text": "influenza A confirmed, fever x5 days, cough, fatigue, no respiratory distress",
+    "vitals": {
+      "hr": 144,
+      "rr": 38,
+      "temp_f": 101.1,
+      "spo2": null,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "influenza"
+  },
+  {
+    "patient_id": "SYNTH-0003",
+    "age_months": 59,
+    "sex": "M",
+    "weight_kg": 16.8,
+    "complaint_text": "scratch on leg 3 days ago, now fever and rapidly spreading redness, child lethargic",
+    "vitals": {
+      "hr": 148,
+      "rr": 46,
+      "temp_f": 102.4,
+      "spo2": 92,
+      "cap_refill_s": 3.7
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0014",
+    "age_months": 11,
+    "sex": "F",
+    "weight_kg": 8.9,
+    "complaint_text": "fever x1 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right'",
+    "vitals": {
+      "hr": 179,
+      "rr": 47,
+      "temp_f": 102.1,
+      "spo2": 96,
+      "cap_refill_s": 3.8
+    },
+    "ground_truth": "sepsis"
+  },
+  {
+    "patient_id": "SYNTH-0157",
+    "age_months": 25,
+    "sex": "F",
+    "weight_kg": 12.1,
+    "complaint_text": "rapid flu positive, fever and body aches, tolerating fluids, no hypoxia",
+    "vitals": {
+      "hr": 143,
+      "rr": 44,
+      "temp_f": 102.2,
+      "spo2": 94,
+      "cap_refill_s": 1.8
+    },
+    "ground_truth": "influenza"
+  }
+]
