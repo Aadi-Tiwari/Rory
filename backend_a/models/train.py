@@ -50,7 +50,7 @@ HERO_COHORT_PATH = DATA_DIR / "hero_cohort.json"
 # Hyperparameters
 # ---------------------------------------------------------------------------
 BATCH_SIZE    = 16
-EPOCHS        = 40
+EPOCHS        = 500
 LR            = 3e-4
 WEIGHT_DECAY  = 1e-4
 VAL_FRACTION  = 0.10      # 10% of 180 = 18 validation cases
