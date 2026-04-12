@@ -9,7 +9,6 @@ build/
 
 # Model weights (too large for git)
 backend_a/models/weights/*.pt
-backend_a/models/weights/*.npy
 
 # Env
 .env
