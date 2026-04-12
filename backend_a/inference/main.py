@@ -1,31 +1,32 @@
-"""
-inference/main.py
-=================
-FastAPI server for RORY — pediatric sepsis triage AI.
+"""FastAPI server for RORY Backend A inference.
 
-Endpoints:
-    POST /predict  — run triage inference
-    POST /chat     — ElevenLabs conversational agent Q&A
-    GET  /healthz  — health check
-"""
+POST /predict  - runs the full predict pipeline (model + DBSCAN + drift + reasoning)
+GET  /healthz  - returns version and status
 
+Run:
+    cd backend_a
+    python -m uvicorn inference.main:app --reload --port 8000
+"""
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from typing import Optional
+from fastapi.middleware.cors import CORSMiddleware
+from contract.schema import PredictRequest, PredictResponse, Reasoning
 
-from contract.schema import PredictRequest, PredictResponse
-from inference.predict import predict as run_predict
-from inference.chat import chat as run_chat
+from inference.predict import predict
 
-app = FastAPI(title="RORY", description="Pediatric sepsis triage AI")
+app = FastAPI(title="RORY Backend A", version="rory-v3")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-# ── /predict ──────────────────────────────────────────────────────────────────
 
 @app.post("/predict", response_model=PredictResponse)
-def predict(req: PredictRequest):
+def predict_endpoint(req: PredictRequest):
     try:
-        result = run_predict(
+        result = predict(
             patient_id=req.patient_id,
             age_months=req.age_months,
             sex=req.sex,
@@ -33,35 +34,29 @@ def predict(req: PredictRequest):
             complaint_text=req.complaint_text,
             vitals_raw=req.vitals.model_dump(),
         )
-        return PredictResponse(**result)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-# ── /chat ─────────────────────────────────────────────────────────────────────
-
-class ChatRequest(BaseModel):
-    message: str
-    triage_context: Optional[dict] = None  # pass the full PredictResponse dict
-
-
-class ChatResponse(BaseModel):
-    response: str
-
-
-@app.post("/chat", response_model=ChatResponse)
-def chat(req: ChatRequest):
-    try:
-        result = run_chat(
-            message=req.message,
-            triage_context=req.triage_context,
+        reasoning_objects = [
+            Reasoning(
+                bullet=r["bullet"] if isinstance(r, dict) else r.bullet,
+                weight=r["weight"] if isinstance(r, dict) else r.weight,
+                source_field=r["source_field"] if isinstance(r, dict) else r.source_field,
+            )
+            for r in result["reasoning"]
+        ]
+        return PredictResponse(
+            recommendation=result["recommendation"],
+            risk=result["risk"],
+            confidence=result["confidence"],
+            completeness=result["completeness"],
+            outlier_flag=result["outlier_flag"],
+            drift_alert=result["drift_alert"],
+            cluster_drift=result["cluster_drift"],
+            sepsis_confidence_trend=result["sepsis_confidence_trend"],
+            reasoning=reasoning_objects,
+            model_version=result["model_version"],
         )
-        return ChatResponse(**result)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# ── /healthz ──────────────────────────────────────────────────────────────────
 
 @app.get("/healthz")
 def health():
