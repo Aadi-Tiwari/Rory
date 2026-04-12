@@ -1,0 +1,134 @@
+{
+  "patients": [
+    {"mrn": "P001", "age_months": 108, "sex": "F", "weight_kg": 32.0, "setting": "school_nurse"},
+    {"mrn": "P002", "age_months": 72, "sex": "M", "weight_kg": 22.5, "setting": "school_nurse"},
+    {"mrn": "P003", "age_months": 144, "sex": "M", "weight_kg": 45.0, "setting": "ped_ed"},
+    {"mrn": "P004", "age_months": 60, "sex": "F", "weight_kg": 19.0, "setting": "school_nurse"},
+    {"mrn": "P005", "age_months": 96, "sex": "M", "weight_kg": 28.0, "setting": "ed_triage"},
+    {"mrn": "P006", "age_months": 36, "sex": "F", "weight_kg": 14.0, "setting": "ped_ed"},
+    {"mrn": "P007", "age_months": 120, "sex": "F", "weight_kg": 36.0, "setting": "school_nurse"},
+    {"mrn": "P008_SEPSIS_DEMO", "age_months": 132, "sex": "M", "weight_kg": 40.0, "setting": "ped_ed"},
+    {"mrn": "P009_SEPSIS_DEMO", "age_months": 84, "sex": "F", "weight_kg": 25.5, "setting": "ed_triage"},
+    {"mrn": "RORY_2012", "age_months": 144, "sex": "M", "weight_kg": 43.0, "setting": "ped_ed"}
+  ],
+  "encounters": [
+    {
+      "encounter_id": "E001",
+      "patient_mrn": "P001",
+      "timestamp": "2026-04-11T08:14:00Z",
+      "complaint_text": "9yo girl sent by teacher. Runny nose, sore throat, fever 101. No rash. Mom reports cranky at home.",
+      "setting": "school_nurse"
+    },
+    {
+      "encounter_id": "E002",
+      "patient_mrn": "P002",
+      "timestamp": "2026-04-11T09:02:00Z",
+      "complaint_text": "6yo boy with earache on right side x2 days. Low grade fever 100.8. No ear drainage.",
+      "setting": "school_nurse"
+    },
+    {
+      "encounter_id": "E003",
+      "patient_mrn": "P003",
+      "timestamp": "2026-04-11T09:30:00Z",
+      "complaint_text": "12yo girl with abdominal pain, worse in RLQ. Vomiting once. No fever. Mom worried about appendicitis.",
+      "setting": "ped_ed"
+    },
+    {
+      "encounter_id": "E004",
+      "patient_mrn": "P004",
+      "timestamp": "2026-04-11T10:15:00Z",
+      "complaint_text": "5yo girl with cough, runny nose for 3 days. Temp 100.2. Eating and drinking normally.",
+      "setting": "school_nurse"
+    },
+    {
+      "encounter_id": "E005",
+      "patient_mrn": "P005",
+      "timestamp": "2026-04-11T11:00:00Z",
+      "complaint_text": "8yo boy fell off bike, scraped knee, minor bleeding. No LOC. Alert and oriented.",
+      "setting": "ed_triage"
+    },
+    {
+      "encounter_id": "E006",
+      "patient_mrn": "P006",
+      "timestamp": "2026-04-11T11:45:00Z",
+      "complaint_text": "3yo girl with vomiting and diarrhea x24h. Fever 101.5. Mildly dehydrated per mom.",
+      "setting": "ped_ed"
+    },
+    {
+      "encounter_id": "E007",
+      "patient_mrn": "P007",
+      "timestamp": "2026-04-11T12:20:00Z",
+      "complaint_text": "10yo girl headache and nausea after PE class. No vomiting. No fever. Feels better after water.",
+      "setting": "school_nurse"
+    },
+    {
+      "encounter_id": "E008_SEPSIS",
+      "patient_mrn": "P008_SEPSIS_DEMO",
+      "timestamp": "2026-04-11T13:00:00Z",
+      "complaint_text": "11yo boy fever 103, lethargic, complains of leg pain. Small cut on shin from 3 days ago. Mom says he won't make eye contact.",
+      "setting": "ped_ed"
+    },
+    {
+      "encounter_id": "E009_SEPSIS",
+      "patient_mrn": "P009_SEPSIS_DEMO",
+      "timestamp": "2026-04-11T13:30:00Z",
+      "complaint_text": "7yo girl high fever 104, vomiting, mottled skin on legs. Stopped responding to questions briefly.",
+      "setting": "ed_triage"
+    },
+    {
+      "encounter_id": "E_RORY_2012",
+      "patient_mrn": "RORY_2012",
+      "timestamp": "2012-03-30T18:00:00Z",
+      "complaint_text": "12yo boy scraped arm playing basketball 2 days ago. Vomiting. Leg pain. Fever 104. Looks pale. Says he feels weird.",
+      "setting": "ped_ed"
+    }
+  ],
+  "vital_snapshots": [
+    {"snapshot_id": "V001", "encounter_id": "E001", "hr": 102, "rr": 22, "temp_f": 101.0, "spo2": 98, "cap_refill_s": 1.8, "completeness": 1.0},
+    {"snapshot_id": "V002", "encounter_id": "E002", "hr": 95, "rr": 20, "temp_f": 100.8, "spo2": 99, "cap_refill_s": 2.0, "completeness": 1.0},
+    {"snapshot_id": "V003", "encounter_id": "E003", "hr": 105, "rr": 20, "temp_f": 98.9, "spo2": 99, "cap_refill_s": 1.9, "completeness": 1.0},
+    {"snapshot_id": "V004", "encounter_id": "E004", "hr": 98, "rr": 22, "temp_f": 100.2, "spo2": 99, "cap_refill_s": 1.7, "completeness": 1.0},
+    {"snapshot_id": "V005", "encounter_id": "E005", "hr": 92, "rr": 18, "temp_f": 98.6, "spo2": 100, "cap_refill_s": 1.6, "completeness": 1.0},
+    {"snapshot_id": "V006", "encounter_id": "E006", "hr": 128, "rr": 28, "temp_f": 101.5, "spo2": 98, "cap_refill_s": 2.1, "completeness": 1.0},
+    {"snapshot_id": "V007", "encounter_id": "E007", "hr": 88, "rr": 18, "temp_f": 98.8, "spo2": 100, "cap_refill_s": 1.5, "completeness": 1.0},
+    {"snapshot_id": "V008", "encounter_id": "E008_SEPSIS", "hr": 142, "rr": 32, "temp_f": 103.0, "spo2": 94, "cap_refill_s": 3.4, "completeness": 1.0},
+    {"snapshot_id": "V009", "encounter_id": "E009_SEPSIS", "hr": 156, "rr": 36, "temp_f": 104.0, "spo2": 92, "cap_refill_s": 4.1, "completeness": 1.0},
+    {"snapshot_id": "V_RORY", "encounter_id": "E_RORY_2012", "hr": 138, "rr": 28, "temp_f": 104.0, "spo2": 95, "cap_refill_s": 3.2, "completeness": 1.0}
+  ],
+  "triage_decisions": [
+    {"decision_id": "D001", "encounter_id": "E001", "triage_class": "HOME", "risk": 0.08, "confidence": 0.92, "reasoning": ["Vitals normal for age", "Complaint matches viral syndrome pattern", "No red flags present"], "outlier_flag": false, "cluster_drift": 0.01, "drift_alert": false, "sepsis_confidence_trend": [0.05, 0.06, 0.07, 0.08, 0.08], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D002", "encounter_id": "E002", "triage_class": "HOME", "risk": 0.12, "confidence": 0.90, "reasoning": ["Low grade fever", "Localized ear complaint", "Vitals stable"], "outlier_flag": false, "cluster_drift": 0.00, "drift_alert": false, "sepsis_confidence_trend": [0.08, 0.10, 0.11, 0.12, 0.12], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D003", "encounter_id": "E003", "triage_class": "ED", "risk": 0.42, "confidence": 0.78, "reasoning": ["RLQ abdominal pain + vomiting", "Consider appendicitis workup", "Vitals within normal limits"], "outlier_flag": false, "cluster_drift": 0.00, "drift_alert": false, "sepsis_confidence_trend": [0.30, 0.35, 0.38, 0.40, 0.42], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D004", "encounter_id": "E004", "triage_class": "HOME", "risk": 0.06, "confidence": 0.94, "reasoning": ["Classic URI presentation", "No tachycardia for age", "Hydration adequate"], "outlier_flag": false, "cluster_drift": 0.00, "drift_alert": false, "sepsis_confidence_trend": [0.05, 0.05, 0.06, 0.06, 0.06], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D005", "encounter_id": "E005", "triage_class": "HOME", "risk": 0.03, "confidence": 0.96, "reasoning": ["Minor trauma", "No concerning neuro findings", "Wound care only"], "outlier_flag": false, "cluster_drift": 0.00, "drift_alert": false, "sepsis_confidence_trend": [0.02, 0.02, 0.03, 0.03, 0.03], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D006", "encounter_id": "E006", "triage_class": "ED", "risk": 0.35, "confidence": 0.82, "reasoning": ["Tachycardia for age (HR 128)", "Febrile with GI losses", "Hydration status requires evaluation"], "outlier_flag": false, "cluster_drift": -0.01, "drift_alert": false, "sepsis_confidence_trend": [0.25, 0.28, 0.30, 0.33, 0.35], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D007", "encounter_id": "E007", "triage_class": "HOME", "risk": 0.04, "confidence": 0.95, "reasoning": ["Exertional headache", "Resolved with rehydration", "No red flags"], "outlier_flag": false, "cluster_drift": 0.00, "drift_alert": false, "sepsis_confidence_trend": [0.04, 0.04, 0.04, 0.04, 0.04], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D008", "encounter_id": "E008_SEPSIS", "triage_class": "ED", "risk": 0.87, "confidence": 0.91, "reasoning": ["Tachycardia for age (HR 142 vs PALS 70-120)", "Fever 103 + recent wound source", "Altered mental status (won't make eye contact)"], "outlier_flag": false, "cluster_drift": -0.08, "drift_alert": true, "sepsis_confidence_trend": [0.12, 0.24, 0.41, 0.63, 0.87], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D009", "encounter_id": "E009_SEPSIS", "triage_class": "911", "risk": 0.94, "confidence": 0.88, "reasoning": ["Septic shock pattern - mottled skin + altered mental status", "Tachycardia and tachypnea for age", "SpO2 borderline"], "outlier_flag": false, "cluster_drift": -0.11, "drift_alert": true, "sepsis_confidence_trend": [0.18, 0.35, 0.58, 0.79, 0.94], "model_version": "rory-v2-0.1.0"},
+    {"decision_id": "D_RORY", "encounter_id": "E_RORY_2012", "triage_class": "ED", "risk": 0.84, "confidence": 0.89, "reasoning": ["Tachycardia for age (HR 138 vs PALS 70-120)", "Fever 104 + recent wound source (scraped arm 2 days ago)", "Altered mental status language ('feels weird', looks pale)"], "outlier_flag": false, "cluster_drift": -0.09, "drift_alert": true, "sepsis_confidence_trend": [0.15, 0.28, 0.45, 0.67, 0.84], "model_version": "rory-v2-0.1.0"}
+  ],
+  "regulations_checks": [
+    {"check_id": "R001", "encounter_id": "E001", "vital_signs_recorded": true, "mental_status_assessed": true, "sepsis_screen_triggered": false, "escalation_required": false, "re_presentation_flag": false, "wound_source_documented": false, "physician_notified": false, "discharge_criteria_met": true, "missing_items": []},
+    {"check_id": "R008", "encounter_id": "E008_SEPSIS", "vital_signs_recorded": true, "mental_status_assessed": true, "sepsis_screen_triggered": true, "escalation_required": true, "re_presentation_flag": false, "wound_source_documented": true, "physician_notified": false, "discharge_criteria_met": false, "missing_items": ["physician_notification_pending"]},
+    {"check_id": "R009", "encounter_id": "E009_SEPSIS", "vital_signs_recorded": true, "mental_status_assessed": true, "sepsis_screen_triggered": true, "escalation_required": true, "re_presentation_flag": false, "wound_source_documented": false, "physician_notified": false, "discharge_criteria_met": false, "missing_items": ["wound_source_documentation", "physician_notification_pending"]},
+    {"check_id": "R_RORY", "encounter_id": "E_RORY_2012", "vital_signs_recorded": true, "mental_status_assessed": true, "sepsis_screen_triggered": true, "escalation_required": true, "re_presentation_flag": false, "wound_source_documented": true, "physician_notified": false, "discharge_criteria_met": false, "missing_items": ["physician_notification_pending"]}
+  ],
+  "protocol_citations": [
+    {"citation_id": "C_REGS_405_4_1", "source": "rorys_regs", "section": "§405.4.1", "page": 3, "quote": "Every pediatric patient presenting to the emergency department shall be screened for sepsis using age-appropriate vital sign thresholds and clinical criteria.", "pdf_url": "/pdfs/rorys_regs.pdf#page=3"},
+    {"citation_id": "C_REGS_405_4_2", "source": "rorys_regs", "section": "§405.4.2", "page": 4, "quote": "Pediatric-specific vital sign thresholds shall be applied per PALS reference ranges, with age-adjusted criteria for tachycardia, tachypnea, and hypotension.", "pdf_url": "/pdfs/rorys_regs.pdf#page=4"},
+    {"citation_id": "C_REGS_405_4_3", "source": "rorys_regs", "section": "§405.4.3", "page": 5, "quote": "Patients re-presenting to the emergency department within 72 hours of discharge shall receive heightened screening and mandatory physician re-evaluation prior to any subsequent discharge.", "pdf_url": "/pdfs/rorys_regs.pdf#page=5"},
+    {"citation_id": "C_REGS_405_4_5", "source": "rorys_regs", "section": "§405.4.5", "page": 7, "quote": "Any patient triggering the sepsis screen shall not be discharged without direct physician evaluation and documentation of the reasoning for discharge.", "pdf_url": "/pdfs/rorys_regs.pdf#page=7"},
+    {"citation_id": "C_PSSC_3_4", "source": "pediatric_ssc", "section": "§3.4", "page": 12, "quote": "School-age pediatric patients (6-12 years) with sustained heart rate above 120 bpm in the absence of fever source warrant sepsis screening.", "pdf_url": "/pdfs/pediatric_ssc.pdf#page=12"},
+    {"citation_id": "C_PSSC_5_2", "source": "pediatric_ssc", "section": "§5.2", "page": 22, "quote": "The combination of fever and documented wound source in a pediatric patient is a high-suspicion pattern for invasive bacterial infection and requires mandatory workup.", "pdf_url": "/pdfs/pediatric_ssc.pdf#page=22"},
+    {"citation_id": "C_PSSC_6_1", "source": "pediatric_ssc", "section": "§6.1", "page": 28, "quote": "Altered mental status in a febrile pediatric patient - including language such as 'confused,' 'won't make eye contact,' or 'not acting right' - shall be considered a qSOFA-equivalent criterion.", "pdf_url": "/pdfs/pediatric_ssc.pdf#page=28"},
+    {"citation_id": "C_PALS_3_4", "source": "pals", "section": "§3.4", "page": 15, "quote": "School-age children (6-12 years): normal HR 70-120, normal RR 18-30.", "pdf_url": "/pdfs/pals_reference.pdf#page=15"}
+  ],
+  "citation_links": [
+    {"decision_id": "D008", "citation_ids": ["C_PSSC_3_4", "C_PSSC_5_2", "C_PSSC_6_1"]},
+    {"decision_id": "D009", "citation_ids": ["C_PSSC_5_2", "C_PSSC_6_1", "C_REGS_405_4_5"]},
+    {"decision_id": "D_RORY", "citation_ids": ["C_PSSC_3_4", "C_PSSC_5_2", "C_PSSC_6_1", "C_REGS_405_4_5"]},
+    {"check_id": "R008", "citation_ids": ["C_REGS_405_4_1", "C_REGS_405_4_5"]},
+    {"check_id": "R009", "citation_ids": ["C_REGS_405_4_1", "C_REGS_405_4_5"]},
+    {"check_id": "R_RORY", "citation_ids": ["C_REGS_405_4_1", "C_REGS_405_4_3", "C_REGS_405_4_5"]}
+  ]
+}

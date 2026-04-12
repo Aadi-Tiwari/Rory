@@ -1,0 +1,38 @@
+{
+  "agent_name": "RORY-Triage-Advisor",
+  "agent_description": "Pediatric sepsis triage advisor grounded in Rory's Regulations and PALS thresholds",
+  "ontology_access": [
+    "Patient",
+    "Encounter",
+    "VitalSnapshot",
+    "TriageDecision",
+    "RegulationsCheck",
+    "ProtocolCitation"
+  ],
+  "logic_functions": [
+    "pediatric_vital_thresholds_for_age",
+    "interpret_cluster_drift"
+  ],
+  "scripted_exchanges": [
+    {
+      "exchange_id": "why_flag_rory",
+      "user_prompt": "Why did you flag Rory's case?",
+      "response": "Rory's encounter triggered escalation for three reasons:\n\n1. Tachycardia for age. HR 138 exceeds the PALS upper bound of 120 for 12-year-olds per the pediatric_vital_thresholds_for_age Logic function.\n   [cite] Pediatric SSC §3.4\n\n2. Fever 104°F combined with a recent wound source (scraped arm 2 days ago) - the canonical clinical pattern for pediatric sepsis with a suspected source of infection.\n   [cite] Pediatric SSC §5.2\n\n3. The complaint text contains 'feels weird' and 'looks pale' - nursing language associated with altered mental status in pediatric sepsis screening.\n   [cite] Pediatric SSC §6.1\n\nRecommendation: Do not discharge. Physician evaluation mandatory per Rory's Regulations §405.4.5.",
+      "cited_objects": [
+        "C_PSSC_3_4",
+        "C_PSSC_5_2",
+        "C_PSSC_6_1",
+        "C_REGS_405_4_5"
+      ]
+    },
+    {
+      "exchange_id": "trajectory_warning",
+      "user_prompt": "Was there any warning before the alert fired?",
+      "response": "Yes. Across the 25 minutes before the alert threshold was crossed, RORY detected an accelerating trajectory toward the septic cluster.\n\nThe sepsis_confidence_trend for this encounter shows five sequential measurements: 0.15 → 0.28 → 0.45 → 0.67 → 0.84. The delta between each measurement was increasing, which the interpret_cluster_drift Logic function classified as 'accelerating.'\n\nPer Rory's Regulations §405.4.3 - the re-presentation clause - any patient showing accelerating trajectory markers requires physician evaluation regardless of whether the current risk threshold has been crossed.\n\nThis is the window where RORY would have caught Rory Staunton's 2012 case before the hard threshold fired.",
+      "cited_objects": [
+        "C_REGS_405_4_3"
+      ]
+    }
+  ],
+  "_note": "Recreate these exchanges in the Foundry AIP Agent UI and save them. During the demo, type each user_prompt verbatim and the Agent should return the scripted response."
+}

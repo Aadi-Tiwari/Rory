@@ -1,0 +1,43 @@
+{
+  "description": "Document Intelligence extraction schema for RORY v2 source PDFs",
+  "documents": [
+    {
+      "filename": "rorys_regs.pdf",
+      "display_name": "New York State Rory's Regulations (10 NYCRR 405.4)",
+      "source_enum": "rorys_regs",
+      "target_sections": [
+        "§405.4.1 General screening requirements",
+        "§405.4.2 Pediatric-specific thresholds",
+        "§405.4.3 Re-presentation clause",
+        "§405.4.4 Documentation requirements",
+        "§405.4.5 Escalation pathway"
+      ]
+    },
+    {
+      "filename": "pediatric_ssc.pdf",
+      "display_name": "2020 Pediatric Surviving Sepsis Campaign Guidelines",
+      "source_enum": "pediatric_ssc",
+      "target_sections": [
+        "§3 Age-adjusted vital sign thresholds",
+        "§5 Wound source + fever patterns",
+        "§6 Altered mental status criteria",
+        "§7 Fluid resuscitation timing",
+        "§8 Antibiotic timing"
+      ]
+    }
+  ],
+  "extraction_fields": {
+    "section_number": {"type": "string", "required": true},
+    "page": {"type": "integer", "required": true},
+    "quote_text": {"type": "string", "required": true, "max_length": 400}
+  },
+  "output_mapping": {
+    "target_object_type": "ProtocolCitation",
+    "field_map": {
+      "section_number": "section",
+      "page": "page",
+      "quote_text": "quote"
+    }
+  },
+  "_note": "Upload the two PDFs to Foundry Document Intelligence, apply this extraction config, and bulk-create ProtocolCitation objects from the output. See README.md for the manual Foundry steps."
+}

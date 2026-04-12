@@ -1,0 +1,1175 @@
+[
+  {
+    "patient_id": "SYNTH-0173",
+    "age_months": 144,
+    "sex": "F",
+    "weight_kg": 28.3,
+    "complaint_text": "fever 5 days, vomiting, decreased urine output, 12-year-old appears very unwell On reassessment at 30 minutes: HR increased from 134 to 141 bpm over 30 minutes, SpO2 drifting down from 100% to 97%, cap refill worsening from 3.3s to 3.8s.",
+    "vitals": {
+      "hr": 134,
+      "rr": 32,
+      "temp_f": 104.2,
+      "spo2": 100,
+      "cap_refill_s": 3.3
+    },
+    "vitals_t30": {
+      "hr": 141,
+      "rr": 29,
+      "temp_f": 103.7,
+      "spo2": 97,
+      "cap_refill_s": 3.8
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0719",
+    "age_months": 24,
+    "sex": "M",
+    "weight_kg": 11.6,
+    "complaint_text": "fever x5 days, rash, red eyes, strawberry tongue, 2-year-old HR improved from 143 to 141 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 143,
+      "rr": 42,
+      "temp_f": 100.8,
+      "spo2": 99,
+      "cap_refill_s": 1.9
+    },
+    "vitals_t30": {
+      "hr": 141,
+      "rr": 40,
+      "temp_f": 100.3,
+      "spo2": 99,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "kawasaki",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0679",
+    "age_months": 118,
+    "sex": "F",
+    "weight_kg": 30.2,
+    "complaint_text": "prolonged fever over 5 days, bilateral conjunctivitis, rash on trunk HR improved from 118 to 109 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 118,
+      "rr": 33,
+      "temp_f": 101.5,
+      "spo2": 99,
+      "cap_refill_s": 2.1
+    },
+    "vitals_t30": {
+      "hr": 109,
+      "rr": 25,
+      "temp_f": 101.0,
+      "spo2": 97,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "kawasaki",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0128",
+    "age_months": 55,
+    "sex": "F",
+    "weight_kg": 15.4,
+    "complaint_text": "mild irritability and decreased appetite x3 days. No focal source. Appears well on initial assessment but HR persistently above expected range for age. On reassessment at 30 minutes: HR increased from 159 to 175 bpm over 30 minutes, SpO2 drifting down from 95% to 94%, cap refill worsening from 2.4s to 3.0s.",
+    "vitals": {
+      "hr": 159,
+      "rr": null,
+      "temp_f": 103.1,
+      "spo2": null,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 175,
+      "rr": 31,
+      "temp_f": 103.8,
+      "spo2": 94,
+      "cap_refill_s": 3.0
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0845",
+    "age_months": 20,
+    "sex": "M",
+    "weight_kg": 9.6,
+    "complaint_text": "febrile UTI, UA with pyuria and bacteriuria, 1y8m-old non-toxic Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 159,
+      "rr": 32,
+      "temp_f": 102.4,
+      "spo2": 98,
+      "cap_refill_s": 2.3
+    },
+    "vitals_t30": {
+      "hr": 162,
+      "rr": 35,
+      "temp_f": 102.7,
+      "spo2": 97,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "uti",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0808",
+    "age_months": 24,
+    "sex": "M",
+    "weight_kg": 12.4,
+    "complaint_text": "2-year-old with influenza: fever, malaise, cough, mild tachycardia HR improved from 127 to 126 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 127,
+      "rr": 34,
+      "temp_f": 100.9,
+      "spo2": 96,
+      "cap_refill_s": 2.1
+    },
+    "vitals_t30": {
+      "hr": 126,
+      "rr": 31,
+      "temp_f": 101.2,
+      "spo2": 98,
+      "cap_refill_s": 2.5
+    },
+    "ground_truth": "influenza",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0646",
+    "age_months": 10,
+    "sex": "M",
+    "weight_kg": 10.4,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 171,
+      "rr": 51,
+      "temp_f": 101.5,
+      "spo2": 97,
+      "cap_refill_s": 1.0
+    },
+    "vitals_t30": {
+      "hr": 171,
+      "rr": 50,
+      "temp_f": 101.9,
+      "spo2": 97,
+      "cap_refill_s": 1.2
+    },
+    "ground_truth": "appendicitis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0919",
+    "age_months": 1,
+    "sex": "F",
+    "weight_kg": 3.8,
+    "complaint_text": "AOM diagnosis, low-grade fever, 1-month-old eating and drinking normally HR improved from 167 to 164 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": null,
+      "rr": 50,
+      "temp_f": 101.2,
+      "spo2": 99,
+      "cap_refill_s": 2.3
+    },
+    "vitals_t30": {
+      "hr": 164,
+      "rr": 46,
+      "temp_f": 101.4,
+      "spo2": 99,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "otitis_media",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0693",
+    "age_months": 12,
+    "sex": "M",
+    "weight_kg": 10.4,
+    "complaint_text": "fever x5 days, rash, red eyes, strawberry tongue, 1-year-old HR improved from 174 to 173 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": null,
+      "rr": 29,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.1
+    },
+    "vitals_t30": {
+      "hr": 173,
+      "rr": 26,
+      "temp_f": 101.6,
+      "spo2": 99,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "kawasaki",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0691",
+    "age_months": 39,
+    "sex": "F",
+    "weight_kg": 13.0,
+    "complaint_text": "fever x2 days, rash, red eyes, strawberry tongue, 3y3m-old Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 127,
+      "rr": 42,
+      "temp_f": 100.9,
+      "spo2": 100,
+      "cap_refill_s": 1.1
+    },
+    "vitals_t30": {
+      "hr": 130,
+      "rr": 40,
+      "temp_f": 100.9,
+      "spo2": 100,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "kawasaki",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0270",
+    "age_months": 17,
+    "sex": "F",
+    "weight_kg": 9.3,
+    "complaint_text": "fever and altered mental status, 4 days of illness, not eating or drinking On reassessment at 30 minutes: HR increased from 174 to 194 bpm over 30 minutes, SpO2 drifting down from 91% to 87%, cap refill worsening from 2.9s to 3.4s.",
+    "vitals": {
+      "hr": 174,
+      "rr": 44,
+      "temp_f": 101.0,
+      "spo2": 91,
+      "cap_refill_s": 2.9
+    },
+    "vitals_t30": {
+      "hr": 194,
+      "rr": 46,
+      "temp_f": 101.9,
+      "spo2": 87,
+      "cap_refill_s": 3.4
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0765",
+    "age_months": 124,
+    "sex": "M",
+    "weight_kg": 32.3,
+    "complaint_text": "rapid flu positive, fever and body aches, tolerating fluids, no hypoxia HR improved from 109 to 104 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 109,
+      "rr": 31,
+      "temp_f": 101.0,
+      "spo2": 94,
+      "cap_refill_s": 2.2
+    },
+    "vitals_t30": {
+      "hr": 104,
+      "rr": 25,
+      "temp_f": 101.6,
+      "spo2": 94,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "influenza",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0308",
+    "age_months": 138,
+    "sex": "M",
+    "weight_kg": 32.7,
+    "complaint_text": "11y6m-old with cough, congestion, fever for 5 days, active and playful HR improved from 104 to 90 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 104,
+      "rr": 25,
+      "temp_f": 99.3,
+      "spo2": 97,
+      "cap_refill_s": 2.5
+    },
+    "vitals_t30": {
+      "hr": 90,
+      "rr": 28,
+      "temp_f": 98.7,
+      "spo2": 96,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "viral_syndrome",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0885",
+    "age_months": 159,
+    "sex": "M",
+    "weight_kg": 40.1,
+    "complaint_text": "dysuria and fever x5 days, urinalysis positive, 13y3m-old HR improved from 127 to 126 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": null,
+      "rr": 20,
+      "temp_f": 100.5,
+      "spo2": null,
+      "cap_refill_s": 2.7
+    },
+    "vitals_t30": {
+      "hr": 126,
+      "rr": 15,
+      "temp_f": 99.7,
+      "spo2": 100,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "uti",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0094",
+    "age_months": 7,
+    "sex": "F",
+    "weight_kg": 6.6,
+    "complaint_text": "7-month-old infant with 5-day fever, tachypneic, mottled skin, capillary refill prolonged On reassessment at 30 minutes: HR increased from 147 to 163 bpm over 30 minutes, SpO2 drifting down from 97% to 96%, cap refill worsening from 1.9s to 2.7s.",
+    "vitals": {
+      "hr": 147,
+      "rr": 56,
+      "temp_f": 100.8,
+      "spo2": 97,
+      "cap_refill_s": 1.9
+    },
+    "vitals_t30": {
+      "hr": 163,
+      "rr": 54,
+      "temp_f": 101.5,
+      "spo2": 96,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0260",
+    "age_months": 138,
+    "sex": "M",
+    "weight_kg": 36.3,
+    "complaint_text": "11y6m-old with minor skin abrasion 3 days ago, now with low-grade fever and subtle tachycardia. Parents concerned. No obvious toxic appearance. On reassessment at 30 minutes: SpO2 drifting down from 94% to 91%, cap refill worsening from 3.0s to 3.6s.",
+    "vitals": {
+      "hr": 116,
+      "rr": 50,
+      "temp_f": 100.2,
+      "spo2": 94,
+      "cap_refill_s": 3.0
+    },
+    "vitals_t30": {
+      "hr": 113,
+      "rr": 58,
+      "temp_f": 100.3,
+      "spo2": 91,
+      "cap_refill_s": 3.6
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0988",
+    "age_months": 179,
+    "sex": "M",
+    "weight_kg": 37.7,
+    "complaint_text": "AOM diagnosis, low-grade fever, 14y11m-old eating and drinking normally Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 81,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 99,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 93,
+      "rr": 13,
+      "temp_f": 98.8,
+      "spo2": 99,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "otitis_media",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0268",
+    "age_months": 112,
+    "sex": "F",
+    "weight_kg": 30.6,
+    "complaint_text": "child unresponsive to verbal stimuli, fever, possible source unknown On reassessment at 30 minutes: HR increased from 137 to 144 bpm over 30 minutes, SpO2 drifting down from 100% to 99%, cap refill worsening from 2.8s to 3.3s.",
+    "vitals": {
+      "hr": 137,
+      "rr": 36,
+      "temp_f": 103.0,
+      "spo2": 100,
+      "cap_refill_s": 2.8
+    },
+    "vitals_t30": {
+      "hr": 144,
+      "rr": 42,
+      "temp_f": 102.8,
+      "spo2": 99,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0110",
+    "age_months": 25,
+    "sex": "M",
+    "weight_kg": 12.5,
+    "complaint_text": "2y1m-old with 4-day fever, tachypneic, mottled skin, capillary refill prolonged On reassessment at 30 minutes: HR increased from 160 to 173 bpm over 30 minutes, SpO2 drifting down from 90% to 89%, cap refill worsening from 3.0s to 3.8s.",
+    "vitals": {
+      "hr": 160,
+      "rr": 46,
+      "temp_f": 98.7,
+      "spo2": 90,
+      "cap_refill_s": 3.0
+    },
+    "vitals_t30": {
+      "hr": 173,
+      "rr": 55,
+      "temp_f": 98.5,
+      "spo2": 89,
+      "cap_refill_s": 3.8
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0031",
+    "age_months": 5,
+    "sex": "M",
+    "weight_kg": 6.9,
+    "complaint_text": "child initially thought to have flu, now with worsening tachycardia and altered mentation On reassessment at 30 minutes: SpO2 drifting down from 92% to 89%, cap refill worsening from 2.1s to 3.3s.",
+    "vitals": {
+      "hr": 172,
+      "rr": 45,
+      "temp_f": 100.7,
+      "spo2": 92,
+      "cap_refill_s": 2.1
+    },
+    "vitals_t30": {
+      "hr": 171,
+      "rr": 46,
+      "temp_f": 101.3,
+      "spo2": 89,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0540",
+    "age_months": 12,
+    "sex": "M",
+    "weight_kg": 9.3,
+    "complaint_text": "1-year-old with 3-day GI illness, mildly dehydrated but alert and interactive HR improved from 139 to 122 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 139,
+      "rr": 38,
+      "temp_f": 99.4,
+      "spo2": 97,
+      "cap_refill_s": 1.8
+    },
+    "vitals_t30": {
+      "hr": 122,
+      "rr": 40,
+      "temp_f": 99.2,
+      "spo2": 96,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "gastroenteritis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0519",
+    "age_months": 37,
+    "sex": "M",
+    "weight_kg": 12.9,
+    "complaint_text": "3y1m-old with 2-day GI illness, mildly dehydrated but alert and interactive HR improved from 136 to 129 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 136,
+      "rr": null,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.0
+    },
+    "vitals_t30": {
+      "hr": 129,
+      "rr": 23,
+      "temp_f": 101.1,
+      "spo2": 100,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "gastroenteritis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0873",
+    "age_months": 12,
+    "sex": "M",
+    "weight_kg": 10.8,
+    "complaint_text": "1-year-old with 5-day fever and foul-smelling urine, UA consistent with UTI Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 117,
+      "rr": 37,
+      "temp_f": 101.5,
+      "spo2": 95,
+      "cap_refill_s": 2.6
+    },
+    "vitals_t30": {
+      "hr": 122,
+      "rr": 36,
+      "temp_f": 101.0,
+      "spo2": 95,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "uti",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0676",
+    "age_months": 28,
+    "sex": "F",
+    "weight_kg": 12.5,
+    "complaint_text": "4-day fever with desquamation of fingertips, concern for Kawasaki disease Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 170,
+      "rr": 34,
+      "temp_f": 102.7,
+      "spo2": 97,
+      "cap_refill_s": 2.2
+    },
+    "vitals_t30": {
+      "hr": 176,
+      "rr": 31,
+      "temp_f": 101.6,
+      "spo2": 99,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "kawasaki",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0029",
+    "age_months": 39,
+    "sex": "F",
+    "weight_kg": 13.9,
+    "complaint_text": "fever x2 days, increasingly lethargic, mom says 'something is wrong, he doesn't look right' On reassessment at 30 minutes: HR increased from 193 to 208 bpm over 30 minutes, SpO2 drifting down from 87% to 84%, cap refill worsening from 2.5s to 2.9s.",
+    "vitals": {
+      "hr": 193,
+      "rr": 38,
+      "temp_f": 103.7,
+      "spo2": 87,
+      "cap_refill_s": 2.5
+    },
+    "vitals_t30": {
+      "hr": 208,
+      "rr": 42,
+      "temp_f": 103.7,
+      "spo2": 84,
+      "cap_refill_s": 2.9
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0371",
+    "age_months": 124,
+    "sex": "F",
+    "weight_kg": 27.3,
+    "complaint_text": "10y4m-old with cough, congestion, fever for 5 days, active and playful HR improved from 116 to 101 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 116,
+      "rr": 31,
+      "temp_f": 101.1,
+      "spo2": 95,
+      "cap_refill_s": 2.2
+    },
+    "vitals_t30": {
+      "hr": 101,
+      "rr": 24,
+      "temp_f": 101.4,
+      "spo2": 95,
+      "cap_refill_s": 2.0
+    },
+    "ground_truth": "viral_syndrome",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0004",
+    "age_months": 18,
+    "sex": "M",
+    "weight_kg": 10.7,
+    "complaint_text": "1y6m-old with progressive deterioration over 1 hours \u2014 started as URI, now toxic-appearing On reassessment at 30 minutes: HR increased from 183 to 198 bpm over 30 minutes, SpO2 drifting down from 94% to 90%, cap refill worsening from 2.6s to 3.5s.",
+    "vitals": {
+      "hr": 183,
+      "rr": 39,
+      "temp_f": 98.1,
+      "spo2": 94,
+      "cap_refill_s": 2.6
+    },
+    "vitals_t30": {
+      "hr": 198,
+      "rr": 41,
+      "temp_f": 97.8,
+      "spo2": 90,
+      "cap_refill_s": 3.5
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0343",
+    "age_months": 29,
+    "sex": "F",
+    "weight_kg": 12.4,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay HR improved from 144 to 141 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 144,
+      "rr": 32,
+      "temp_f": 102.0,
+      "spo2": 95,
+      "cap_refill_s": 3.3
+    },
+    "vitals_t30": {
+      "hr": 141,
+      "rr": 29,
+      "temp_f": 101.9,
+      "spo2": 99,
+      "cap_refill_s": 3.5
+    },
+    "ground_truth": "viral_syndrome",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0645",
+    "age_months": 31,
+    "sex": "M",
+    "weight_kg": 12.1,
+    "complaint_text": "fever and RLQ tenderness, Rovsing sign positive, appendicitis workup initiated Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 147,
+      "rr": null,
+      "temp_f": null,
+      "spo2": 95,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 148,
+      "rr": 46,
+      "temp_f": 100.5,
+      "spo2": 95,
+      "cap_refill_s": 2.6
+    },
+    "ground_truth": "appendicitis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0526",
+    "age_months": 78,
+    "sex": "F",
+    "weight_kg": 21.0,
+    "complaint_text": "vomiting and diarrhea x1 days, mild fever, tolerating sips of fluid HR improved from 103 to 95 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 103,
+      "rr": 44,
+      "temp_f": 99.7,
+      "spo2": 97,
+      "cap_refill_s": 2.8
+    },
+    "vitals_t30": {
+      "hr": 95,
+      "rr": 41,
+      "temp_f": 99.3,
+      "spo2": 97,
+      "cap_refill_s": 2.7
+    },
+    "ground_truth": "gastroenteritis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0437",
+    "age_months": 3,
+    "sex": "M",
+    "weight_kg": 6.3,
+    "complaint_text": "pharyngitis, fever, rapid strep pending, 3-month-old infant appears non-toxic HR improved from 172 to 171 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": null,
+      "rr": 48,
+      "temp_f": null,
+      "spo2": null,
+      "cap_refill_s": 2.1
+    },
+    "vitals_t30": {
+      "hr": 171,
+      "rr": 47,
+      "temp_f": 101.2,
+      "spo2": 95,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "strep",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0324",
+    "age_months": 17,
+    "sex": "M",
+    "weight_kg": 9.2,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay HR improved from 145 to 140 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 145,
+      "rr": 30,
+      "temp_f": 101.7,
+      "spo2": 97,
+      "cap_refill_s": 2.2
+    },
+    "vitals_t30": {
+      "hr": 140,
+      "rr": 34,
+      "temp_f": 101.5,
+      "spo2": 100,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "viral_syndrome",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0300",
+    "age_months": 178,
+    "sex": "M",
+    "weight_kg": 46.0,
+    "complaint_text": "14y10m-old with 3-day history of what appeared to be viral URI. Now with subtle color change and slightly prolonged cap refill. Afebrile on arrival. On reassessment at 30 minutes: cap refill worsening from 2.5s to 3.3s.",
+    "vitals": {
+      "hr": 150,
+      "rr": 33,
+      "temp_f": 100.9,
+      "spo2": 100,
+      "cap_refill_s": 2.5
+    },
+    "vitals_t30": {
+      "hr": 150,
+      "rr": 33,
+      "temp_f": 101.8,
+      "spo2": 100,
+      "cap_refill_s": 3.3
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0515",
+    "age_months": 81,
+    "sex": "F",
+    "weight_kg": 19.3,
+    "complaint_text": "gastro symptoms: nausea, vomiting, loose stools, low-grade temp HR improved from 142 to 132 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 142,
+      "rr": 26,
+      "temp_f": 99.0,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 132,
+      "rr": 31,
+      "temp_f": 98.2,
+      "spo2": 97,
+      "cap_refill_s": 1.6
+    },
+    "ground_truth": "gastroenteritis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0266",
+    "age_months": 21,
+    "sex": "F",
+    "weight_kg": 12.9,
+    "complaint_text": "high fever, chills, poor oral intake x1 days, child appears toxic On reassessment at 30 minutes: HR increased from 139 to 148 bpm over 30 minutes, SpO2 drifting down from 92% to 91%, cap refill worsening from 2.2s to 2.8s.",
+    "vitals": {
+      "hr": 139,
+      "rr": 32,
+      "temp_f": 102.9,
+      "spo2": 92,
+      "cap_refill_s": 2.2
+    },
+    "vitals_t30": {
+      "hr": 148,
+      "rr": 36,
+      "temp_f": 103.0,
+      "spo2": 91,
+      "cap_refill_s": 2.8
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0724",
+    "age_months": 0,
+    "sex": "M",
+    "weight_kg": 3.3,
+    "complaint_text": "4-day fever with desquamation of fingertips, concern for Kawasaki disease HR improved from 184 to 183 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 184,
+      "rr": 63,
+      "temp_f": 101.6,
+      "spo2": 92,
+      "cap_refill_s": 2.5
+    },
+    "vitals_t30": {
+      "hr": 183,
+      "rr": 64,
+      "temp_f": 101.5,
+      "spo2": 96,
+      "cap_refill_s": 2.6
+    },
+    "ground_truth": "kawasaki",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0076",
+    "age_months": 21,
+    "sex": "M",
+    "weight_kg": 12.0,
+    "complaint_text": "child seen at urgent care yesterday for fever, sent home with diagnosis of viral syndrome. Returning today \u2014 parents report child 'just not acting right'. Vitals borderline. On reassessment at 30 minutes: HR increased from 167 to 182 bpm over 30 minutes, cap refill worsening from 4.0s to 4.7s.",
+    "vitals": {
+      "hr": null,
+      "rr": 48,
+      "temp_f": 99.5,
+      "spo2": 98,
+      "cap_refill_s": 4.0
+    },
+    "vitals_t30": {
+      "hr": 182,
+      "rr": 49,
+      "temp_f": 100.9,
+      "spo2": 98,
+      "cap_refill_s": 4.7
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0489",
+    "age_months": 163,
+    "sex": "F",
+    "weight_kg": 43.3,
+    "complaint_text": "vomiting and diarrhea x2 days, mild fever, tolerating sips of fluid HR improved from 82 to 75 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 82,
+      "rr": 20,
+      "temp_f": 100.3,
+      "spo2": 97,
+      "cap_refill_s": 2.0
+    },
+    "vitals_t30": {
+      "hr": 75,
+      "rr": 17,
+      "temp_f": 100.6,
+      "spo2": 98,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "gastroenteritis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0329",
+    "age_months": 196,
+    "sex": "F",
+    "weight_kg": 44.8,
+    "complaint_text": "16y4m-old with cough, congestion, fever for 4 days, active and playful Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 109,
+      "rr": 27,
+      "temp_f": 98.6,
+      "spo2": 98,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 119,
+      "rr": 22,
+      "temp_f": 98.4,
+      "spo2": 96,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "viral_syndrome",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0483",
+    "age_months": 26,
+    "sex": "F",
+    "weight_kg": 13.6,
+    "complaint_text": "vomiting and diarrhea x5 days, mild fever, tolerating sips of fluid HR improved from 169 to 155 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 169,
+      "rr": 33,
+      "temp_f": 99.9,
+      "spo2": 94,
+      "cap_refill_s": 3.0
+    },
+    "vitals_t30": {
+      "hr": 155,
+      "rr": 32,
+      "temp_f": 99.7,
+      "spo2": 96,
+      "cap_refill_s": 2.4
+    },
+    "ground_truth": "gastroenteritis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0856",
+    "age_months": 46,
+    "sex": "F",
+    "weight_kg": 15.5,
+    "complaint_text": "febrile UTI, UA with pyuria and bacteriuria, 3y10m-old non-toxic HR improved from 141 to 131 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 141,
+      "rr": 30,
+      "temp_f": 100.3,
+      "spo2": 98,
+      "cap_refill_s": 1.6
+    },
+    "vitals_t30": {
+      "hr": 131,
+      "rr": 24,
+      "temp_f": 100.1,
+      "spo2": 100,
+      "cap_refill_s": 1.3
+    },
+    "ground_truth": "uti",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0083",
+    "age_months": 58,
+    "sex": "M",
+    "weight_kg": 19.3,
+    "complaint_text": "child brought in lethargic and not responding normally, fever for 4 days, looks very ill On reassessment at 30 minutes: HR increased from 225 to 234 bpm over 30 minutes, SpO2 drifting down from 94% to 93%.",
+    "vitals": {
+      "hr": 225,
+      "rr": 42,
+      "temp_f": 102.9,
+      "spo2": 94,
+      "cap_refill_s": 2.0
+    },
+    "vitals_t30": {
+      "hr": 234,
+      "rr": 47,
+      "temp_f": 102.9,
+      "spo2": 93,
+      "cap_refill_s": 1.9
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0951",
+    "age_months": 12,
+    "sex": "F",
+    "weight_kg": 10.3,
+    "complaint_text": "ear pain and low-grade fever x5 days, 1-year-old tugging at ear HR improved from 141 to 134 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 141,
+      "rr": 27,
+      "temp_f": 99.4,
+      "spo2": 100,
+      "cap_refill_s": 2.0
+    },
+    "vitals_t30": {
+      "hr": 134,
+      "rr": 26,
+      "temp_f": 99.3,
+      "spo2": 100,
+      "cap_refill_s": 2.2
+    },
+    "ground_truth": "otitis_media",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0386",
+    "age_months": 8,
+    "sex": "F",
+    "weight_kg": 8.5,
+    "complaint_text": "URI symptoms, mild fever, eating and drinking okay HR improved from 154 to 152 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 154,
+      "rr": 38,
+      "temp_f": 101.6,
+      "spo2": 96,
+      "cap_refill_s": 2.5
+    },
+    "vitals_t30": {
+      "hr": 152,
+      "rr": 33,
+      "temp_f": 101.2,
+      "spo2": 97,
+      "cap_refill_s": 2.3
+    },
+    "ground_truth": "viral_syndrome",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0908",
+    "age_months": 209,
+    "sex": "M",
+    "weight_kg": 50.3,
+    "complaint_text": "dysuria and fever x4 days, urinalysis positive, 17y5m-old HR improved from 103 to 101 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 103,
+      "rr": 21,
+      "temp_f": 101.5,
+      "spo2": 98,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 101,
+      "rr": 15,
+      "temp_f": 100.8,
+      "spo2": 98,
+      "cap_refill_s": 1.0
+    },
+    "ground_truth": "uti",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0219",
+    "age_months": 64,
+    "sex": "M",
+    "weight_kg": 18.5,
+    "complaint_text": "mom reports child has been crying inconsolably, high fever, looks pale and mottled On reassessment at 30 minutes: HR increased from 208 to 230 bpm over 30 minutes, cap refill worsening from 4.6s to 5.4s.",
+    "vitals": {
+      "hr": 208,
+      "rr": 44,
+      "temp_f": 98.6,
+      "spo2": 87,
+      "cap_refill_s": 4.6
+    },
+    "vitals_t30": {
+      "hr": 230,
+      "rr": 45,
+      "temp_f": 98.8,
+      "spo2": 87,
+      "cap_refill_s": 5.4
+    },
+    "ground_truth": "sepsis",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0952",
+    "age_months": 144,
+    "sex": "F",
+    "weight_kg": 36.0,
+    "complaint_text": "3-day ear pain, fever, bulging tympanic membrane on exam HR improved from 117 to 112 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": 117,
+      "rr": 22,
+      "temp_f": 101.3,
+      "spo2": 99,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 112,
+      "rr": 18,
+      "temp_f": 100.4,
+      "spo2": 100,
+      "cap_refill_s": 1.7
+    },
+    "ground_truth": "otitis_media",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0440",
+    "age_months": 69,
+    "sex": "M",
+    "weight_kg": 19.3,
+    "complaint_text": "sore throat and fever x3 days, no rash, no difficulty swallowing Vital signs stable on reassessment.",
+    "vitals": {
+      "hr": 123,
+      "rr": 37,
+      "temp_f": 101.1,
+      "spo2": 95,
+      "cap_refill_s": 1.9
+    },
+    "vitals_t30": {
+      "hr": 131,
+      "rr": 34,
+      "temp_f": 100.1,
+      "spo2": 95,
+      "cap_refill_s": 1.4
+    },
+    "ground_truth": "strep",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0821",
+    "age_months": 143,
+    "sex": "F",
+    "weight_kg": 33.2,
+    "complaint_text": "11y11m-old with influenza: fever, malaise, cough, mild tachycardia HR improved from 143 to 131 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": null,
+      "rr": null,
+      "temp_f": 102.8,
+      "spo2": 95,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 131,
+      "rr": 20,
+      "temp_f": 102.4,
+      "spo2": 96,
+      "cap_refill_s": 3.4
+    },
+    "ground_truth": "influenza",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "SYNTH-0842",
+    "age_months": 19,
+    "sex": "F",
+    "weight_kg": 11.3,
+    "complaint_text": "dysuria and fever x5 days, urinalysis positive, 1y7m-old HR improved from 126 to 117 on reassessment \u2014 reassuring trajectory.",
+    "vitals": {
+      "hr": null,
+      "rr": 40,
+      "temp_f": 102.1,
+      "spo2": null,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 117,
+      "rr": 41,
+      "temp_f": 102.1,
+      "spo2": 100,
+      "cap_refill_s": 2.1
+    },
+    "ground_truth": "uti",
+    "source": "synthetic_v3_physionet_recal"
+  },
+  {
+    "patient_id": "RORY-2012-0330",
+    "age_months": 144,
+    "sex": "M",
+    "weight_kg": 45.0,
+    "complaint_text": "12-year-old male with 2-day history of fever, vomiting, and left leg pain. Sustained a minor laceration on leg during gym class 3 days ago. Mom reports he has been increasingly lethargic, refusing food, high fever at home. Father notes the child looks pale and 'just not right'. No rash. HR increased from 124 to 130 bpm between triage and first assessment. Cap refill 3 seconds and not improving.",
+    "vitals": {
+      "hr": 130,
+      "rr": 22,
+      "temp_f": 104.7,
+      "spo2": 98,
+      "cap_refill_s": null
+    },
+    "vitals_t30": {
+      "hr": 136,
+      "rr": 24,
+      "temp_f": 104.9,
+      "spo2": 97,
+      "cap_refill_s": null
+    },
+    "ground_truth": "sepsis",
+    "note": "Rory Staunton, age 12. Died April 1 2012. HELD OUT \u2014 never in training."
+  }
+]

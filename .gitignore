@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.next/
+frontend/node_modules/
+frontend/.next/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Model weights (too large for git)
+backend_a/models/weights/*.pt
+backend_a/models/weights/*.npy
+backend_a/models/weights/*.pkl
+backend_a/models/weights/*.json
+
+# Env
+.env
+backend_b/.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Videos (large)
+frontend/public/images/gpu-anim.mp4
+frontend/public/images/gpu-assembled.webp
+frontend/public/images/gpu-exploded.png
