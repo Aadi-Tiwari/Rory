@@ -33,6 +33,8 @@ def impute(vitals: dict) -> tuple[dict, float]:
     completeness = fraction of vitals that were present on arrival.
     """
     stats    = _load()
+    if "meta" in stats:
+        stats = stats["meta"]
     means    = stats["means"]        # {"hr": float, "rr": float, ...}
     out      = dict(vitals)
     present  = 0
