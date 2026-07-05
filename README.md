@@ -16,14 +16,14 @@ RORY/
 │
 ├── backend_a/                 # ML / Inference (Person A)
 │   ├── contract/              # Backend A's own contract copy (matches shared)
-│   └── backend_a/
-│       ├── data/              # 974-case synthetic cohort + held-out set
-│       ├── models/            # VitalsMLP + TextEncoder + FusionModel
-│       │   └── weights/       # dbscan.pkl, train_stats.json
-│       │                      # MISSING: best_model.pt (424MB), sepsis_centroid.npy
-│       ├── inference/         # FastAPI server, predict pipeline, DBSCAN, drift
-│       ├── tests/
-│       └── requirements.txt
+│   ├── data/                  # 974-case synthetic cohort + held-out set
+│   ├── models/                # VitalsMLP + TextEncoder + FusionModel
+│   │   └── weights/           # dbscan.pkl, train_stats.json, sepsis_centroid.npy
+│   │                          # MISSING: best_model.pt (424MB)
+│   ├── inference/             # FastAPI server, predict pipeline, DBSCAN, drift
+│   ├── tests/
+│   ├── generate_artifacts.py
+│   └── requirements.txt
 │
 ├── backend_b/                 # Palantir Foundry / AIP (Person B)
 │   ├── foundry/
@@ -43,18 +43,17 @@ RORY/
 
 ### Prerequisites
 - Python 3.11
-- best_model.pt in backend_a/backend_a/models/weights/ (424MB, must transfer from AMD Dev Cloud)
-- sepsis_centroid.npy in same directory (generate via generate_artifacts.py on Dev Cloud)
+- best_model.pt in backend_a/models/weights/ (424MB, must transfer from AMD Dev Cloud)
 
 ### Install
 ```bash
-cd backend_a/backend_a
+cd backend_a
 pip install -r requirements.txt
 ```
 
 ### Start the server
 ```bash
-cd backend_a/backend_a
+cd backend_a
 python -m uvicorn inference.main:app --reload --port 8000
 ```
 
@@ -66,7 +65,7 @@ curl http://localhost:8000/healthz
 
 ### Run demo cases
 ```bash
-cd backend_a/backend_a
+cd backend_a
 python -m inference.demo_cache
 ```
 
@@ -123,8 +122,7 @@ Key types:
 
 | File | Location | How to get it |
 |---|---|---|
-| `best_model.pt` | `backend_a/backend_a/models/weights/` | Transfer from AMD Dev Cloud JupyterLab (/workspace/rory/backend_a/models/weights/) |
-| `sepsis_centroid.npy` | `backend_a/backend_a/models/weights/` | Run `python generate_artifacts.py` on Dev Cloud, then transfer |
+| `best_model.pt` | `backend_a/models/weights/` | Transfer from AMD Dev Cloud JupyterLab (/workspace/rory/backend_a/models/weights/) |
 
 Without these, Backend A returns errors on /predict. The demo_cache.py fallback still works for cached cases.
 
