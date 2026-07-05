@@ -37,3 +37,6 @@ build/
 frontend/public/images/gpu-anim.mp4
 frontend/public/images/gpu-assembled.webp
 frontend/public/images/gpu-exploded.png
+
+# Jupyter
+.ipynb_checkpoints/
