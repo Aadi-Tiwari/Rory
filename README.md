@@ -132,10 +132,3 @@ Three tablet demo cases:
 1. **Case 1 - Viral mimic**: 9yo girl, fever 101, runny nose. Tablet returns GREEN: SEND HOME.
 2. **Case 2 - Rory 2012 in ED**: 12yo boy, scraped arm, fever 104, leg pain. Tablet returns RED: SEND TO ED.
 3. **Case 3 - Rory 2012 school nurse**: Same case, only temp + HR available. Tablet still returns RED (lowered threshold).
-
-## Prize Targets
-
-- 1st Overall ($1000)
-- Best Social Impact (Fifine mics)
-- Palantir AIP 1st ($700 + office tour)
-- AMD AI 1st ($600 + $500 GPU credits)
