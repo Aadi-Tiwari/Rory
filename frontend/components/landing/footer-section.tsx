@@ -18,13 +18,13 @@ const footerLinks = {
   ],
   Project: [
     { name: "Los Altos Hacks X", href: "#" },
-    { name: "GitHub", href: "https://github.com/Tiwari-Aadi/Rory-Test" },
+    { name: "GitHub", href: "https://github.com/Tiwari-Aadi/Rory" },
     { name: "Rory's Regulations", href: "#compliance" },
   ],
 };
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/Tiwari-Aadi/Rory-Test" },
+  { name: "GitHub", href: "https://github.com/Tiwari-Aadi/Rory" },
   { name: "Devpost", href: "#" },
 ];
 

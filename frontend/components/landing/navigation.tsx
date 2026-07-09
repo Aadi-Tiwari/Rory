@@ -69,7 +69,7 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="https://github.com/Tiwari-Aadi/Rory-Test" target="_blank" rel="noopener noreferrer" className={`transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isScrolled ? "text-xs text-foreground/70 hover:text-foreground" : "text-sm text-white/70 hover:text-white"}`}>
+            <a href="https://github.com/Tiwari-Aadi/Rory" target="_blank" rel="noopener noreferrer" className={`transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isScrolled ? "text-xs text-foreground/70 hover:text-foreground" : "text-sm text-white/70 hover:text-white"}`}>
               GitHub
             </a>
             <a href="/demo">
