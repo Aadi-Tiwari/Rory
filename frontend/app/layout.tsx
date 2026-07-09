@@ -1,6 +1,5 @@
 import React from "react"
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -34,9 +33,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
-        {/* @ts-expect-error - elevenlabs-convai is a custom element */}
-        <elevenlabs-convai agent-id="agent_1501kp0wc3sdesxap05bmzdhkez1"></elevenlabs-convai>
-        <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" strategy="lazyOnload" />
       </body>
     </html>
   )

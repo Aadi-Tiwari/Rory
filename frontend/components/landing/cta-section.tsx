@@ -76,7 +76,7 @@ export function CtaSection() {
                     className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
                     asChild
                   >
-                    <a href="https://github.com/Tiwari-Aadi/Rory-Test" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Tiwari-Aadi/Rory" target="_blank" rel="noopener noreferrer">
                       View on GitHub
                     </a>
                   </Button>

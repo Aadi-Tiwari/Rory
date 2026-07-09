@@ -155,7 +155,7 @@ export function TechStackSection() {
             ))}
           </div>
 
-          <a href="https://github.com/Tiwari-Aadi/Rory-Test" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors">
+          <a href="https://github.com/Tiwari-Aadi/Rory" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors">
             View source on GitHub
             <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
