@@ -11,7 +11,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contract.schema import PredictRequest, PredictResponse, Reasoning
 
-from inference.predict import predict
+from inference.predict import MODEL_PATH, predict
 
 app = FastAPI(title="RORY Backend A", version="rory-v3")
 
@@ -54,10 +54,12 @@ def predict_endpoint(req: PredictRequest):
             reasoning=reasoning_objects,
             model_version=result["model_version"],
         )
+    except FileNotFoundError:
+        raise HTTPException(status_code=503, detail="Inference assets are unavailable. See the repository setup instructions.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/healthz")
 def health():
-    return {"version": "rory-v3", "status": "ok"}
+    return {"version": "rory-v3", "status": "ok", "checkpoint_present": MODEL_PATH.is_file()}

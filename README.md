@@ -1,134 +1,65 @@
-# RORY - Pediatric Sepsis Triage System
+# Rory
 
-Named after Rory Staunton (2012). A tablet a nurse uses in the first 90 seconds of seeing a kid. She types what she's seeing, enters vitals, and gets back HOME / ED / 911 with Rory's Regulations citations.
+A research prototype for exploring pediatric triage interfaces, structured vital-sign inputs, model inference, and protocol citations.
 
-Built for Los Altos Hacks X, April 11-12 2026.
+The repository contains a Next.js tablet interface, a Python inference service, a shared request/response contract, and Palantir Foundry integration code. The training cohort is synthetic. The project is not clinically validated and must not guide patient care.
 
-## Project Structure
+## Current availability
 
-```
-RORY/
-├── contract/                  # Shared Pydantic/TS contract (canonical)
-│   ├── schema.py              # PredictRequest, PredictResponse
-│   ├── schema.ts              # TypeScript mirror
-│   ├── __init__.py
-│   └── VERSION
-│
-├── backend_a/                 # ML / Inference (Person A)
-│   ├── contract/              # Backend A's own contract copy (matches shared)
-│   ├── data/                  # 974-case synthetic cohort + held-out set
-│   ├── models/                # VitalsMLP + TextEncoder + FusionModel
-│   │   └── weights/           # dbscan.pkl, train_stats.json, sepsis_centroid.npy
-│   │                          # MISSING: best_model.pt (424MB)
-│   ├── inference/             # FastAPI server, predict pipeline, DBSCAN, drift
-│   ├── tests/
-│   ├── generate_artifacts.py
-│   └── requirements.txt
-│
-├── backend_b/                 # Palantir Foundry / AIP (Person B)
-│   ├── foundry/
-│   │   ├── ontology/          # Seed data (52 objects), ontology export
-│   │   ├── logic/             # 2 AIP Logic functions (TypeScript source)
-│   │   ├── document_intelligence/  # 2 PDFs + extraction config
-│   │   └── agent/             # AIP Agent config + scripted exchanges
-│   ├── client/                # predict_client.py, ontology_writer.py, bulk_import.py
-│   ├── frontend_components/   # 6 React/TSX components
-│   ├── .env                   # Foundry credentials (DO NOT COMMIT)
-│   └── README.md
-│
-└── README.md                  # This file
+The repository does not include `backend_a/models/weights/best_model.pt`. The interface and non-inference tests can run without it. A prediction requires the matching trained checkpoint and the other model assets. Missing inference files return a service-unavailable response rather than a fabricated prediction.
+
+`inference.demo_cache` calls the real prediction pipeline. It is not an offline fallback for a missing checkpoint.
+
+## Frontend
+
+Use Node.js 22:
+
+```sh
+cd frontend
+npm ci
+npm run dev
 ```
 
-## Running Backend A (ML inference server)
+Open <http://localhost:3000>. Check the backend address in `components/landing/demo-content.tsx` when running the API on another host. The interface is a demonstration; its labels and thresholds are not medical advice.
 
-### Prerequisites
-- Python 3.11
-- best_model.pt in backend_a/models/weights/ (424MB, must transfer from AMD Dev Cloud)
+## Inference service
 
-### Install
-```bash
-cd backend_a
-pip install -r requirements.txt
+Use a Python 3.11 virtual environment. From `backend_a/`:
+
+```sh
+python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
+python -m uvicorn inference.main:app --host 127.0.0.1 --port 8000
 ```
 
-### Start the server
-```bash
-cd backend_a
-python -m uvicorn inference.main:app --reload --port 8000
+Place a trusted checkpoint from this project's training pipeline at `models/weights/best_model.pt` before requesting inference. Model loading uses tensor weights rather than unrestricted checkpoint deserialization. Other existing serialized artifacts also need a trusted source.
+
+Inference runs all model components on CPU. The pinned scikit-learn version matches the saved DBSCAN artifact; changing that dependency requires regenerating and checking the artifact.
+
+`GET /healthz` reports process health and whether the checkpoint file exists. File presence is not proof that the checkpoint loads correctly. `POST /predict` uses the types in `contract/schema.py`.
+
+## Project layout
+
+- `frontend/`: tablet and presentation interface.
+- `contract/`: shared Python and TypeScript request/response definitions.
+- `backend_a/`: synthetic data, models, inference, and backend tests.
+- `backend_b/`: Foundry clients, ontology configuration, citation integration, and reusable interface components.
+- `tests/`: shared-contract checks.
+
+The Foundry layer requires separate workspace credentials and configuration. Local source files do not prove that a live workspace is deployed or available. See [backend_b/README.md](backend_b/README.md) for integration notes; do not run import or write operations against a workspace merely to preview the interface.
+
+## Checks
+
+From the repository root:
+
+```sh
+python -m pytest -q tests backend_a/tests
 ```
 
-### Verify
-```bash
-curl http://localhost:8000/healthz
-# {"version": "rory-v3", "status": "ok"}
+From `frontend/`:
+
+```sh
+npm run build
 ```
 
-### Run demo cases
-```bash
-cd backend_a
-python -m inference.demo_cache
-```
-
-Expected output:
-- Obvious mimic: HOME, risk=0.00
-- Ambiguous+drift: 911, risk=1.00
-- Rory Staunton 2012: 911, risk=1.00
-
-## Running Backend B (Palantir Foundry layer)
-
-Backend B is deployed inside Palantir Foundry at https://losaltos.palantirfoundry.com
-
-### What's deployed in Foundry
-- 6 RORY object types (RoryPatient, RoryEncounter, RoryVitalSnapshot, RoryTriageDecision, RoryRegulationsCheck, RoryProtocolCitation)
-- 4 link types wiring the relationships
-- 52 seed objects (10 patients including Rory 2012)
-- 2 PDFs in Document Intelligence (Rory's Regulations + Pediatric SSC)
-- 2 AIP Logic functions with AI FDE evals (19/20 pass rate)
-- 1 AIP Agent (RORY_Triage_Advisor)
-
-### Calling Backend A from Backend B
-```bash
-cd backend_b
-cp .env.example .env  # already done
-pip install httpx python-dotenv
-python -c "
-import asyncio
-from contract.schema import PredictRequest, VitalSnapshot
-from client.predict_client import run_prediction
-
-req = PredictRequest(
-    patient_id='RORY-2012',
-    age_months=144,
-    sex='M',
-    weight_kg=43.0,
-    complaint_text='12yo boy scraped arm 2 days ago, fever 104, leg pain, looks pale',
-    vitals=VitalSnapshot(hr=138, rr=28, temp_f=104.0, spo2=95, cap_refill_s=3.2)
-)
-
-asyncio.run(run_prediction('E_RORY', 'RORY_2012', req))
-"
-```
-
-## Contract
-
-The shared contract lives in `/contract/schema.py`. Both backends import from it.
-
-Key types:
-- `PredictRequest`: patient_id, age_months, sex, weight_kg, complaint_text, vitals
-- `PredictResponse`: recommendation, risk, confidence, completeness, outlier_flag, drift_alert, cluster_drift, sepsis_confidence_trend, reasoning, model_version
-- `VitalSnapshot`: hr, rr, temp_f, spo2, cap_refill_s (all Optional for adaptive dimensionality)
-
-## Missing Files (Action Required)
-
-| File | Location | How to get it |
-|---|---|---|
-| `best_model.pt` | `backend_a/models/weights/` | Transfer from AMD Dev Cloud JupyterLab (/workspace/rory/backend_a/models/weights/) |
-
-Without these, Backend A returns errors on /predict. The demo_cache.py fallback still works for cached cases.
-
-## Demo
-
-Three tablet demo cases:
-1. **Case 1 - Viral mimic**: 9yo girl, fever 101, runny nose. Tablet returns GREEN: SEND HOME.
-2. **Case 2 - Rory 2012 in ED**: 12yo boy, scraped arm, fever 104, leg pain. Tablet returns RED: SEND TO ED.
-3. **Case 3 - Rory 2012 school nurse**: Same case, only temp + HR available. Tablet still returns RED (lowered threshold).
+Tests cover contract behavior, inference helpers, and failure when the checkpoint is absent. They do not establish clinical safety, external Foundry availability, or a functioning end-to-end prediction without the missing model.

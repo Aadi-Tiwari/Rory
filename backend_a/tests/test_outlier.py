@@ -18,8 +18,11 @@ def _make_cluster(center: np.ndarray, n: int = 20, scale: float = 0.01, seed: in
 
 
 @pytest.fixture(autouse=True)
-def fit_dbscan():
+def fit_dbscan(tmp_path, monkeypatch):
     """Fit DBSCAN on two well-separated unit-sphere clusters."""
+    import inference.dbscan_flag as dbf
+    monkeypatch.setattr(dbf, "DBSCAN_PATH", tmp_path / "dbscan.pkl")
+    monkeypatch.setattr(dbf, "_dbscan", None)
     center_a = np.zeros(256, dtype=np.float32); center_a[0] = 1.0
     center_b = np.zeros(256, dtype=np.float32); center_b[1] = 1.0
     embeddings = np.vstack([
