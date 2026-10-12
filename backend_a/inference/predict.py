@@ -10,19 +10,18 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
 import numpy as np
-import torch
-
-from models.fusion import FusionModel, RoryModel
-from models.vitals_mlp import VitalsMLP
-from models.text_encoder import TextEncoder
 from inference.imputation import impute
 from inference.ring_buffer import push_embedding
 from inference.dbscan_flag import is_outlier
 from inference.cluster_drift import cosine_distance_to_sepsis, compute_drift
 from inference.reasoning import generate_reasoning
+
+if TYPE_CHECKING:
+    import torch
+    from models.fusion import RoryModel
 
 WEIGHTS_DIR = Path(__file__).parent.parent / "models" / "weights"
 MODEL_PATH  = WEIGHTS_DIR / "best_model.pt"
@@ -44,11 +43,18 @@ def _load_stats() -> dict:
 def _load_model() -> RoryModel:
     global _model
     if _model is None:
+        if not MODEL_PATH.is_file():
+            raise FileNotFoundError("Model checkpoint is unavailable. Install best_model.pt before running predictions.")
+        import torch
+        from models.fusion import FusionModel, RoryModel
+        from models.vitals_mlp import VitalsMLP
+        from models.text_encoder import TextEncoder
+
         vitals_mlp   = VitalsMLP(hidden_dim=64, out_dim=128, dropout=0.3)
-        text_encoder = TextEncoder(out_dim=128, dropout=0.3)
+        text_encoder = TextEncoder(out_dim=128, dropout=0.3, device="cpu")
         fusion       = FusionModel(vitals_dim=128, text_dim=128, hidden_dim=256, dropout=0.3)
         model        = RoryModel(vitals_mlp, text_encoder, fusion)
-        model.load_state_dict(torch.load(MODEL_PATH, map_location="cpu", weights_only=False))
+        model.load_state_dict(torch.load(MODEL_PATH, map_location="cpu", weights_only=True))
         model.eval()
         _model = model
     return _model
@@ -59,6 +65,8 @@ def _risk_from_proba(proba: torch.Tensor) -> float:
     proba is (1, 3) softmax — classes [HOME, ED, 911].
     Risk = weighted sum: HOME=0.0, ED=0.5, 911=1.0
     """
+    import torch
+
     weights = torch.tensor([0.0, 0.5, 1.0])
     return float((proba.squeeze() * weights).sum())
 
@@ -88,6 +96,7 @@ def predict(
     Returns a dict matching PredictResponse schema.
     """
     model = _load_model()
+    import torch
 
     # ── completeness score (impute() for scoring only) ─────────────────────────
     _, completeness = impute(vitals_raw)

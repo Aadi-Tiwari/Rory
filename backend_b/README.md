@@ -43,7 +43,7 @@ backend_b/
    - `foundry/document_intelligence/pediatric_ssc.pdf` - 2020 Pediatric Surviving Sepsis Campaign from SCCM public portal
 4. Download a public photo of Rory Staunton for the splash screen and save it in the frontend project's `public/` folder as `rory_staunton.jpg`
 
-## What Claude scaffolded for you (already done)
+## Included integration components
 
 - [x] Contract package (`../contract/schema.py` + `schema.ts` + `VERSION`)
 - [x] Ontology seed data with 10 patients including Rory 2012 case
@@ -55,7 +55,7 @@ backend_b/
 
 ## What you still have to do manually (Foundry UI actions)
 
-These cannot be scripted from Claude - they require logging into the Foundry workspace:
+These steps require access to the Foundry workspace:
 
 ### Hour 1-4: Create the Ontology in Foundry
 1. Open Foundry → Ontology Manager → New Ontology named `rory-v2`

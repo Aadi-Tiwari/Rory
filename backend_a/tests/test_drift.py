@@ -17,8 +17,11 @@ def reset_registry():
 
 
 @pytest.fixture(autouse=True)
-def set_centroid():
+def set_centroid(tmp_path, monkeypatch):
     """Save a unit-vector centroid along dim-0."""
+    import inference.cluster_drift as drift
+    monkeypatch.setattr(drift, "CENTROID_PATH", tmp_path / "sepsis_centroid.npy")
+    monkeypatch.setattr(drift, "_centroid", None)
     centroid = np.zeros(256, dtype=np.float32)
     centroid[0] = 1.0
     # save_centroid normalizes, so pass it already normalized
