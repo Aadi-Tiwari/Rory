@@ -142,16 +142,18 @@ export function SettingsSection() {
                     ))}
                   </ul>
 
-                  <div
-                    className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium ${
+                  <a
+                    href="/demo"
+                    aria-label={`${setting.cta}: open Rory demo`}
+                    className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
                       setting.highlight
-                        ? "bg-foreground text-background"
-                        : "border border-foreground/20 text-foreground"
+                        ? "bg-foreground text-background hover:bg-foreground/90"
+                        : "border border-foreground/20 text-foreground hover:bg-foreground/5"
                     }`}
                   >
                     {setting.cta}
                     <ArrowRight className="w-4 h-4" />
-                  </div>
+                  </a>
                 </div>
               </div>
             ))}
