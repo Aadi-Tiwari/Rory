@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, AlertTriangle, CheckCircle, XCircle, Activity, RotateCcw } from "lucide-react";
 
-const BACKEND_URL = "http://localhost:8000";
+const BACKEND_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
 
 const presets = [
   { label: "Viral mimic", desc: "9yo girl, cold symptoms", data: { age_months: 108, sex: "F", weight_kg: 30, complaint_text: "9yo girl, fever 101, runny nose, mom says just a cold, active and alert", hr: 98, rr: 20, temp_f: 101, spo2: 98, cap_refill_s: 1.8 } },
@@ -136,7 +136,10 @@ export function DemoContent() {
       const p = presets[idx];
       const label = p.label;
       await new Promise(r => setTimeout(r, 600 + Math.random() * 400));
-      navigateToResults(demoResponses[label] ?? demoResponses["Viral mimic"], p.data);
+      const { hr, rr, temp_f, spo2, cap_refill_s, ...patient } = p.data;
+      navigateToResults(demoResponses[label] ?? demoResponses["Viral mimic"], {
+        ...patient, vitals: { hr, rr, temp_f, spo2, cap_refill_s },
+      });
       return;
     }
 

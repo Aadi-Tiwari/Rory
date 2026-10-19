@@ -20,7 +20,9 @@ npm ci
 npm run dev
 ```
 
-Open <http://localhost:3000>. Check the backend address in `components/landing/demo-content.tsx` when running the API on another host. The interface is a demonstration; its labels and thresholds are not medical advice.
+Open <http://localhost:3000/demo> and enable demo mode to explore saved illustrative presets without the backend or checkpoint. Results identify these as saved examples; no inference runs in this mode. The interface is a demonstration; its labels and thresholds are not medical advice.
+
+To point live mode at a different backend, set `NEXT_PUBLIC_API_URL` in `frontend/.env.local` before starting or building the interface. Its default is `http://localhost:8000`.
 
 ## Inference service
 
@@ -63,3 +65,9 @@ npm run build
 ```
 
 Tests cover contract behavior, inference helpers, and failure when the checkpoint is absent. They do not establish clinical safety, external Foundry availability, or a functioning end-to-end prediction without the missing model.
+
+Preset results preserve the entered vital signs and identify their saved explanations. The results page provides prototype review steps rather than a clinical care plan.
+
+## License
+
+Original project source is available under the [MIT License](LICENSE). Third-party dependencies, model weights, fonts, documents, and datasets retain their own licenses. This license does not grant rights to third-party assets.

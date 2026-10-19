@@ -103,11 +103,11 @@ export default function ResultsPage() {
   const vList = [{ l: "HR", v: vitals.hr, u: "bpm" }, { l: "RR", v: vitals.rr, u: "/min" }, { l: "Temp", v: vitals.temp_f, u: "F" }, { l: "SpO2", v: vitals.spo2, u: "%" }, { l: "Cap Refill", v: vitals.cap_refill_s, u: "s" }];
   const flagCount = vList.filter(v => getVitalInfo(v.l, v.v, age).flag).length;
 
-  const steps = result.recommendation === "HOME"
-    ? [{ s: "Monitor 24-48 hours", w: "Viral illness can unmask bacterial infection." }, { s: "Return if fever > 103F or new symptoms", w: "Red-flag escalation indicators." }, { s: "Follow up within 48 hours", w: "Rory Staunton's abnormal labs were never reviewed." }]
-    : result.recommendation === "ED"
-    ? [{ s: "Transport to pediatric ED", w: "Needs CBC, lactate, blood cultures." }, { s: "Lactate within 30 minutes", w: "Best single biomarker for sepsis severity." }, { s: "Antibiotics within 1 hour", w: "Every hour delay increases mortality ~4%." }]
-    : [{ s: "Call 911 immediately", w: "IV access and fluids can begin during transport." }, { s: "Activate Rory's Law (NY 405.4)", w: "Mandates sepsis screening within 15 min of triage." }, { s: "Blood cultures then antibiotics within 1 hour", w: "Each hour delay increases mortality 4-8%." }, { s: "20 mL/kg fluid bolus", w: "Restore circulating volume. May need 40-60 mL/kg." }];
+  const steps = [
+    { s: "Review the input", w: "Check the displayed case and note which values are missing." },
+    { s: "Compare the sample cases", w: "Demo mode loads saved outputs. Live mode requires the research backend and model assets." },
+    { s: "Validate independently", w: "Clinical performance and calibration have not been established. These outputs are for prototype evaluation." },
+  ];
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background">
@@ -127,12 +127,16 @@ export default function ResultsPage() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] rounded-full blur-[100px]" style={{ backgroundColor: `${rc}0a` }} />
               <div className="relative grid lg:grid-cols-[1fr_auto] gap-8 items-center px-10 lg:px-16 py-14 lg:py-20">
                 <div>
-                  <span className="text-xs font-mono text-white/25 tracking-[0.4em] uppercase block mb-6">Triage Result</span>
+                  <span className="text-xs font-mono text-white/25 tracking-[0.4em] uppercase block mb-6">
+                    {result.model_version === "rory-demo" ? "Illustrative preset result" : "Research model result"}
+                  </span>
+                  <p className="text-sm text-amber-200/80 mb-6">
+                    {result.model_version === "rory-demo" ? "This is a saved example. No model inference ran. " : "This model was trained on synthetic data. "}
+                    Not clinically validated. Do not use this result for patient care.
+                  </p>
                   <h1 className="text-[100px] lg:text-[140px] font-display leading-[0.85] mb-4" style={{ color: rc }}>{result.recommendation}</h1>
                   <p className="text-base text-white/40 max-w-lg leading-relaxed">
-                    {result.recommendation === "HOME" ? "Vitals are within normal ranges. Clinical description matches low-risk viral illness. No sepsis signature detected."
-                      : result.recommendation === "ED" ? "Multiple vitals outside normal range. Pattern matches early bacterial infection that can progress to sepsis."
-                      : "Presentation matches the sepsis signature. High fever + tachycardia + poor perfusion. Every hour of delay increases mortality 4-8%."}
+                    The displayed category is an experimental output for exploring the interface. It cannot establish a diagnosis or a safe course of action.
                   </p>
                   <div className="flex gap-3 mt-6">
                     <span className="text-xs font-mono text-white/20 px-3 py-1.5 border border-white/[0.06] rounded-sm">{flagCount} vitals flagged</span>
@@ -205,7 +209,9 @@ export default function ResultsPage() {
                 <span className="text-xs font-mono text-white/25 tracking-[0.3em] uppercase">Why This Decision</span>
               </div>
               <div className="bg-[#0a0a10]/80 backdrop-blur-md border border-white/[0.06] rounded-lg p-8">
-                <p className="text-xs text-white/20 mb-8">The model analyzed clinical text and vital signs through dual encoders. Each factor's contribution:</p>
+                <p className="text-xs text-white/20 mb-8">{result.model_version === "rory-demo"
+                  ? "Saved explanation for this preset. No model analysis ran."
+                  : "Explanation returned by the research backend. The displayed weights are not validated clinical evidence."}</p>
                 <div className="space-y-3">
                   {result.reasoning.map((r, i) => (
                     <div key={i} className={`flex items-center gap-5 p-4 rounded-lg border border-white/[0.04] hover:border-white/[0.08] hover:bg-white/[0.01] transition-all duration-500 ${i < rev ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"}`}>
@@ -341,7 +347,7 @@ export default function ResultsPage() {
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-white/15 mt-6 pt-4 border-t border-white/[0.04]">AI-generated recommendations. Clinical judgment takes precedence. Refer to Rory&apos;s Law (NY 405.4).</p>
+                <p className="text-xs text-white/15 mt-6 pt-4 border-t border-white/[0.04]">Prototype review steps. This interface does not provide a clinical care plan.</p>
               </div>
             </div>
 
