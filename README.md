@@ -10,6 +10,14 @@ The repository does not include `backend_a/models/weights/best_model.pt`. The in
 
 `inference.demo_cache` calls the real prediction pipeline. It is not an offline fallback for a missing checkpoint.
 
+A checkpoint was recovered in an older local checkout, but its original training provenance is incomplete and it is not distributed here. The [research workflow](docs/RESEARCH.md) records its identity and explains how to evaluate a trusted local checkpoint without presenting synthetic results as clinical evidence.
+
+## Research preparation
+
+The repository now includes a cohort leakage audit, frozen CPU inference with artifact hashes, and an evaluator that uses the same decision policy as the service. It reports missed cases, false alarms, calibration, uncertainty, and exploratory subgroup results. The current synthetic data contains later reassessment information and repeated complaint templates; it cannot support an arrival-time clinical validation claim. See the [protocol, data routes, and runnable commands](docs/RESEARCH.md).
+
+There is no clinical partner or approved pediatric study dataset yet. The next research step is to define the intended use and reference outcome with a clinician, then obtain appropriate data. MIT licensing does not confer clinical validation or permission to use third-party data.
+
 ## Frontend
 
 Use Node.js 22:

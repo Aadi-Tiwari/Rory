@@ -1,0 +1,82 @@
+{
+  "scope": "Legacy synthetic cohort audit; not a clinical validation report",
+  "cohorts": {
+    "training": {
+      "rows": 974,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unknown_diagnosis_labels": 0,
+      "complaints_with_later_information": 952,
+      "source_labels": {
+        "synthetic_v3_physionet_recal": 954,
+        "Schlapbach et al., JAMA Pediatrics 2017": 1,
+        "Hsiao et al., Pediatric Emergency Care 2019": 1,
+        "Weiss et al., Pediatr Crit Care Med 2020": 1,
+        "Ngo et al., Lancet 2001": 1,
+        "Akula et al., Pediatrics 2018": 1,
+        "de Oliveira et al., Intensive Care Medicine 2016": 1,
+        "Cruz et al., Annals of Emergency Medicine 2019": 1,
+        "Typpo et al., Pediatr Crit Care Med 2015": 1,
+        "Scott et al., Pediatric Emergency Care 2020": 1,
+        "Florin et al., JAMA Pediatrics 2017": 1,
+        "Alessio et al., Pediatric Infectious Disease Journal 2020": 1,
+        "Kissoon et al., Global Heart 2014": 1,
+        "Depuydt et al., Pediatric Infectious Disease Journal 2019": 1,
+        "Inwald et al., Arch Dis Child 2009": 1,
+        "Standage & Wong, Pediatric Clinics of North America 2013": 1,
+        "Ladhani et al., Arch Dis Child 2018": 1,
+        "Gebremariam et al., BMC Pediatrics 2016": 1,
+        "Paul et al., Pediatric Emergency Care 2018": 1,
+        "Burns et al., NEJM Case Records 2018": 1,
+        "Balamuth et al., Pediatrics 2017": 1
+      },
+      "missing_vitals": {
+        "hr": 122,
+        "rr": 118,
+        "temp_f": 102,
+        "spo2": 114,
+        "cap_refill_s": 115
+      }
+    },
+    "evaluation": {
+      "rows": 51,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unknown_diagnosis_labels": 0,
+      "complaints_with_later_information": 50,
+      "source_labels": {
+        "synthetic_v3_physionet_recal": 50,
+        "missing": 1
+      },
+      "missing_vitals": {
+        "hr": 7,
+        "rr": 5,
+        "temp_f": 5,
+        "spo2": 6,
+        "cap_refill_s": 10
+      }
+    }
+  },
+  "overlap": {
+    "patient_ids": 0,
+    "exact_complaints": 4,
+    "numeric_normalized_complaints": 43
+  },
+  "expected_units": {
+    "hr": "beats/min",
+    "rr": "breaths/min",
+    "temp_f": "degF",
+    "spo2": "percent",
+    "cap_refill_s": "seconds"
+  },
+  "arrival_evaluation_ready": false,
+  "limitations": [
+    "Diagnosis-derived labels are not clinical disposition reference labels.",
+    "Text screening flags possible temporal leakage; manual timestamp review is required.",
+    "Source strings and nonoverlapping IDs do not prove provenance or independence."
+  ],
+  "input_sha256": {
+    "training": "7725283595f92da2de048783f9f13e7e25a998b5500c4d86ff79bef6bfa3b4e4",
+    "evaluation": "3d811f0b1666864b842b41944128cb444fe478d81281e5fcbf2764fde45c1c2a"
+  }
+}

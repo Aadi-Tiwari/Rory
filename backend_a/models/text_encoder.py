@@ -4,7 +4,7 @@ text_encoder.py — RORY Hackathon, Backend A
 Complaint text encoder: Bio_ClinicalBERT (frozen) + 2-layer trainable MLP head.
 
 Bio_ClinicalBERT (emilyalsentzer/Bio_ClinicalBERT) was trained on MIMIC-III
-clinical notes — ideal for pediatric ED complaint text.
+clinical notes. Suitability for pediatric complaints requires evaluation.
 
 Architecture:
     BERT [CLS] pooling (768-dim, frozen)
@@ -40,6 +40,7 @@ def _check_transformers() -> None:
 
 
 MODEL_NAME = "emilyalsentzer/Bio_ClinicalBERT"
+MODEL_REVISION = "d5892b39a4adaed74b92212a44081509db72f87b"
 BERT_DIM   = 768
 
 
@@ -68,6 +69,7 @@ class TextEncoder(nn.Module):
         dropout: float = 0.3,
         max_length: int = 128,
         device: str | None = None,
+        revision: str = MODEL_REVISION,
     ) -> None:
         super().__init__()
         _check_transformers()
@@ -78,8 +80,8 @@ class TextEncoder(nn.Module):
         self._device = device or _auto_device()
 
         # Load tokenizer and BERT
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-        self.bert = AutoModel.from_pretrained(MODEL_NAME)
+        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, revision=revision)
+        self.bert = AutoModel.from_pretrained(MODEL_NAME, revision=revision)
 
         # Freeze all BERT parameters
         for param in self.bert.parameters():

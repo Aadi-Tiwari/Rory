@@ -22,6 +22,7 @@ Notes
 from __future__ import annotations
 
 import json
+import random
 import time
 from pathlib import Path
 
@@ -33,8 +34,10 @@ from torch.utils.data import DataLoader, Dataset
 
 # Local imports — run from repo root or with backend_a on PYTHONPATH
 from models.vitals_mlp import VitalsMLP
-from models.text_encoder import TextEncoder
+from models.text_encoder import MODEL_NAME, MODEL_REVISION, TextEncoder
 from models.fusion import FusionModel, RoryModel, LABEL_TO_IDX
+from decision_policy import synthetic_label
+from research.audit import file_hash, read_json
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -59,19 +62,6 @@ HIDDEN_DIM    = 64
 EMBED_DIM     = 128
 
 # Ground-truth → triage label mapping
-GT_TO_TRIAGE: dict[str, str] = {
-    "sepsis":         "911",
-    "appendicitis":   "911",
-    "strep":          "ED",
-    "gastroenteritis":"ED",
-    "kawasaki":       "ED",
-    "uti":            "ED",
-    "viral_syndrome": "HOME",
-    "influenza":      "HOME",
-    "otitis_media":   "HOME",
-}
-
-
 # ---------------------------------------------------------------------------
 # Dataset
 # ---------------------------------------------------------------------------
@@ -97,7 +87,7 @@ class TriageDataset(Dataset):
         vitals = case["vitals"]
         text   = case["complaint_text"]
         gt     = case["ground_truth"]
-        triage = GT_TO_TRIAGE.get(gt, "ED")
+        triage = synthetic_label(gt)
         label  = LABEL_TO_IDX[triage]
         return vitals, text, label
 
@@ -132,7 +122,7 @@ def compute_class_weights(cases: list[dict], device: torch.device) -> torch.Tens
     """Inverse-frequency weighting for HOME / ED / 911."""
     counts = [0, 0, 0]
     for case in cases:
-        triage = GT_TO_TRIAGE.get(case["ground_truth"], "ED")
+        triage = synthetic_label(case["ground_truth"])
         counts[LABEL_TO_IDX[triage]] += 1
 
     total = sum(counts)
@@ -186,6 +176,10 @@ def run_epoch(
 # ---------------------------------------------------------------------------
 
 def train() -> None:
+    random.seed(42)
+    np.random.seed(42)
+    torch.manual_seed(42)
+    torch.use_deterministic_algorithms(True)
     print("=" * 60)
     print("  RORY — Model Training")
     print("=" * 60)
@@ -193,8 +187,7 @@ def train() -> None:
     device = get_device()
 
     # --- Load cohort ---
-    with open(HERO_COHORT_PATH, encoding="utf-8") as f:
-        all_cases: list[dict] = json.load(f)
+    all_cases, cohort_hash = read_json(HERO_COHORT_PATH)
     print(f"\n  Loaded {len(all_cases)} training cases from {HERO_COHORT_PATH.name}")
 
     # --- Train / val split (last 10% as val, deterministic) ---
@@ -293,7 +286,17 @@ def train() -> None:
     torch.save(model.state_dict(), WEIGHTS_DIR / "final_model.pt")
 
     # --- Save imputation stats alongside weights (needed at inference time) ---
+    if file_hash(HERO_COHORT_PATH) != cohort_hash:
+        raise ValueError("Cohort changed during training; no training manifest was published")
     meta = {
+        "seed": 42,
+        "encoder": MODEL_NAME,
+        "encoder_revision": MODEL_REVISION,
+        "data_kind": "synthetic",
+        "cohort_sha256": cohort_hash,
+        "checkpoint_sha256": file_hash(WEIGHTS_DIR / "best_model.pt"),
+        "train_patient_ids": [case["patient_id"] for case in train_cases],
+        "validation_patient_ids": [case["patient_id"] for case in val_cases],
         "means": means,
         "stds":  stds,
         "label_to_idx": LABEL_TO_IDX,

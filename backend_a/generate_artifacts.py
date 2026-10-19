@@ -1,98 +1,77 @@
-"""
-generate_artifacts.py — run once on Dev Cloud after training.
-Generates dbscan.pkl and sepsis_centroid.npy in models/weights/.
+"""Regenerate auxiliary artifacts from a recorded training split only."""
 
-Run from inside backend_a/:
-    export PYTHONPATH=/workspace/rory/backend_a
-    python generate_artifacts.py
-"""
-
+import argparse
 import json
-import numpy as np
-import torch
+from pathlib import Path
 
-from models.vitals_mlp import VitalsMLP
-from models.text_encoder import TextEncoder
-from models.fusion import FusionModel, RoryModel
-from inference.dbscan_flag import fit as dbscan_fit
-from inference.cluster_drift import save_centroid
+from research.audit import file_hash, read_json
 
-VITAL_KEYS = ["hr", "rr", "temp_f", "spo2", "cap_refill_s"]
 
-# ── Load cohort ────────────────────────────────────────────────────────────────
-with open("data/hero_cohort.json") as f:
-    cohort = json.load(f)
+def training_cases(cohort, meta):
+    ids = meta.get("train_patient_ids")
+    validation = meta.get("validation_patient_ids")
+    if not ids or not validation or len(set(ids)) != len(ids) or set(ids) & set(validation):
+        raise ValueError("A disjoint, recorded training/validation split is required; legacy statistics cannot establish it")
+    cases = {case["patient_id"]: case for case in cohort}
+    if len(cases) != len(cohort) or set(ids) | set(validation) != set(cases):
+        raise ValueError("Recorded split does not match the cohort")
+    return [cases[case_id] for case_id in ids]
 
-print(f"Cohort size: {len(cohort)} cases")
 
-# ── Load train stats ───────────────────────────────────────────────────────────
-with open("models/weights/train_stats.json") as f:
-    raw_stats = json.load(f)
+def collect_embeddings(model, cases):
+    import numpy as np
+    import torch
 
-meta = raw_stats["meta"]  # means, stds live under "meta"
+    embeddings, sepsis = [], []
+    with torch.inference_mode():
+        for case in cases:
+            embedding = model([case["vitals"]], [case["complaint_text"]])["fused_emb"][0].numpy()
+            embeddings.append(embedding)
+            if case["ground_truth"] == "sepsis":
+                sepsis.append(embedding)
+    if not sepsis:
+        raise ValueError("Training split has no sepsis examples for the legacy centroid")
+    return np.array(embeddings), np.array(sepsis)
 
-# Patch imputation module so it uses the correct stats structure
-import inference.imputation as _imp
-_imp._stats = meta
 
-from inference.imputation import impute
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cohort", type=Path, required=True)
+    parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--train-stats", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    args = parser.parse_args()
+    stats, stats_hash = read_json(args.train_stats)
+    cohort, cohort_hash = read_json(args.cohort)
+    checkpoint_hash = file_hash(args.checkpoint)
+    meta = stats["meta"]
+    if meta.get("cohort_sha256") != cohort_hash or meta.get("checkpoint_sha256") != checkpoint_hash:
+        raise ValueError("Training manifest does not match the cohort and checkpoint")
+    cases = training_cases(cohort, meta)
+    outputs = [args.output_dir / name for name in ("dbscan.pkl", "sepsis_centroid.npy", "artifact_manifest.json")]
+    if any(path.resolve() in {args.cohort.resolve(), args.checkpoint.resolve(), args.train_stats.resolve()} for path in outputs):
+        parser.error("Outputs must not overwrite input artifacts")
+    import torch
+    from models.checkpoint import load_model
+    from inference import dbscan_flag, cluster_drift
 
-# ── Build model (must match train.py architecture exactly) ─────────────────────
-# train.py: VitalsMLP(hidden_dim=64, out_dim=128)
-#           TextEncoder(out_dim=128)
-#           FusionModel(vitals_dim=128, text_dim=128, hidden_dim=256)
-device = "cuda" if torch.cuda.is_available() else "cpu"
-print(f"Using device: {device}")
+    torch.set_num_threads(1)
+    if not meta.get("encoder_revision"):
+        raise ValueError("A recorded encoder construction and tokenizer revision is required")
+    embeddings, sepsis = collect_embeddings(load_model(args.checkpoint, meta["encoder_revision"]), cases)
+    if (file_hash(args.cohort), file_hash(args.checkpoint), file_hash(args.train_stats)) != (cohort_hash, checkpoint_hash, stats_hash):
+        raise ValueError("Inputs changed during artifact generation")
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    dbscan_flag.DBSCAN_PATH = args.output_dir / "dbscan.pkl"
+    cluster_drift.CENTROID_PATH = args.output_dir / "sepsis_centroid.npy"
+    dbscan_flag.fit(embeddings, eps=0.5, min_samples=5)
+    cluster_drift.save_centroid(sepsis)
+    manifest = {"cohort_sha256": cohort_hash, "checkpoint_sha256": checkpoint_hash,
+                "train_stats_sha256": stats_hash, "training_cases": len(cases),
+                "outputs": {path.name: file_hash(path) for path in (dbscan_flag.DBSCAN_PATH, cluster_drift.CENTROID_PATH)}}
+    (args.output_dir / "artifact_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    print("Auxiliary artifacts generated from the recorded training split. Research use only.")
 
-vitals_mlp   = VitalsMLP(hidden_dim=64, out_dim=128, dropout=0.3)
-text_encoder = TextEncoder(out_dim=128, dropout=0.3, device=device)
-fusion       = FusionModel(vitals_dim=128, text_dim=128, hidden_dim=256, dropout=0.3)
-model        = RoryModel(vitals_mlp, text_encoder, fusion)
 
-model.load_state_dict(torch.load("models/weights/best_model.pt", map_location=device))
-model.to(device)
-model.eval()
-
-print("Model loaded.")
-
-# ── Collect embeddings ─────────────────────────────────────────────────────────
-all_embeddings    = []
-sepsis_embeddings = []
-
-with torch.no_grad():
-    for case in cohort:
-        # Build mask BEFORE imputation (1 = missing, 0 = present)
-        mask = [1.0 if case["vitals"].get(k) is None else 0.0 for k in VITAL_KEYS]
-
-        # Impute missing vitals
-        imputed, completeness = impute(case["vitals"])
-
-        # Build 10-dim tensor: [5 vitals | 5 mask flags]
-        vitals_tensor = torch.tensor(
-            [[imputed[k] for k in VITAL_KEYS] + mask],
-            dtype=torch.float32,
-        ).to(device)
-
-        # Forward pass
-        out = model(vitals_tensor, [case["complaint_text"]])
-        emb = out["fused_emb"].squeeze(0).cpu().numpy()  # back to CPU for numpy
-
-        all_embeddings.append(emb)
-        if case["ground_truth"] == "sepsis":
-            sepsis_embeddings.append(emb)
-
-all_embeddings    = np.array(all_embeddings)
-sepsis_embeddings = np.array(sepsis_embeddings)
-
-print(f"Total embeddings:  {len(all_embeddings)}")
-print(f"Sepsis embeddings: {len(sepsis_embeddings)}")
-
-# ── Fit DBSCAN ─────────────────────────────────────────────────────────────────
-dbscan_fit(all_embeddings, eps=0.5, min_samples=5)
-print("dbscan.pkl saved.")
-
-# ── Save sepsis centroid ───────────────────────────────────────────────────────
-save_centroid(sepsis_embeddings)
-print("sepsis_centroid.npy saved.")
-
-print("\nDone. All artifacts in models/weights/ — download and drop locally.")
+if __name__ == "__main__":
+    main()

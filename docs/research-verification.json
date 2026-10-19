@@ -1,0 +1,49 @@
+{
+  "scope": "Technical research workflow verification; not clinical validation",
+  "checkpoint_metadata": {
+    "data_kind": "synthetic",
+    "dataset_sha256": "3d811f0b1666864b842b41944128cb444fe478d81281e5fcbf2764fde45c1c2a",
+    "checkpoint_sha256": "825409ee00fde7193a3e35aca0bd9d89c0f7c73d606c30294490f29876e86e2c",
+    "policy_version": "weighted-risk-0.35-0.70-v1",
+    "encoder_architecture": "emilyalsentzer/Bio_ClinicalBERT",
+    "tokenizer_revision": "d5892b39a4adaed74b92212a44081509db72f87b",
+    "encoder_construction_revision": "d5892b39a4adaed74b92212a44081509db72f87b",
+    "checkpoint_weight_origin": "Not established; checkpoint replaces all encoder weights",
+    "python": "3.13.3",
+    "packages": {
+      "torch": "2.6.0+cu124",
+      "transformers": "5.7.0",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.1"
+    },
+    "device": "cpu",
+    "threads": 1,
+    "seed": 0,
+    "deterministic_algorithms": true,
+    "complaints_with_later_information": 50,
+    "reference_standard": "synthetic diagnosis mapping",
+    "training_provenance": "Not established by this run",
+    "scope": "Frozen model only; excludes drift, outlier, reasoning, and API confidence"
+  },
+  "cases_exercised": 51,
+  "separate_runs_have_identical_probability_rows": true,
+  "evaluation_status": "research_only",
+  "clinical_validation": false,
+  "test_command": "python -m pytest -q tests backend_a/tests",
+  "tests": {
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "not_exercised": [
+    "Full retraining",
+    "Regenerating auxiliary artifacts from the historical checkpoint without a recorded split",
+    "A fresh environment installed from backend_a/requirements.txt",
+    "Real pediatric data evaluation",
+    "External clinical validation",
+    "Prospective study",
+    "Full API behavior with corrected auxiliary artifacts"
+  ],
+  "environment_note": "The existing project virtual environment passed backend tests. Its ML dependencies differ from the older requirements file; actual versions are recorded above. Global Python failed an existing API test because FastAPI and Starlette were incompatible."
+}

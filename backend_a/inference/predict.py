@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Optional, TYPE_CHECKING
 
 import numpy as np
+from decision_policy import risk_from_probabilities, recommendation_from_risk
 from inference.imputation import impute
 from inference.ring_buffer import push_embedding
 from inference.dbscan_flag import is_outlier
@@ -45,38 +46,18 @@ def _load_model() -> RoryModel:
     if _model is None:
         if not MODEL_PATH.is_file():
             raise FileNotFoundError("Model checkpoint is unavailable. Install best_model.pt before running predictions.")
-        import torch
-        from models.fusion import FusionModel, RoryModel
-        from models.vitals_mlp import VitalsMLP
-        from models.text_encoder import TextEncoder
+        from models.checkpoint import load_model
 
-        vitals_mlp   = VitalsMLP(hidden_dim=64, out_dim=128, dropout=0.3)
-        text_encoder = TextEncoder(out_dim=128, dropout=0.3, device="cpu")
-        fusion       = FusionModel(vitals_dim=128, text_dim=128, hidden_dim=256, dropout=0.3)
-        model        = RoryModel(vitals_mlp, text_encoder, fusion)
-        model.load_state_dict(torch.load(MODEL_PATH, map_location="cpu", weights_only=True))
-        model.eval()
-        _model = model
+        _model = load_model(MODEL_PATH)
     return _model
 
 
 def _risk_from_proba(proba: torch.Tensor) -> float:
-    """
-    proba is (1, 3) softmax — classes [HOME, ED, 911].
-    Risk = weighted sum: HOME=0.0, ED=0.5, 911=1.0
-    """
-    import torch
-
-    weights = torch.tensor([0.0, 0.5, 1.0])
-    return float((proba.squeeze() * weights).sum())
+    return risk_from_probabilities(proba.reshape(-1).tolist())
 
 
 def _risk_to_recommendation(risk: float) -> str:
-    if risk >= 0.70:
-        return "911"
-    if risk >= 0.35:
-        return "ED"
-    return "HOME"
+    return recommendation_from_risk(risk)
 
 
 def _model_version() -> str:
