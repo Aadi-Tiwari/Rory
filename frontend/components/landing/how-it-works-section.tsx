@@ -303,19 +303,10 @@ export function HowItWorksSection() {
             </h2>
           </div>
 
-          {/* GPU animation video */}
           <div className={`relative h-[320px] lg:h-[640px] overflow-hidden transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-contain object-center"
-            >
-              <source src="/images/gpu-anim.mp4" type="video/mp4" />
-            </video>
+            <GpuAnimation activeStep={activeStep} />
             {/* Vignette edges */}
             <div className="absolute inset-0 pointer-events-none" style={{
               boxShadow: "inset 0 0 80px 40px oklch(0.09 0.01 260), inset 0 0 160px 60px oklch(0.09 0.01 260 / 0.6)"

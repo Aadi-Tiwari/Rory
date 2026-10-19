@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Capabilities", href: "#features" },
-  { name: "How It Works", href: "#how-it-works" },
-  { name: "Technology", href: "#tech" },
-  { name: "Compliance", href: "#compliance" },
-  { name: "Cases", href: "#cases" },
+  { name: "Capabilities", href: "/#features" },
+  { name: "How It Works", href: "/#how-it-works" },
+  { name: "Technology", href: "/#tech" },
+  { name: "Cases", href: "/#cases" },
 ];
 
 export function Navigation() {
@@ -40,7 +39,8 @@ export function Navigation() {
       }`}
     >
       <nav
-        className={`mx-auto transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+        aria-label="Main navigation"
+        className={`relative z-50 mx-auto transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
           isScrolled || isMobileMenuOpen
             ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
             : "bg-transparent max-w-[1400px]"
@@ -51,7 +51,7 @@ export function Navigation() {
             isScrolled ? "h-14" : "h-20"
           }`}
         >
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <span className={`font-display tracking-tight transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isScrolled ? "text-xl text-foreground" : "text-2xl text-white"}`}>RORY</span>
           </a>
 
@@ -69,7 +69,7 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="https://github.com/Tiwari-Aadi/Rory" target="_blank" rel="noopener noreferrer" className={`transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isScrolled ? "text-xs text-foreground/70 hover:text-foreground" : "text-sm text-white/70 hover:text-white"}`}>
+            <a href="https://github.com/Aadi-Tiwari/Rory" target="_blank" rel="noopener noreferrer" className={`transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isScrolled ? "text-xs text-foreground/70 hover:text-foreground" : "text-sm text-white/70 hover:text-white"}`}>
               GitHub
             </a>
             <a href="/demo">
@@ -86,6 +86,8 @@ export function Navigation() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"}`}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -97,6 +99,8 @@ export function Navigation() {
       </nav>
 
       <div
+        id="mobile-navigation"
+        inert={!isMobileMenuOpen}
         className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
@@ -130,13 +134,10 @@ export function Navigation() {
           }`}
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
-            <Button
-              variant="outline"
-              className="flex-1 rounded-full h-14 text-base"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <a href="https://github.com/Aadi-Tiwari/Rory" target="_blank" rel="noopener noreferrer"
+              className="flex-1 rounded-full h-14 text-base border flex items-center justify-center">
               GitHub
-            </Button>
+            </a>
             <a href="/demo" className="flex-1">
               <Button
                 className="w-full bg-foreground text-background rounded-full h-14 text-base"

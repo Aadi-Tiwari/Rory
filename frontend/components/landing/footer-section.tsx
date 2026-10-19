@@ -5,27 +5,23 @@ import { useEffect, useRef } from "react";
 
 const footerLinks = {
   System: [
-    { name: "Capabilities", href: "#features" },
-    { name: "How it works", href: "#how-it-works" },
-    { name: "Technology", href: "#tech" },
-    { name: "Compliance", href: "#compliance" },
+    { name: "Capabilities", href: "/#features" },
+    { name: "How it works", href: "/#how-it-works" },
+    { name: "Technology", href: "/#tech" },
   ],
   Architecture: [
-    { name: "Backend A - ML", href: "#architecture" },
-    { name: "Backend B - Foundry", href: "#architecture" },
-    { name: "Shared Contract", href: "#tech" },
-    { name: "Demo Cases", href: "#cases" },
+    { name: "Backend A - ML", href: "/#architecture" },
+    { name: "Backend B - Foundry", href: "/#architecture" },
+    { name: "Shared Contract", href: "/#tech" },
+    { name: "Demo Cases", href: "/#cases" },
   ],
   Project: [
-    { name: "Los Altos Hacks X", href: "#" },
-    { name: "GitHub", href: "https://github.com/Tiwari-Aadi/Rory" },
-    { name: "Rory's Regulations", href: "#compliance" },
+    { name: "GitHub", href: "https://github.com/Aadi-Tiwari/Rory" },
   ],
 };
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/Tiwari-Aadi/Rory" },
-  { name: "Devpost", href: "#" },
+  { name: "GitHub", href: "https://github.com/Aadi-Tiwari/Rory" },
 ];
 
 function AnimatedWaveCanvas() {
@@ -104,12 +100,12 @@ export function FooterSection() {
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-8">
             <div className="col-span-2">
-              <a href="#" className="inline-flex items-center gap-2 mb-6">
+              <a href="/" className="inline-flex items-center gap-2 mb-6">
                 <span className="text-2xl font-display text-white">RORY</span>
               </a>
 
               <p className="text-white/50 leading-relaxed mb-4 max-w-xs text-sm">
-                Pediatric sepsis early-warning system. A tablet a nurse uses in the first 90 seconds of seeing a child.
+                Pediatric sepsis research prototype with illustrative demo cases. Not clinically validated or intended for patient care.
               </p>
               <p className="text-white/30 leading-relaxed mb-8 max-w-xs text-xs italic">
                 Named after Rory Staunton (1999-2012), who died of septic shock after being sent home from the ER twice.
