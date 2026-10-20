@@ -1,0 +1,939 @@
+{
+  "study": {
+    "name": "Nairobi admission association with missing text and capillary refill",
+    "dataset": "https://doi.org/10.6084/m9.figshare.9104918.v1",
+    "file": "https://ndownloader.figshare.com/files/16604291",
+    "license": "CC BY 4.0",
+    "source_study": "https://doi.org/10.12688/wellcomeopenres.15387.3",
+    "endpoint": "Released admitted field: clinician-decided admission for at least 24 hours.",
+    "encoding": "admitted 0 = no, 1 = yes; binary release encoding interpretation.",
+    "eligibility": "Known binary admission, age 2 through 60 months inclusive, at least one numeric model vital.",
+    "age": "years*12 + months + days/30; blank components zero unless all are blank.",
+    "age_source": "https://github.com/pmwaniki/ppg-analysis/blob/8679a3a31d023f5e22b7d7c23404fa0bd222d474/EDA/descriptives.py",
+    "inputs": "pulse_rate, resp_rate, temp converted C to F, oxygen_sat; cap_refill_s missing, complaint empty.",
+    "timing": "Study-time measurements; some emergency measurements followed treatment initiation.",
+    "thresholds": [
+      0.35,
+      0.7
+    ],
+    "resamples": 2000,
+    "seed": 42,
+    "development_files": [
+      "backend_a/data/hero_cohort.json",
+      "backend_a/data/held_out.json"
+    ],
+    "fitting": "None. No tuning, recalibration, imputation fitting, or narrative generation.",
+    "clinical_validation": false,
+    "clinical_review_status": "No new clinical endorsement claimed for this public-data association study."
+  },
+  "clinical_validation": false,
+  "interpretation": "Association of frozen urgency scores with admission under missing-input ablation.",
+  "sepsis_calibration": "Not estimable: no sepsis labels and urgency is not a sepsis probability.",
+  "external_validation": "Not established for the intended text-and-vitals workflow or sepsis endpoint.",
+  "baseline": "Unavailable: no verified recorded screening result or complete score coding.",
+  "overall_at_070": {
+    "n": 1116,
+    "events": 139,
+    "threshold": 0.7,
+    "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+    "confusion": {
+      "tp": 0,
+      "fn": 139,
+      "fp": 6,
+      "tn": 971
+    },
+    "sensitivity": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 139,
+      "ci95": [
+        0.0,
+        0.026893164298442414
+      ]
+    },
+    "specificity": {
+      "value": 0.9938587512794268,
+      "numerator": 971,
+      "denominator": 977,
+      "ci95": [
+        0.9866666527328742,
+        0.9971824610273241
+      ]
+    },
+    "ppv": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 6,
+      "ci95": [
+        0.0,
+        0.39033428790216523
+      ]
+    },
+    "npv": {
+      "value": 0.8747747747747747,
+      "numerator": 971,
+      "denominator": 1110,
+      "ci95": [
+        0.8540022548343931,
+        0.8929622196976461
+      ]
+    },
+    "missed_case_rate": {
+      "value": 1.0,
+      "numerator": 139,
+      "denominator": 139,
+      "ci95": [
+        0.9731068357015575,
+        1.0
+      ]
+    },
+    "false_positive_rate": {
+      "value": 0.006141248720573183,
+      "numerator": 6,
+      "denominator": 977,
+      "ci95": [
+        0.002817538972675898,
+        0.013333347267125753
+      ]
+    },
+    "false_discovery_rate": {
+      "value": 1.0,
+      "numerator": 6,
+      "denominator": 6,
+      "ci95": [
+        0.6096657120978348,
+        1.0
+      ]
+    },
+    "alert_rate": {
+      "value": 0.005376344086021506,
+      "numerator": 6,
+      "denominator": 1116,
+      "ci95": [
+        0.002466286649330779,
+        0.011679875466668013
+      ]
+    },
+    "auroc": 0.5878993836660457,
+    "average_precision": 0.16281659814387828,
+    "ci95": {
+      "auroc": [
+        0.5356173067690684,
+        0.6402935974898922
+      ],
+      "average_precision": [
+        0.1312890982223132,
+        0.20869946679648857
+      ]
+    },
+    "bootstrap_requested": 2000,
+    "bootstrap_valid": 2000,
+    "bootstrap_seed": 42,
+    "interval_note": null,
+    "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+    "missing_vitals": {
+      "hr": 33,
+      "rr": 4,
+      "temp_f": 6,
+      "spo2": 33,
+      "cap_refill_s": 1116
+    }
+  },
+  "overall_at_035": {
+    "n": 1116,
+    "events": 139,
+    "threshold": 0.35,
+    "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+    "confusion": {
+      "tp": 2,
+      "fn": 137,
+      "fp": 6,
+      "tn": 971
+    },
+    "sensitivity": {
+      "value": 0.014388489208633094,
+      "numerator": 2,
+      "denominator": 139,
+      "ci95": [
+        0.003954752436952022,
+        0.05094148627016831
+      ]
+    },
+    "specificity": {
+      "value": 0.9938587512794268,
+      "numerator": 971,
+      "denominator": 977,
+      "ci95": [
+        0.9866666527328742,
+        0.9971824610273241
+      ]
+    },
+    "ppv": {
+      "value": 0.25,
+      "numerator": 2,
+      "denominator": 8,
+      "ci95": [
+        0.07147921275210906,
+        0.5907245696898311
+      ]
+    },
+    "npv": {
+      "value": 0.8763537906137184,
+      "numerator": 971,
+      "denominator": 1108,
+      "ci95": [
+        0.8556609056310719,
+        0.8944460393686277
+      ]
+    },
+    "missed_case_rate": {
+      "value": 0.9856115107913669,
+      "numerator": 137,
+      "denominator": 139,
+      "ci95": [
+        0.9490585137298316,
+        0.996045247563048
+      ]
+    },
+    "false_positive_rate": {
+      "value": 0.006141248720573183,
+      "numerator": 6,
+      "denominator": 977,
+      "ci95": [
+        0.002817538972675898,
+        0.013333347267125753
+      ]
+    },
+    "false_discovery_rate": {
+      "value": 0.75,
+      "numerator": 6,
+      "denominator": 8,
+      "ci95": [
+        0.409275430310169,
+        0.928520787247891
+      ]
+    },
+    "alert_rate": {
+      "value": 0.007168458781362007,
+      "numerator": 8,
+      "denominator": 1116,
+      "ci95": [
+        0.003636768181600444,
+        0.014081328129630234
+      ]
+    },
+    "auroc": 0.5878993836660457,
+    "average_precision": 0.16281659814387828,
+    "ci95": {
+      "auroc": [
+        0.5356173067690684,
+        0.6402935974898922
+      ],
+      "average_precision": [
+        0.1312890982223132,
+        0.20869946679648857
+      ]
+    },
+    "bootstrap_requested": 2000,
+    "bootstrap_valid": 2000,
+    "bootstrap_seed": 42,
+    "interval_note": null,
+    "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study."
+  },
+  "score_quantiles": {
+    "min": 9.993004823627416e-08,
+    "q25": 1.817530261405409e-06,
+    "median": 4.1684909319883445e-06,
+    "q75": 1.2227120805619052e-05,
+    "max": 0.9959909915924072
+  },
+  "threshold_bands": {
+    "below_035": 1108,
+    "at_least_070": 6,
+    "035_to_070": 2
+  },
+  "age_groups_months_at_070": {
+    "[2,12)": {
+      "n": 404,
+      "events": 71,
+      "threshold": 0.7,
+      "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+      "confusion": {
+        "tp": 0,
+        "fn": 71,
+        "fp": 3,
+        "tn": 330
+      },
+      "sensitivity": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 71,
+        "ci95": [
+          3.469446951953614e-18,
+          0.05132795219689032
+        ]
+      },
+      "specificity": {
+        "value": 0.990990990990991,
+        "numerator": 330,
+        "denominator": 333,
+        "ci95": [
+          0.9738516267090854,
+          0.9969314863460897
+        ]
+      },
+      "ppv": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 3,
+        "ci95": [
+          0.0,
+          0.5614970317550454
+        ]
+      },
+      "npv": {
+        "value": 0.8229426433915212,
+        "numerator": 330,
+        "denominator": 401,
+        "ci95": [
+          0.782568998634824,
+          0.8571876131372725
+        ]
+      },
+      "missed_case_rate": {
+        "value": 1.0,
+        "numerator": 71,
+        "denominator": 71,
+        "ci95": [
+          0.9486720478031097,
+          1.0
+        ]
+      },
+      "false_positive_rate": {
+        "value": 0.009009009009009009,
+        "numerator": 3,
+        "denominator": 333,
+        "ci95": [
+          0.0030685136539102802,
+          0.026148373290914656
+        ]
+      },
+      "false_discovery_rate": {
+        "value": 1.0,
+        "numerator": 3,
+        "denominator": 3,
+        "ci95": [
+          0.4385029682449546,
+          1.0
+        ]
+      },
+      "alert_rate": {
+        "value": 0.007425742574257425,
+        "numerator": 3,
+        "denominator": 404,
+        "ci95": [
+          0.00252857158904061,
+          0.02160202771087235
+        ]
+      },
+      "auroc": 0.4971873281732436,
+      "average_precision": 0.17775719214309593,
+      "ci95": {
+        "auroc": [
+          0.4206417938520857,
+          0.57243686629563
+        ],
+        "average_precision": [
+          0.13673455778564714,
+          0.2429335917205969
+        ]
+      },
+      "bootstrap_requested": 2000,
+      "bootstrap_valid": 2000,
+      "bootstrap_seed": 42,
+      "interval_note": null,
+      "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+      "missing_vitals": {
+        "hr": 11,
+        "rr": 0,
+        "temp_f": 4,
+        "spo2": 11,
+        "cap_refill_s": 404
+      }
+    },
+    "[12,24)": {
+      "n": 346,
+      "events": 41,
+      "threshold": 0.7,
+      "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+      "confusion": {
+        "tp": 0,
+        "fn": 41,
+        "fp": 3,
+        "tn": 302
+      },
+      "sensitivity": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 41,
+        "ci95": [
+          0.0,
+          0.08566757018443184
+        ]
+      },
+      "specificity": {
+        "value": 0.9901639344262295,
+        "numerator": 302,
+        "denominator": 305,
+        "ci95": [
+          0.9714849488293831,
+          0.9966493202604161
+        ]
+      },
+      "ppv": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 3,
+        "ci95": [
+          0.0,
+          0.5614970317550454
+        ]
+      },
+      "npv": {
+        "value": 0.880466472303207,
+        "numerator": 302,
+        "denominator": 343,
+        "ci95": [
+          0.8418519355723494,
+          0.910653260569524
+        ]
+      },
+      "missed_case_rate": {
+        "value": 1.0,
+        "numerator": 41,
+        "denominator": 41,
+        "ci95": [
+          0.9143324298155682,
+          1.0
+        ]
+      },
+      "false_positive_rate": {
+        "value": 0.009836065573770493,
+        "numerator": 3,
+        "denominator": 305,
+        "ci95": [
+          0.0033506797395839207,
+          0.02851505117061696
+        ]
+      },
+      "false_discovery_rate": {
+        "value": 1.0,
+        "numerator": 3,
+        "denominator": 3,
+        "ci95": [
+          0.4385029682449546,
+          1.0
+        ]
+      },
+      "alert_rate": {
+        "value": 0.008670520231213872,
+        "numerator": 3,
+        "denominator": 346,
+        "ci95": [
+          0.002953054459019472,
+          0.025178142037443268
+        ]
+      },
+      "auroc": 0.5519392243102759,
+      "average_precision": 0.17134279797542798,
+      "ci95": {
+        "auroc": [
+          0.444547653507987,
+          0.6511024520284596
+        ],
+        "average_precision": [
+          0.11392228232292151,
+          0.28344025825993613
+        ]
+      },
+      "bootstrap_requested": 2000,
+      "bootstrap_valid": 2000,
+      "bootstrap_seed": 42,
+      "interval_note": null,
+      "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+      "missing_vitals": {
+        "hr": 11,
+        "rr": 2,
+        "temp_f": 1,
+        "spo2": 11,
+        "cap_refill_s": 346
+      }
+    },
+    "[24,60]": {
+      "n": 366,
+      "events": 27,
+      "threshold": 0.7,
+      "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+      "confusion": {
+        "tp": 0,
+        "fn": 27,
+        "fp": 0,
+        "tn": 339
+      },
+      "sensitivity": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 27,
+        "ci95": [
+          0.0,
+          0.12455502974186704
+        ]
+      },
+      "specificity": {
+        "value": 1.0,
+        "numerator": 339,
+        "denominator": 339,
+        "ci95": [
+          0.9887952325430303,
+          1.0
+        ]
+      },
+      "ppv": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "ci95": null
+      },
+      "npv": {
+        "value": 0.9262295081967213,
+        "numerator": 339,
+        "denominator": 366,
+        "ci95": [
+          0.8947965971104811,
+          0.9488081220436885
+        ]
+      },
+      "missed_case_rate": {
+        "value": 1.0,
+        "numerator": 27,
+        "denominator": 27,
+        "ci95": [
+          0.8754449702581331,
+          1.0
+        ]
+      },
+      "false_positive_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 339,
+        "ci95": [
+          0.0,
+          0.011204767456969678
+        ]
+      },
+      "false_discovery_rate": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "ci95": null
+      },
+      "alert_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 366,
+        "ci95": [
+          0.0,
+          0.010386771761455041
+        ]
+      },
+      "auroc": 0.6739866710368185,
+      "average_precision": 0.17770260864934062,
+      "ci95": {
+        "auroc": [
+          0.5498788677320638,
+          0.7939490808202085
+        ],
+        "average_precision": [
+          0.09253464775480674,
+          0.3077627257018858
+        ]
+      },
+      "bootstrap_requested": 2000,
+      "bootstrap_valid": 2000,
+      "bootstrap_seed": 42,
+      "interval_note": null,
+      "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+      "missing_vitals": {
+        "hr": 11,
+        "rr": 2,
+        "temp_f": 1,
+        "spo2": 11,
+        "cap_refill_s": 366
+      }
+    }
+  },
+  "resuscitation_codes_at_070": {
+    "0": {
+      "n": 727,
+      "events": 18,
+      "threshold": 0.7,
+      "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+      "confusion": {
+        "tp": 0,
+        "fn": 18,
+        "fp": 4,
+        "tn": 705
+      },
+      "sensitivity": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 18,
+        "ci95": [
+          0.0,
+          0.17587922364665756
+        ]
+      },
+      "specificity": {
+        "value": 0.9943582510578279,
+        "numerator": 705,
+        "denominator": 709,
+        "ci95": [
+          0.9855844580652711,
+          0.9978039115726507
+        ]
+      },
+      "ppv": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 4,
+        "ci95": [
+          0.0,
+          0.4898908364545972
+        ]
+      },
+      "npv": {
+        "value": 0.975103734439834,
+        "numerator": 705,
+        "denominator": 723,
+        "ci95": [
+          0.9609906130210369,
+          0.9841948764179705
+        ]
+      },
+      "missed_case_rate": {
+        "value": 1.0,
+        "numerator": 18,
+        "denominator": 18,
+        "ci95": [
+          0.8241207763533425,
+          1.0
+        ]
+      },
+      "false_positive_rate": {
+        "value": 0.005641748942172073,
+        "numerator": 4,
+        "denominator": 709,
+        "ci95": [
+          0.0021960884273493474,
+          0.014415541934729085
+        ]
+      },
+      "false_discovery_rate": {
+        "value": 1.0,
+        "numerator": 4,
+        "denominator": 4,
+        "ci95": [
+          0.5101091635454027,
+          1.0
+        ]
+      },
+      "alert_rate": {
+        "value": 0.005502063273727648,
+        "numerator": 4,
+        "denominator": 727,
+        "ci95": [
+          0.0021416634942029687,
+          0.014060836620940778
+        ]
+      },
+      "auroc": 0.7052186177715092,
+      "average_precision": 0.0597242111185022,
+      "ci95": {
+        "auroc": [
+          0.5779938074051528,
+          0.8187457039570416
+        ],
+        "average_precision": [
+          0.030436943758860163,
+          0.1288756668004151
+        ]
+      },
+      "bootstrap_requested": 2000,
+      "bootstrap_valid": 2000,
+      "bootstrap_seed": 42,
+      "interval_note": null,
+      "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+      "missing_vitals": {
+        "hr": 18,
+        "rr": 4,
+        "temp_f": 2,
+        "spo2": 18,
+        "cap_refill_s": 727
+      }
+    },
+    "1": {
+      "n": 384,
+      "events": 120,
+      "threshold": 0.7,
+      "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+      "confusion": {
+        "tp": 0,
+        "fn": 120,
+        "fp": 2,
+        "tn": 262
+      },
+      "sensitivity": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 120,
+        "ci95": [
+          0.0,
+          0.031019166418703472
+        ]
+      },
+      "specificity": {
+        "value": 0.9924242424242424,
+        "numerator": 262,
+        "denominator": 264,
+        "ci95": [
+          0.9728035165737738,
+          0.9979199895808741
+        ]
+      },
+      "ppv": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 2,
+        "ci95": [
+          0.0,
+          0.6576197724933468
+        ]
+      },
+      "npv": {
+        "value": 0.6858638743455497,
+        "numerator": 262,
+        "denominator": 382,
+        "ci95": [
+          0.6376614637001875,
+          0.7303653430458169
+        ]
+      },
+      "missed_case_rate": {
+        "value": 1.0,
+        "numerator": 120,
+        "denominator": 120,
+        "ci95": [
+          0.9689808335812966,
+          1.0
+        ]
+      },
+      "false_positive_rate": {
+        "value": 0.007575757575757576,
+        "numerator": 2,
+        "denominator": 264,
+        "ci95": [
+          0.0020800104191257465,
+          0.027196483426226145
+        ]
+      },
+      "false_discovery_rate": {
+        "value": 1.0,
+        "numerator": 2,
+        "denominator": 2,
+        "ci95": [
+          0.3423802275066532,
+          1.0
+        ]
+      },
+      "alert_rate": {
+        "value": 0.005208333333333333,
+        "numerator": 2,
+        "denominator": 384,
+        "ci95": [
+          0.0014294767943998088,
+          0.01878873000725975
+        ]
+      },
+      "auroc": 0.49594381313131314,
+      "average_precision": 0.31266269142331193,
+      "ci95": {
+        "auroc": [
+          0.43242193106918825,
+          0.5605614910524339
+        ],
+        "average_precision": [
+          0.2575535295698085,
+          0.3913693344993985
+        ]
+      },
+      "bootstrap_requested": 2000,
+      "bootstrap_valid": 2000,
+      "bootstrap_seed": 42,
+      "interval_note": null,
+      "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+      "missing_vitals": {
+        "hr": 15,
+        "rr": 0,
+        "temp_f": 4,
+        "spo2": 15,
+        "cap_refill_s": 384
+      }
+    },
+    "missing": {
+      "n": 5,
+      "events": 1,
+      "threshold": 0.7,
+      "rate_interval_method": "Wilson score, 95%; descriptive intervals without multiplicity adjustment.",
+      "confusion": {
+        "tp": 0,
+        "fn": 1,
+        "fp": 0,
+        "tn": 4
+      },
+      "sensitivity": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 1,
+        "ci95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "specificity": {
+        "value": 1.0,
+        "numerator": 4,
+        "denominator": 4,
+        "ci95": [
+          0.5101091635454027,
+          1.0
+        ]
+      },
+      "ppv": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "ci95": null
+      },
+      "npv": {
+        "value": 0.8,
+        "numerator": 4,
+        "denominator": 5,
+        "ci95": [
+          0.3755346297625255,
+          0.9637758913675698
+        ]
+      },
+      "missed_case_rate": {
+        "value": 1.0,
+        "numerator": 1,
+        "denominator": 1,
+        "ci95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "false_positive_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 4,
+        "ci95": [
+          0.0,
+          0.4898908364545972
+        ]
+      },
+      "false_discovery_rate": {
+        "value": null,
+        "numerator": 0,
+        "denominator": 0,
+        "ci95": null
+      },
+      "alert_rate": {
+        "value": 0.0,
+        "numerator": 0,
+        "denominator": 5,
+        "ci95": [
+          2.7755575615628914e-17,
+          0.43448246478317465
+        ]
+      },
+      "auroc": 0.5,
+      "average_precision": 0.3333333333333333,
+      "ci95": {
+        "auroc": [
+          0.0,
+          1.0
+        ],
+        "average_precision": [
+          0.2,
+          1.0
+        ]
+      },
+      "bootstrap_requested": 2000,
+      "bootstrap_valid": 1371,
+      "bootstrap_seed": 42,
+      "interval_note": null,
+      "bootstrap_method": "Participant-row percentile bootstrap; linkage assumed from source study.",
+      "missing_vitals": {
+        "hr": 0,
+        "rr": 0,
+        "temp_f": 0,
+        "spo2": 0,
+        "cap_refill_s": 5
+      }
+    }
+  },
+  "resuscitation_coding_limit": "Raw codes only. No verified codebook to identify pre-treatment records.",
+  "limitations": [
+    "Empty narrative and missing numeric capillary refill differ from the intended workflow.",
+    "Admission reflects local practice; it is neither sepsis nor the correct HOME / ED / 911 disposition.",
+    "Study-time measurements can follow treatment; availability at initial triage cannot be established.",
+    "Released rows differ from published article counts; selection is reported without forcing agreement.",
+    "Intervals assume independent participant rows; absent identifiers prevent verifying linkage.",
+    "Declared development files contain synthetic or illustrative cases; complete training history is not independently audited.",
+    "Age component semantics are supported by author analysis of the same cohort, not a release-specific dictionary.",
+    "No independent hospital replication, calibrated sepsis model, or clinical endorsement is established."
+  ],
+  "missingness_by_admission": {
+    "0": {
+      "hr": 31,
+      "rr": 4,
+      "temp_f": 3,
+      "spo2": 31,
+      "cap_refill_s": 977
+    },
+    "1": {
+      "hr": 2,
+      "rr": 0,
+      "temp_f": 3,
+      "spo2": 2,
+      "cap_refill_s": 139
+    }
+  },
+  "participant_flow": {
+    "released_rows": 1135,
+    "included_rows": 1116,
+    "exclusions_in_applied_order": {
+      "missing_or_unknown_admission": 14,
+      "outside_age_range": 4,
+      "exact_duplicate_row": 1
+    },
+    "unit": "Released participant row; original identifiers are not released.",
+    "linkage_limit": "Exact duplicate rows are removed; repeated patients cannot be independently linked."
+  },
+  "source_sha256": "36acddd0c4358affd4adc1170f46c10a43d4bd00704a46d4bca5e7dabb3f3e5c",
+  "manifest_sha256": "64c06ad59139fefe0759d15c671ec5eba9b0d1e7e6a3fc29676f0aa55837def2",
+  "checkpoint_sha256": "825409ee00fde7193a3e35aca0bd9d89c0f7c73d606c30294490f29876e86e2c",
+  "frozen_at": "2026-10-20T18:21:47.885774+00:00",
+  "completed_at": "2026-10-20T18:23:32.277052+00:00",
+  "predictions_sha256": "f43a1d1b6f3bc3d1fae1bfe0b54f74297f168177f7149ef6ce1f3bcb5755ec62"
+}

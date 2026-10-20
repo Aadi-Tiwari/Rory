@@ -1,0 +1,79 @@
+{
+  "clinical_validation": false,
+  "cohorts": {
+    "hero_cohort.json": {
+      "n": 974,
+      "sha256": "7725283595f92da2de048783f9f13e7e25a998b5500c4d86ff79bef6bfa3b4e4",
+      "sources": {
+        "synthetic_v3_physionet_recal": 954,
+        "Schlapbach et al., JAMA Pediatrics 2017": 1,
+        "Hsiao et al., Pediatric Emergency Care 2019": 1,
+        "Weiss et al., Pediatr Crit Care Med 2020": 1,
+        "Ngo et al., Lancet 2001": 1,
+        "Akula et al., Pediatrics 2018": 1,
+        "de Oliveira et al., Intensive Care Medicine 2016": 1,
+        "Cruz et al., Annals of Emergency Medicine 2019": 1,
+        "Typpo et al., Pediatr Crit Care Med 2015": 1,
+        "Scott et al., Pediatric Emergency Care 2020": 1,
+        "Florin et al., JAMA Pediatrics 2017": 1,
+        "Alessio et al., Pediatric Infectious Disease Journal 2020": 1,
+        "Kissoon et al., Global Heart 2014": 1,
+        "Depuydt et al., Pediatric Infectious Disease Journal 2019": 1,
+        "Inwald et al., Arch Dis Child 2009": 1,
+        "Standage & Wong, Pediatric Clinics of North America 2013": 1,
+        "Ladhani et al., Arch Dis Child 2018": 1,
+        "Gebremariam et al., BMC Pediatrics 2016": 1,
+        "Paul et al., Pediatric Emergency Care 2018": 1,
+        "Burns et al., NEJM Case Records 2018": 1,
+        "Balamuth et al., Pediatrics 2017": 1
+      },
+      "labels": {
+        "sepsis": 298,
+        "uti": 83,
+        "kawasaki": 83,
+        "influenza": 86,
+        "appendicitis": 87,
+        "viral_syndrome": 84,
+        "otitis_media": 83,
+        "gastroenteritis": 83,
+        "strep": 87
+      },
+      "text_mentions_reassessment": 951,
+      "records_without_index_time": 974
+    },
+    "held_out.json": {
+      "n": 51,
+      "sha256": "3d811f0b1666864b842b41944128cb444fe478d81281e5fcbf2764fde45c1c2a",
+      "sources": {
+        "synthetic_v3_physionet_recal": 50,
+        "unspecified": 1
+      },
+      "labels": {
+        "sepsis": 16,
+        "kawasaki": 6,
+        "uti": 6,
+        "influenza": 3,
+        "appendicitis": 2,
+        "otitis_media": 4,
+        "viral_syndrome": 6,
+        "gastroenteritis": 6,
+        "strep": 2
+      },
+      "text_mentions_reassessment": 50,
+      "records_without_index_time": 51
+    }
+  },
+  "overlapping_patient_ids": 0,
+  "overlapping_exact_complaint_texts": 3,
+  "checkpoint": {
+    "present": true,
+    "sha256": "825409ee00fde7193a3e35aca0bd9d89c0f7c73d606c30294490f29876e86e2c"
+  },
+  "findings": [
+    "Generated cases and literature-attributed vignettes are not an independently collected patient cohort.",
+    "The generator appends label-dependent T+30 reassessment information to initial complaint text.",
+    "The existing evaluator uses argmax; deployment uses ordinal-score thresholds.",
+    "The model forward pass does not receive structured age, sex, or weight.",
+    "Patient ID separation alone does not establish independent source data."
+  ]
+}

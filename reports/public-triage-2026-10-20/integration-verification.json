@@ -1,0 +1,48 @@
+{
+  "integration_base": "1725dd4d162428d056c21eb0ec8fa01d9e39faf9",
+  "tests": {
+    "command": ".\\validation_private\\test-env\\Scripts\\python.exe -m pytest -q tests backend_a/tests",
+    "exit_code": 0,
+    "output": "104 passed, 1 warning in 10.91s",
+    "environment": "System-site-packages virtual environment with Starlette 0.37.2, compatible with installed FastAPI 0.111.0.",
+    "global_environment_issue": "Global Starlette 1.3.1 violates installed FastAPI requirements. Plain FastAPI() reproduces the on_startup TypeError independently of Rory. Global packages were not changed."
+  },
+  "run": {
+    "command": "python -m backend_a.validation.public_triage run --manifest validation_private/public-triage-freeze.integration.json --source validation_private/public-cohorts/figshare-9104918-PaediatricTriage_DATA.csv --predictions validation_private/public-triage-predictions.integration.json --output reports/public-triage-2026-10-20/metrics.integration.json",
+    "exit_code": 0,
+    "included_rows": 1116,
+    "frozen_at": "2026-10-20T18:38:58.722615+00:00",
+    "completed_at": "2026-10-20T18:40:52.302219+00:00",
+    "manifest_sha256": "758acbdbee18b95b1f6f5b3a7ddfca96f329f5761d422719a1f502ed54551174"
+  },
+  "policy": {
+    "version": "weighted-risk-0.35-0.70-v1",
+    "score": "(0.5 * p_ED + p_911) / sum(probabilities)",
+    "ed_threshold": 0.35,
+    "alarm_threshold": 0.7
+  },
+  "post_run_manifest_verification": "PASS",
+  "source_manifest_checkpoint_and_prediction_hashes": "PASS",
+  "exact_original_and_integrated_raw_prediction_agreement": "PASS",
+  "independently_recomputed_confusion_auroc_and_average_precision": "PASS",
+  "unchanged_threshold_counts_discrimination_and_intervals": "PASS",
+  "unchanged_age_and_resuscitation_summaries": "PASS",
+  "age_and_resuscitation_partition_totals": "PASS",
+  "confusion": {
+    "0.35": {
+      "tp": 2,
+      "fn": 137,
+      "fp": 6,
+      "tn": 971
+    },
+    "0.7": {
+      "tp": 0,
+      "fn": 139,
+      "fp": 6,
+      "tn": 971
+    }
+  },
+  "clinical_validation": false,
+  "sepsis_calibration": "UNMEASURED: no sepsis labels or calibrated sepsis model.",
+  "intended_workflow_external_validation": "UNVERIFIED: missing modalities and no independent replication."
+}

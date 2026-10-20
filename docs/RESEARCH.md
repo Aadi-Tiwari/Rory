@@ -2,6 +2,8 @@
 
 Rory is a pediatric research prototype. This workflow prepares an evaluation; it does not establish clinical validity, authorize patient use, or provide a medical-device clearance. There is currently no clinical partner, approved pediatric study dataset, or prospective study for this repository.
 
+A separate [public admission benchmark](../reports/public-triage-2026-10-20/results.md) now records an exploratory test with missing narrative text and numeric capillary refill. It uses an openly licensed cohort and an admission endpoint, so it does not resolve the intended clinical study's data or outcome requirements. Its [protocol](public-triage-benchmark.md) and the [incident-sepsis protocol](retrospective-study.md) specify these distinct analyses.
+
 ## What has to be established
 
 The first proposed research question is whether information available at initial pediatric assessment can identify children who need urgent clinical review. A pediatric clinician must define the setting, eligible ages, prediction time, reference outcome, outcome window, exclusions, and intended user before a real-data experiment is frozen.

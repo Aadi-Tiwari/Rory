@@ -1,0 +1,52 @@
+{
+  "dataset_kind": "template",
+  "dataset_id": "REPLACE_WITH_APPROVED_COHORT",
+  "setting": "pediatric_ed",
+  "reference_standard": "Must exactly match the frozen study",
+  "clinical_review_status": "pending",
+  "access_basis": "Document the permitted research use",
+  "patient_linkage": "Describe patient linkage across encounters, sites and development records",
+  "sampling_description": "Describe consecutive sampling and selection of the earliest eligible encounter",
+  "calendar_time_preserved": true,
+  "records": [
+    {
+      "patient_id": "FICTIONAL_SCHEMA_EXAMPLE",
+      "encounter_id": "EXAMPLE_VISIT",
+      "site_id": "EXAMPLE_SITE",
+      "age_months": 120,
+      "index_time": "2026-01-01T09:02:00Z",
+      "complaint": {
+        "value": "Schema example only. Replace with a permitted original complaint.",
+        "origin": "recorded_at_care",
+        "observed_at": "2026-01-01T09:00:00Z",
+        "available_at": "2026-01-01T09:01:00Z"
+      },
+      "vitals": {
+        "hr": {
+          "value": 100,
+          "observed_at": "2026-01-01T09:00:00Z",
+          "available_at": "2026-01-01T09:01:00Z"
+        },
+        "rr": null,
+        "temp_f": null,
+        "spo2": null,
+        "cap_refill_s": null
+      },
+      "units": {
+        "hr": "bpm",
+        "rr": "breaths/min",
+        "temp_f": "degF",
+        "spo2": "percent",
+        "cap_refill_s": "seconds"
+      },
+      "outcome": {
+        "sepsis": 0,
+        "prevalent_sepsis": false,
+        "onset_time": null,
+        "followup_end": "2026-01-02T09:02:00Z",
+        "ascertainment_complete": true
+      },
+      "baseline": null
+    }
+  ]
+}

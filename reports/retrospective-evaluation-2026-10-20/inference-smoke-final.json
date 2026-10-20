@@ -1,0 +1,13 @@
+{
+  "dataset_kind": "synthetic",
+  "purpose": "Final offline inference smoke test only",
+  "clinical_validation": false,
+  "n": 2,
+  "finite_normalized_probabilities": true,
+  "seconds": 67.64664540000376,
+  "clinical_metrics_computed": false,
+  "manifest_sha256": "d5bb03a68fed12565ac43f76c6fd50d2377cfd8d0ea5bdfc2953d5913fb0cb00",
+  "checkpoint_sha256": "825409ee00fde7193a3e35aca0bd9d89c0f7c73d606c30294490f29876e86e2c",
+  "template_rejection": "The retrospective study requires real records, not synthetic cases.",
+  "template_output_created": false
+}

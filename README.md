@@ -16,7 +16,9 @@ A checkpoint was recovered in an older local checkout, but its original training
 
 The repository now includes a cohort leakage audit, frozen CPU inference with artifact hashes, and an evaluator that uses the same decision policy as the service. It reports missed cases, false alarms, calibration, uncertainty, and exploratory subgroup results. The current synthetic data contains later reassessment information and repeated complaint templates; it cannot support an arrival-time clinical validation claim. See the [protocol, data routes, and runnable commands](docs/RESEARCH.md).
 
-There is no clinical partner or approved pediatric study dataset yet. The next research step is to define the intended use and reference outcome with a clinician, then obtain appropriate data. MIT licensing does not confer clinical validation or permission to use third-party data.
+There is no clinical partner or suitable approved incident-sepsis cohort yet. The [retrospective study specification](docs/retrospective-study.md) defines that provisional research question, and the [evaluation guide](docs/retrospective-evaluation.md) documents its data requirements and frozen scorer. MIT licensing does not confer clinical validation or permission to use third-party data.
+
+A separate [public admission benchmark](reports/public-triage-2026-10-20/results.md) tested the frozen checkpoint on real pediatric records with narrative text and numeric capillary refill omitted. Performance in that restricted setting was poor. This is an admission-association study, not validation of sepsis detection or HOME / ED / 911 safety. The [benchmark protocol](docs/public-triage-benchmark.md) records the source, exclusions, missing inputs, and thresholds. The [dataset-access review](research_notes/patient-evaluation-access-2026-10-20/open-cohorts.md) and [unsent clinical collaboration request](docs/clinical-collaboration-draft.md) cover the remaining clinical study requirements.
 
 ## Frontend
 

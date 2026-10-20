@@ -41,3 +41,6 @@ frontend/public/images/gpu-exploded.png
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Local clinical exports, frozen manifests, and patient-level predictions
+validation_private/

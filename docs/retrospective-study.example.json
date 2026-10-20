@@ -1,0 +1,12 @@
+{
+  "endpoint_definition": "New sepsis onset after the initial ED prediction time and within the following 24 hours.",
+  "reference_standard": "PENDING: clinician-approved case definition and blinded adjudication procedure",
+  "setting": "pediatric_ed",
+  "horizon_hours": 24,
+  "development_files": ["backend_a/data/hero_cohort.json"],
+  "development_sites": [],
+  "development_end": null,
+  "cohort_role": "exploratory",
+  "baseline_name": null,
+  "clinical_review_status": "pending"
+}

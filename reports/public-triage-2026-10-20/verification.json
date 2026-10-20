@@ -1,0 +1,22 @@
+{
+  "tests": {
+    "command": "python -m pytest tests/test_retrospective.py tests/test_public_triage.py -q",
+    "exit_code": 0,
+    "output": "60 passed, 1 warning in 7.38s"
+  },
+  "run": {
+    "command": "python -m backend_a.validation.public_triage run --manifest validation_private/public-triage-freeze.final.json --source validation_private/public-cohorts/figshare-9104918-PaediatricTriage_DATA.csv --predictions validation_private/public-triage-predictions.final.json --output reports/public-triage-2026-10-20/metrics.json",
+    "exit_code": 0,
+    "included_rows": 1116,
+    "completed_at": "2026-10-20T18:23:32.277052+00:00"
+  },
+  "post_run_manifest_verification": "PASS",
+  "exact_first_and_final_prediction_agreement": "PASS",
+  "independently_recomputed_confusion_and_auroc": "PASS",
+  "age_and_resuscitation_partition_totals": "PASS",
+  "source_manifest_and_prediction_hashes": "PASS",
+  "clinical_validation": false,
+  "sepsis_calibration": "UNMEASURED: no sepsis labels or calibrated sepsis model.",
+  "intended_workflow_external_validation": "UNVERIFIED: missing modalities and no independent replication.",
+  "clinical_review": "PENDING for the separate incident-sepsis protocol."
+}

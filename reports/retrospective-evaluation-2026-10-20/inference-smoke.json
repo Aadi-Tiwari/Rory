@@ -1,0 +1,9 @@
+{
+  "dataset_kind": "synthetic",
+  "purpose": "Offline inference smoke test only",
+  "clinical_validation": false,
+  "n": 2,
+  "finite_normalized_probabilities": true,
+  "seconds": 44.14501769997878,
+  "clinical_metrics_computed": false
+}
